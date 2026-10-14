@@ -24,8 +24,8 @@ input{font:inherit;color:inherit}
 #app{position:relative;width:100%;height:100%;max-width:430px;margin:0 auto;background:var(--bg);overflow:hidden;isolation:isolate}
 html.phone #app{max-width:none}
 html.desktop,html.desktop body{overflow:hidden}
-html.desktop body{display:grid;place-items:center}
-html.desktop #app{flex:none;width:400px;height:860px;max-width:none;border-radius:46px;border:10px solid #1b1e19;box-shadow:0 30px 90px rgba(0,0,0,.6);transform:scale(var(--s,1));transform-origin:center}
+html.desktop:not(.wide) body{display:grid;place-items:center}
+html.desktop:not(.wide) #app{flex:none;width:400px;height:860px;max-width:none;border-radius:46px;border:10px solid #1b1e19;box-shadow:0 30px 90px rgba(0,0,0,.6);transform:scale(var(--s,1));transform-origin:center}
 
 /* status bar */
 .sb{position:absolute;top:0;left:0;right:0;z-index:80;height:calc(44px + var(--sat));padding:var(--sat) 26px 0 32px;display:flex;align-items:center;justify-content:space-between;pointer-events:none;font-weight:700;font-size:15px;font-variant-numeric:tabular-nums}
@@ -255,12 +255,65 @@ section{display:flex;flex-direction:column;gap:14px}
 .loader{position:absolute;bottom:calc(70px + var(--sab));display:flex;flex-direction:column;align-items:center;gap:14px}
 .loader .track{width:120px;height:3px;border-radius:2px;background:var(--line);overflow:hidden}
 .loader .track i{display:block;height:100%;width:0;background:var(--accent);transition:width .4s var(--ease)}
+
+/* ---------- desktop: full website layout ---------- */
+.brand{display:none}
+.mini .mid{display:contents}
+.donly{display:none!important}
+html.wide #app{width:100%;height:100%;max-width:none;border:0;border-radius:0;box-shadow:none;transform:none}
+html.wide .donly{display:inline-flex!important}
+html.wide .sb{top:auto;bottom:108px;left:0;right:auto;width:240px;height:auto;padding:0 28px;justify-content:flex-start;font-family:var(--fm);font-size:30px;font-weight:500}
+html.wide .sb .ind{display:none}
+html.wide .tabs{top:0;bottom:88px;right:auto;width:240px;flex-direction:column;justify-content:flex-start;align-items:stretch;gap:4px;padding:28px 16px;border-top:0;border-right:1px solid var(--line);background:var(--surface);backdrop-filter:none}
+html.wide .tabs button{flex-direction:row;width:100%;gap:14px;font-size:15px;padding:12px 14px;border-radius:12px;justify-content:flex-start;transition:background .2s,color .2s}
+html.wide .tabs button:hover{background:var(--raised);color:var(--text)}
+html.wide .tabs button.on{background:var(--raised)}
+html.wide .brand{display:flex;align-items:center;gap:10px;font-family:var(--fd);font-weight:700;font-size:22px;padding:0 10px 24px;letter-spacing:-.02em}
+.brand i{font-style:normal;width:34px;height:34px;border-radius:10px;background:var(--accent);color:var(--ink);display:grid;place-items:center;font-weight:800;font-size:22px;padding-top:7px;line-height:1}
+html.wide #stage{left:240px;bottom:88px}
+html.wide .view{padding:36px max(48px,calc((100% - 1180px)/2)) 56px;gap:30px}
+html.wide .view.nobar{padding-bottom:56px}
+html.wide .chips{margin:0;padding:0;flex-wrap:wrap;overflow:visible}
+html.wide .h1{font-size:40px}
+html.wide .hero{height:320px}
+html.wide .hero h3{font-size:46px;max-width:70%}
+html.wide .hero .in{padding:32px}
+html.wide .hero .play{width:64px;height:64px;right:28px;bottom:28px}
+html.wide .hscroll{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));overflow:visible;margin:0;padding:0;gap:22px}
+html.wide .hscroll .card{width:auto}
+html.wide .card .art{width:100%;height:auto;aspect-ratio:1}
+html.wide .grid2{grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:26px 22px}
+html.wide .tiles{grid-template-columns:repeat(4,1fr)}
+html.wide .tile{height:110px;font-size:22px}
+html.wide .trow{padding:8px 12px;margin:0 -12px}
+html.wide .chead{flex-direction:row;align-items:flex-end;text-align:left;flex-wrap:wrap;gap:28px}
+html.wide .chead .art.big,html.wide .chead .mosaic{width:220px!important;height:220px!important}
+html.wide .chead .info{align-items:flex-start;flex:1;min-width:260px}
+html.wide .chead .acts{justify-content:flex-start;width:100%}
+html.wide .stats{max-width:620px;width:100%;align-self:center}
+html.wide .mini{left:0;right:0;bottom:0;height:88px;border-radius:0;border-top:1px solid var(--line);background:var(--surface);padding:0 28px;gap:16px;box-shadow:none}
+html.wide .mini.hide{transform:none;opacity:1;pointer-events:auto}
+html.wide .mini .art{width:56px;height:56px}
+html.wide .mini .tm{flex:0 1 300px}
+html.wide .mini .mid{display:flex;flex:1;align-items:center;justify-content:center;gap:22px}
+html.wide .mini .mid>button:not(.pp){color:var(--muted);width:36px;height:36px;display:grid;place-items:center}
+html.wide .mini .mid>button:not(.pp):hover{color:var(--text)}
+html.wide .mini .pp{width:44px;height:44px}
+html.wide .mini .bar{height:3px;top:0;bottom:auto}
+html.wide .mtime{font-family:var(--fm);font-size:12px;color:var(--muted);min-width:110px;justify-content:flex-end}
+html.wide .player{padding:48px;align-items:center}
+html.wide .player>*{width:100%;max-width:520px}
+html.wide .player .cov{max-width:420px}
+html.wide .sheet{left:50%;right:auto;bottom:auto;top:50%;width:min(520px,calc(100% - 48px));max-height:85%;border-radius:24px;border:1px solid var(--line);transform:translate(-50%,-46%);opacity:0;pointer-events:none;transition:transform .3s var(--ease),opacity .25s}
+html.wide .sheet.open{transform:translate(-50%,-50%);opacity:1;pointer-events:auto}
+html.wide .handle{display:none}
+html.wide .toast{bottom:112px}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
 </style>
 <script>/* device detection: phone = full screen, desktop = phone mockup scaled to fit the window */
 (function(){var n=navigator,u=n.userAgent||'',m=!!((n.userAgentData&&n.userAgentData.mobile)||/Android|iPhone|iPad|iPod|Mobile|Silk|Kindle|BlackBerry|Opera Mini|IEMobile/i.test(u)||(/Macintosh/.test(u)&&n.maxTouchPoints>1));
 var d=document.documentElement;d.classList.add(m?'phone':'desktop');d.dataset.device=m?'phone':'desktop';
-function fit(){if(m)return;d.style.setProperty('--s',Math.max(.3,Math.min(1,(innerWidth-32)/420,(innerHeight-32)/880)))}fit();addEventListener('resize',fit)})();</script>
+function fit(){if(m)return;var w=innerWidth>=900,was=d.classList.contains('wide');d.classList.toggle('wide',w);d.dataset.layout=w?'desktop':'preview';d.style.setProperty('--s',Math.max(.3,Math.min(1,(innerWidth-32)/420,(innerHeight-32)/880)));if(w!==was&&typeof renderNow==='function')renderNow()}fit();addEventListener('resize',fit)})();</script>
 </head>
 <body>
 <div id="app">
@@ -268,6 +321,7 @@ function fit(){if(m)return;d.style.setProperty('--s',Math.max(.3,Math.min(1,(inn
   <div id="stage"></div>
   <div class="mini hide" id="mini" data-act="openplayer" role="button" tabindex="0" aria-label="Open player"></div>
   <nav class="tabs" id="tabs" aria-label="Main">
+    <div class="brand"><i>""</i>empty.string</div>
     <button data-act="tab" data-view="home" aria-label="Home"></button>
     <button data-act="tab" data-view="search" aria-label="Search"></button>
     <button data-act="tab" data-view="library" aria-label="Library"></button>
@@ -396,9 +450,9 @@ function onTrack(t){
 /* ---------- mini + player render ---------- */
 function renderNow(){
   const t=P.cur();const mini=$('#mini');
-  if(!t){mini.classList.add('hide');return}
+  if(!t){if(document.documentElement.classList.contains('wide')){mini.classList.remove('hide');mini.innerHTML='<div class="art"></div><div class="tm"><b>Nothing playing</b><span>Pick any song to start</span></div><div class="mid"></div>'}else mini.classList.add('hide');return}
   mini.classList.remove('hide');
-  mini.innerHTML=`${art(t.art,t.id)}<div class="tm"><b>${esc(t.title)}</b><span>${esc(t.artist)}</span></div><button class="ib0 like${isLiked(t.id)?' on':''}" data-act="like" aria-label="${isLiked(t.id)?'Remove from':'Add to'} liked songs">${ic(isLiked(t.id)?'heartF':'heart',22)}</button><button class="pp" data-act="toggle" aria-label="Play or pause">${ic(audio.paused?'play':'pause',18)}</button><div class="bar"></div>`;
+  mini.innerHTML=`${art(t.art,t.id)}<div class="tm"><b>${esc(t.title)}</b><span>${esc(t.artist)}</span></div><button class="ib0 like${isLiked(t.id)?' on':''}" data-act="like" aria-label="${isLiked(t.id)?'Remove from':'Add to'} liked songs">${ic(isLiked(t.id)?'heartF':'heart',22)}</button><div class="mid"><button class="donly" data-act="prev" aria-label="Previous">${ic('prev',22)}</button><button class="pp" data-act="toggle" aria-label="Play or pause">${ic(audio.paused?'play':'pause',18)}</button><button class="donly" data-act="next" aria-label="Next">${ic('next',22)}</button></div><span class="donly mtime" id="mtime"></span><div class="bar"></div>`;
   const pl=$('#player');
   const upNext=P.q[P.i+1];
   pl.innerHTML=`<div class="glow" style="${bgArt(t.art,t.id)}"></div>
@@ -415,7 +469,7 @@ function renderNow(){
 }
 let seeking=false;
 function renderPlayState(){const p=audio.paused;$('#player').classList.toggle('paused',p);const a=$('#mini .pp');if(a)a.innerHTML=ic(p?'play':'pause',18);const b=$('#bigpp');if(b)b.innerHTML=ic(p?'play':'pause',30)}
-function renderProgress(){const d=audio.duration||P.cur()?.duration||0;const c=audio.currentTime||0;const bar=$('#mini .bar');if(bar)bar.style.width=(d?c/d*100:0)+'%';const s=$('#seek');if(s&&!seeking){if(isFinite(audio.duration))s.max=audio.duration;s.value=c;$('#tcur').textContent=fmt(c);if(isFinite(audio.duration))$('#tdur').textContent=fmt(audio.duration)}}
+function renderProgress(){const d=audio.duration||P.cur()?.duration||0;const c=audio.currentTime||0;const bar=$('#mini .bar');if(bar)bar.style.width=(d?c/d*100:0)+'%';const mt=$('#mtime');if(mt)mt.textContent=fmt(c)+' / '+fmt(d);const s=$('#seek');if(s&&!seeking){if(isFinite(audio.duration))s.max=audio.duration;s.value=c;$('#tcur').textContent=fmt(c);if(isFinite(audio.duration))$('#tdur').textContent=fmt(audio.duration)}}
 function openPlayer(){if(!P.cur())return;const p=$('#player');p.classList.add('open');p.setAttribute('aria-hidden','false')}
 function closePlayer(){const p=$('#player');p.classList.remove('open');p.setAttribute('aria-hidden','true')}
 
@@ -583,18 +637,18 @@ VIEWS.collection=(el,p)=>{
   const label=p.kind==='trending'?'Chart · updated live':isArtist?'Artist':(p.isAlbum?'Album':'Playlist')+(p.owner?' · '+p.owner:'');
   el.innerHTML=`${top}<div class="chead">${p.kind==='trending'?`<div class="art big" data-cover style="${bgArt('',title)}"></div>`:art(p.art,p.id,'big'+(isArtist?' round':''))}<div class="info"><div class="eyebrow">${esc(label)}</div><h1 class="h1">${esc(title)}</h1><div class="muted" data-sub>Loading…</div></div>
   <div class="acts"><button class="btn" data-act="playlist" data-c="1" disabled>${ic('play',18)}Play</button><button class="btn outline" data-act="playlist" data-c="1" data-shuffle="1" disabled>${ic('shuffle',18)}Shuffle</button>${p.kind==='trending'?'':isArtist?`<button class="btn ${saved?'soft':'outline'}" data-act="follow" data-arg="${A({id:p.id,name:title,art:p.art,handle:p.handle||''})}">${saved?'Following':'Follow'}</button>`:`<button class="ib ghost like${saved?' on':''}" style="width:48px;height:48px" data-act="savepl" data-arg="${A({kind:'playlist',id:p.id,title,owner:p.owner,art:p.art,count:p.count,isAlbum:p.isAlbum,link:p.link})}" aria-label="${saved?'Remove from':'Save to'} library">${ic(saved?'heartF':'heart',24)}</button>`}</div></div>
-  <div data-list>${skelRows(6)}</div>`;
+  <div data-tracks>${skelRows(6)}</div>`;
   const fill=list=>{
     if(!el.isConnected)return;const k=reg(list,title);
     $$('[data-c]',el).forEach(b=>{b.dataset.list=k;b.disabled=!list.length});
     const tot=list.reduce((s,t)=>s+t.duration,0);
     $('[data-sub]',el).textContent=isArtist?`${num(p.followers||0)} followers · ${list.length} tracks`:`${list.length} ${list.length===1?'song':'songs'} · ${fmtLong(tot)}`;
     if(p.kind==='trending'&&list[0])$('[data-cover]',el).setAttribute('style',bgArt(list[0].art,list[0].id));
-    $('[data-list]',el).innerHTML=list.length?`<div class="tlist">${list.map((t,i)=>trow(t,k,i,{num:true,noArtist:isArtist})).join('')}</div>`:'<p class="empty">No playable tracks here.</p>';
+    $('[data-tracks]',el).innerHTML=list.length?`<div class="tlist">${list.map((t,i)=>trow(t,k,i,{num:true,noArtist:isArtist})).join('')}</div>`:'<p class="empty">No playable tracks here.</p>';
   };
   if(p._tracks){fill(p._tracks);return}
   const load=p.kind==='trending'?trending(p.genre):isArtist?api(`/users/${encodeURIComponent(p.id)}/tracks`,{sort:'plays',limit:50}).then(tracksOf):api(`/playlists/${encodeURIComponent(p.id)}/tracks`).then(tracksOf);
-  load.then(list=>{p._tracks=list;fill(list)}).catch(e=>{if(el.isConnected)$('[data-list]',el).innerHTML=`<p class="empty err">Couldn't load tracks: ${esc(e.message)}</p>`;const s=$('[data-sub]',el);if(s)s.textContent=''});
+  load.then(list=>{p._tracks=list;fill(list)}).catch(e=>{if(el.isConnected)$('[data-tracks]',el).innerHTML=`<p class="empty err">Couldn't load tracks: ${esc(e.message)}</p>`;const s=$('[data-sub]',el);if(s)s.textContent=''});
 };
 
 /* browse (see all runs playlists) */
@@ -666,7 +720,7 @@ VIEWS.settings=(el)=>{
   <section style="gap:8px"><div class="eyebrow">Data on this device</div><div class="list"><button class="li danger" data-act="clearlib">Clear library and history</button></div></section>
   <section style="gap:8px"><div class="eyebrow">About</div><div class="list">
     <button class="li" data-act="openext" data-arg="${A({u:'https://audius.co'})}">Music source<span class="r">Audius (${esc(new URL(HOST).host)})${ic('ext',16)}</span></button>
-    <div class="li">Device<span class="r">${document.documentElement.dataset.device==='phone'?'Phone · full screen':'Desktop · phone preview'}</span></div>
+    <div class="li">Device<span class="r">${document.documentElement.dataset.device==='phone'?'Phone · full screen':document.documentElement.classList.contains('wide')?'Desktop · full layout':'Desktop · small window'}</span></div>
     <div class="li">Clock<span class="r">Europe/Vienna · ${esc(clockSource)}</span></div>
     <div class="li">Version<span class="r">empty.string 1.0</span></div></div></section>`;
   const n=$('#sname',el);n.addEventListener('change',()=>{S.name=n.value.trim()||'Tester';save();tick();toast('Name saved');stack.filter(v=>v.name==='home').forEach(refresh)});
