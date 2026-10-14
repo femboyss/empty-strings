@@ -22,7 +22,10 @@ input{font:inherit;color:inherit}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:8px}
 [hidden]{display:none!important}
 #app{position:relative;width:100%;height:100%;max-width:430px;margin:0 auto;background:var(--bg);overflow:hidden;isolation:isolate}
-@media (min-width:600px){body{display:grid;place-items:center}#app{width:400px;height:min(880px,calc(100vh - 40px));border-radius:46px;border:10px solid #1b1e19;box-shadow:0 30px 90px rgba(0,0,0,.6)}}
+html.phone #app{max-width:none}
+html.desktop,html.desktop body{overflow:hidden}
+html.desktop body{display:grid;place-items:center}
+html.desktop #app{flex:none;width:400px;height:860px;max-width:none;border-radius:46px;border:10px solid #1b1e19;box-shadow:0 30px 90px rgba(0,0,0,.6);transform:scale(var(--s,1));transform-origin:center}
 
 /* status bar */
 .sb{position:absolute;top:0;left:0;right:0;z-index:80;height:calc(44px + var(--sat));padding:var(--sat) 26px 0 32px;display:flex;align-items:center;justify-content:space-between;pointer-events:none;font-weight:700;font-size:15px;font-variant-numeric:tabular-nums}
@@ -254,6 +257,10 @@ section{display:flex;flex-direction:column;gap:14px}
 .loader .track i{display:block;height:100%;width:0;background:var(--accent);transition:width .4s var(--ease)}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
 </style>
+<script>/* device detection: phone = full screen, desktop = phone mockup scaled to fit the window */
+(function(){var n=navigator,u=n.userAgent||'',m=!!((n.userAgentData&&n.userAgentData.mobile)||/Android|iPhone|iPad|iPod|Mobile|Silk|Kindle|BlackBerry|Opera Mini|IEMobile/i.test(u)||(/Macintosh/.test(u)&&n.maxTouchPoints>1));
+var d=document.documentElement;d.classList.add(m?'phone':'desktop');d.dataset.device=m?'phone':'desktop';
+function fit(){if(m)return;d.style.setProperty('--s',Math.max(.3,Math.min(1,(innerWidth-32)/420,(innerHeight-32)/880)))}fit();addEventListener('resize',fit)})();</script>
 </head>
 <body>
 <div id="app">
@@ -659,6 +666,7 @@ VIEWS.settings=(el)=>{
   <section style="gap:8px"><div class="eyebrow">Data on this device</div><div class="list"><button class="li danger" data-act="clearlib">Clear library and history</button></div></section>
   <section style="gap:8px"><div class="eyebrow">About</div><div class="list">
     <button class="li" data-act="openext" data-arg="${A({u:'https://audius.co'})}">Music source<span class="r">Audius (${esc(new URL(HOST).host)})${ic('ext',16)}</span></button>
+    <div class="li">Device<span class="r">${document.documentElement.dataset.device==='phone'?'Phone · full screen':'Desktop · phone preview'}</span></div>
     <div class="li">Clock<span class="r">Europe/Vienna · ${esc(clockSource)}</span></div>
     <div class="li">Version<span class="r">empty.string 1.0</span></div></div></section>`;
   const n=$('#sname',el);n.addEventListener('change',()=>{S.name=n.value.trim()||'Tester';save();tick();toast('Name saved');stack.filter(v=>v.name==='home').forEach(refresh)});
