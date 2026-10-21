@@ -336,7 +336,7 @@ html.wide .donly{display:inline-flex!important}
 html.wide .sb{top:auto;bottom:108px;left:0;right:auto;width:240px;height:auto;padding:0 28px;justify-content:flex-start;font-family:var(--fm);font-size:30px;font-weight:500}
 html.wide .sb .ind{display:none}
 html.wide .tabs{top:0;bottom:88px;right:auto;width:240px;flex-direction:column;justify-content:flex-start;align-items:stretch;gap:4px;padding:28px 16px;border-top:0;border-right:1px solid var(--line);background:var(--surface);backdrop-filter:none}
-html.wide .tabs button{flex-direction:row;width:100%;gap:14px;font-size:15px;padding:12px 14px;border-radius:12px;justify-content:flex-start;transition:background .2s,color .2s}
+html.wide .tabs button{flex:none;max-width:none;min-width:0;flex-direction:row;width:100%;gap:14px;font-size:15px;padding:12px 14px;border-radius:12px;justify-content:flex-start;transition:background .2s,color .2s}
 html.wide .tabs button:hover{background:var(--raised);color:var(--text)}
 html.wide .tabs button.on{background:var(--raised)}
 html.wide .brand{display:flex;align-items:center;gap:10px;font-family:var(--fd);font-weight:700;font-size:22px;padding:0 10px 24px;letter-spacing:-.02em}
@@ -1265,7 +1265,7 @@ if(standalone())document.documentElement.classList.add('standalone');
 
 /* ---------- boot ---------- */
 (async function boot(){
-  $$('#tabs button').forEach(b=>{const v=b.dataset.view;b.innerHTML=ic(v,24)+`<span>${v[0].toUpperCase()+v.slice(1)}</span>`});
+  $$('#tabs button').forEach(b=>{const v=b.dataset.view;b.innerHTML=ic(v==='explore'?'compass':v,24)+`<span>${v[0].toUpperCase()+v.slice(1)}</span>`});
   clockLoop();syncClock();
   const bar=$('#loadbar'),txt=$('#loadtxt');const t0=Date.now();
   bar.style.width='25%';
