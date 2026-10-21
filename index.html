@@ -204,7 +204,7 @@ section{display:flex;flex-direction:column;gap:14px}
 .eqbox.off{opacity:.45}
 
 /* tab bar */
-.tabs{position:absolute;left:0;right:0;bottom:0;z-index:30;display:flex;justify-content:space-around;padding:10px 30px calc(12px + var(--sab));background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--line)}
+.tabs{position:absolute;left:0;right:0;bottom:0;z-index:30;display:flex;justify-content:space-around;padding:10px 12px calc(12px + var(--sab));background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--line)}
 .tabs button{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:11px;font-weight:600;color:var(--muted);width:72px;transition:color .2s}
 .tabs button.on{color:var(--accent);font-weight:700}
 
@@ -256,6 +256,50 @@ section{display:flex;flex-direction:column;gap:14px}
 .loader .track{width:120px;height:3px;border-radius:2px;background:var(--line);overflow:hidden}
 .loader .track i{display:block;height:100%;width:0;background:var(--accent);transition:width .4s var(--ease)}
 
+/* ---------- v2: sources, radio, lyrics, sleep ---------- */
+.src{font-family:var(--fm);font-size:9px;letter-spacing:.06em;text-transform:uppercase;padding:2px 6px;border-radius:999px;border:1px solid var(--line);color:var(--muted);margin-right:6px;vertical-align:1px}
+.src.live{border-color:color-mix(in srgb,var(--danger) 50%,transparent);color:var(--danger)}
+.src.ia{border-color:color-mix(in srgb,#5CE1E6 45%,transparent);color:#5CE1E6}
+.trow .dur.live{color:var(--danger);font-weight:500}
+.livedot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--danger);margin-right:6px;animation:blink 1.4s infinite}
+@keyframes blink{50%{opacity:.25}}
+.livebar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px;border-radius:14px;background:color-mix(in srgb,var(--raised) 80%,transparent);font-size:13px}
+.livebar .np{min-width:0;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--muted)}
+.livebar .np b{color:var(--text);font-weight:700}
+.mini.live .bar{width:100%!important;opacity:.35}
+.pbtns{display:flex;justify-content:space-between;gap:8px;font-size:13px;font-weight:600;color:var(--muted)}
+.pbtns button{display:flex;align-items:center;gap:6px;padding:8px 6px;white-space:nowrap;border-radius:999px;transition:background .15s,color .15s}
+.pbtns button:hover{background:var(--raised);color:var(--text)}
+.pbtns button.on{color:var(--accent)}
+.scard{display:flex;flex-direction:column;gap:8px;width:140px;flex:none;scroll-snap-align:start;text-align:left;cursor:pointer;position:relative}
+.scard .art{width:140px;height:140px;border-radius:12px;background-size:cover;transition:transform .2s var(--ease)}
+.scard:hover .art{transform:scale(1.03)}
+.scard b{font-size:14px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.scard span{font-size:12px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:-4px}
+.scard .lv{position:absolute;top:8px;left:8px;background:rgba(14,16,13,.8);color:var(--text);font-family:var(--fm);font-size:10px;padding:4px 8px;border-radius:999px;display:flex;align-items:center}
+.scard .lv .livedot{width:6px;height:6px;margin-right:5px}
+.scard.playing b{color:var(--accent)}
+.lyr{display:flex;flex-direction:column;gap:14px;padding:6px 0 30vh}
+.lyr p{margin:0;font-family:var(--fd);font-weight:700;font-size:22px;line-height:1.25;color:var(--muted);opacity:.55;cursor:pointer;transition:color .25s,opacity .25s,transform .25s var(--ease);transform-origin:left center}
+.lyr p.on{color:var(--text);opacity:1;transform:scale(1.03)}
+.lyr p.past{opacity:.35}
+.lyr.plain p{font-family:var(--fb);font-weight:500;font-size:16px;opacity:1;color:var(--text);cursor:default}
+.lyr .gap{height:10px}
+.sheet.tall{height:90%}
+.status{display:flex;flex-direction:column;gap:10px}
+.scard2{background:var(--raised);border-radius:16px;padding:14px 16px;display:flex;flex-direction:column;gap:8px}
+.scard2 .top{display:flex;align-items:center;gap:10px}
+.scard2 .top b{font-size:15px;flex:1}
+.scard2 p{margin:0;color:var(--muted);font-size:13px;line-height:1.5}
+.scard2 .meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-family:var(--fm);font-size:11px;color:var(--muted)}
+.ping{display:inline-flex;align-items:center;gap:6px;font-family:var(--fm);font-size:11px;color:var(--muted)}
+.ping i{width:8px;height:8px;border-radius:50%;background:var(--line)}
+.ping.ok i{background:var(--accent)}.ping.bad i{background:var(--danger)}.ping.wait i{animation:blink 1s infinite;background:var(--muted)}
+.kbd{font-family:var(--fm);font-size:11px;padding:2px 7px;border:1px solid var(--line);border-bottom-width:2px;border-radius:6px;color:var(--text)}
+.sleepchip{position:absolute;top:calc(8px + var(--sat));left:50%;transform:translateX(-50%);z-index:81;font-family:var(--fm);font-size:11px;background:var(--raised);border:1px solid var(--line);padding:4px 10px;border-radius:999px;color:var(--accent);display:flex;align-items:center;gap:6px;cursor:pointer}
+.note{font-size:12px;color:var(--muted);line-height:1.5}
+.note a{color:var(--accent)}
+
 /* ---------- desktop: full website layout ---------- */
 .brand{display:none}
 .mini .mid{display:contents}
@@ -280,7 +324,10 @@ html.wide .hero h3{font-size:46px;max-width:70%}
 html.wide .hero .in{padding:32px}
 html.wide .hero .play{width:64px;height:64px;right:28px;bottom:28px}
 html.wide .hscroll{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));overflow:visible;margin:0;padding:0;gap:22px}
-html.wide .hscroll .card{width:auto}
+html.wide .hscroll .card,html.wide .hscroll .scard{width:auto}
+html.wide .scard .art{width:100%;height:auto;aspect-ratio:1}
+html.wide .sleepchip{top:16px;left:auto;right:24px;transform:none}
+html.wide .lyr p{font-size:26px}
 html.wide .card .art{width:100%;height:auto;aspect-ratio:1}
 html.wide .grid2{grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:26px 22px}
 html.wide .tiles{grid-template-columns:repeat(4,1fr)}
@@ -324,13 +371,15 @@ function fit(){if(m)return;var w=innerWidth>=900,was=d.classList.contains('wide'
     <div class="brand"><i>""</i>empty.string</div>
     <button data-act="tab" data-view="home" aria-label="Home"></button>
     <button data-act="tab" data-view="search" aria-label="Search"></button>
+    <button data-act="tab" data-view="radio" aria-label="Radio"></button>
     <button data-act="tab" data-view="library" aria-label="Library"></button>
   </nav>
+  <button class="sleepchip" id="sleepchip" data-act="sleep" hidden></button>
   <div class="player" id="player" aria-hidden="true"></div>
   <div class="scrim" id="scrim" data-act="closesheet"></div>
   <div class="sheet" id="sheet" role="dialog" aria-modal="true"></div>
   <div class="toast" id="toast" role="status"></div>
-  <div class="splash" id="splash"><div class="logo">""</div><div class="wm">empty.string</div><div class="tl">Full songs. No account. Just music.</div><div class="loader"><div class="track"><i id="loadbar"></i></div><div class="eyebrow" id="loadtxt">Connecting to Audius</div></div></div>
+  <div class="splash" id="splash"><div class="logo">""</div><div class="wm">empty.string</div><div class="tl">Full songs. No account. Just music.</div><div class="loader"><div class="track"><i id="loadbar"></i></div><div class="eyebrow" id="loadtxt">Connecting to sources</div></div></div>
 </div>
 <script>
 'use strict';
@@ -343,7 +392,7 @@ const num=n=>new Intl.NumberFormat('en',{notation:n>=10000?'compact':'standard'}
 const jarg=el=>{try{return JSON.parse(el.dataset.arg||'{}')}catch{return{}}};
 const A=o=>esc(JSON.stringify(o));
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
-const IC={home:'<path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>',search:'<circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>',library:'<path d="M4 4v16M9 4v16M14 4l6 16"/>',heart:'<path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>',heartF:'<path fill="currentColor" d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>',play:'<path d="M7 4.5v15l13-7.5z" fill="currentColor" stroke="none"/>',pause:'<rect x="6" y="4" width="4" height="16" rx="1" fill="currentColor" stroke="none"/><rect x="14" y="4" width="4" height="16" rx="1" fill="currentColor" stroke="none"/>',next:'<path d="M5 4.5v15l11-7.5z" fill="currentColor" stroke="none"/><path d="M19 5v14"/>',prev:'<path d="M19 4.5v15L8 12z" fill="currentColor" stroke="none"/><path d="M5 5v14"/>',more:'<circle cx="5" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="19" cy="12" r="1.6" fill="currentColor" stroke="none"/>',back:'<path d="m15 18-6-6 6-6"/>',chevR:'<path d="m9 18 6-6-6-6"/>',chevD:'<path d="m6 9 6 6 6-6"/>',bell:'<path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>',sliders:'<path d="M4 6h9M17 6h3M4 12h3M11 12h9M4 18h11M19 18h1"/><circle cx="15" cy="6" r="2"/><circle cx="9" cy="12" r="2"/><circle cx="17" cy="18" r="2"/>',shuffle:'<path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/>',repeat:'<path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/>',plus:'<path d="M12 5v14M5 12h14"/>',x:'<path d="M18 6 6 18M6 6l12 12"/>',check:'<path d="M20 6 9 17l-5-5"/>',sort:'<path d="M3 6h18M6 12h12M10 18h4"/>',queue:'<path d="M3 6h13M3 12h13M3 18h9"/><path d="M17 15v6l5-3z" fill="currentColor"/>',speaker:'<path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/>',grip:'<circle cx="9" cy="6" r="1.5" fill="currentColor" stroke="none"/><circle cx="15" cy="6" r="1.5" fill="currentColor" stroke="none"/><circle cx="9" cy="12" r="1.5" fill="currentColor" stroke="none"/><circle cx="15" cy="12" r="1.5" fill="currentColor" stroke="none"/><circle cx="9" cy="18" r="1.5" fill="currentColor" stroke="none"/><circle cx="15" cy="18" r="1.5" fill="currentColor" stroke="none"/>',minusC:'<circle cx="12" cy="12" r="9"/><path d="M8 12h8"/>',pencil:'<path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/>',gear:'<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1 7 17M17 7l2.1-2.1"/>',user:'<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>',ext:'<path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/>',nextup:'<path d="M3 6h12M3 12h12M3 18h7"/><path d="M18 14v8M14 18h8"/>',activity:'<path d="M22 12h-4l-3 9L9 3l-3 9H2"/>',refresh:'<path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/>'};
+const IC={home:'<path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>',search:'<circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>',library:'<path d="M4 4v16M9 4v16M14 4l6 16"/>',heart:'<path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>',heartF:'<path fill="currentColor" d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>',play:'<path d="M7 4.5v15l13-7.5z" fill="currentColor" stroke="none"/>',pause:'<rect x="6" y="4" width="4" height="16" rx="1" fill="currentColor" stroke="none"/><rect x="14" y="4" width="4" height="16" rx="1" fill="currentColor" stroke="none"/>',next:'<path d="M5 4.5v15l11-7.5z" fill="currentColor" stroke="none"/><path d="M19 5v14"/>',prev:'<path d="M19 4.5v15L8 12z" fill="currentColor" stroke="none"/><path d="M5 5v14"/>',more:'<circle cx="5" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="19" cy="12" r="1.6" fill="currentColor" stroke="none"/>',back:'<path d="m15 18-6-6 6-6"/>',chevR:'<path d="m9 18 6-6-6-6"/>',chevD:'<path d="m6 9 6 6 6-6"/>',bell:'<path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>',sliders:'<path d="M4 6h9M17 6h3M4 12h3M11 12h9M4 18h11M19 18h1"/><circle cx="15" cy="6" r="2"/><circle cx="9" cy="12" r="2"/><circle cx="17" cy="18" r="2"/>',shuffle:'<path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/>',repeat:'<path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/>',plus:'<path d="M12 5v14M5 12h14"/>',x:'<path d="M18 6 6 18M6 6l12 12"/>',check:'<path d="M20 6 9 17l-5-5"/>',sort:'<path d="M3 6h18M6 12h12M10 18h4"/>',queue:'<path d="M3 6h13M3 12h13M3 18h9"/><path d="M17 15v6l5-3z" fill="currentColor"/>',speaker:'<path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/>',grip:'<circle cx="9" cy="6" r="1.5" fill="currentColor" stroke="none"/><circle cx="15" cy="6" r="1.5" fill="currentColor" stroke="none"/><circle cx="9" cy="12" r="1.5" fill="currentColor" stroke="none"/><circle cx="15" cy="12" r="1.5" fill="currentColor" stroke="none"/><circle cx="9" cy="18" r="1.5" fill="currentColor" stroke="none"/><circle cx="15" cy="18" r="1.5" fill="currentColor" stroke="none"/>',minusC:'<circle cx="12" cy="12" r="9"/><path d="M8 12h8"/>',pencil:'<path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/>',gear:'<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1 7 17M17 7l2.1-2.1"/>',user:'<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>',ext:'<path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/>',nextup:'<path d="M3 6h12M3 12h12M3 18h7"/><path d="M18 14v8M14 18h8"/>',activity:'<path d="M22 12h-4l-3 9L9 3l-3 9H2"/>',refresh:'<path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/>',radio:'<circle cx="12" cy="12" r="2"/><path d="M16.2 7.8a6 6 0 0 1 0 8.4M7.8 16.2a6 6 0 0 1 0-8.4M19.1 4.9a10 10 0 0 1 0 14.2M4.9 19.1a10 10 0 0 1 0-14.2"/>',mic:'<rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0M12 17v5M8 22h8"/>',moon:'<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>',box:'<path d="M3 7l9-4 9 4-9 4z"/><path d="M3 7v10l9 4 9-4V7M12 11v10"/>',layers:'<path d="m12 2 10 5-10 5L2 7z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/>',kbd:'<rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M7 14h10"/>',grid:'<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>'};
 const ic=(n,s=24)=>`<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${IC[n]}</svg>`;
 const PAL=[['#C8F548','#1F6B4F'],['#FF5E8A','#5B2BD6'],['#FFB547','#D9382B'],['#5CE1E6','#2643C9'],['#B78CFF','#1E1438'],['#E8ECE4','#5E6A58'],['#FF8A3D','#2B1A10'],['#7CF0A8','#0E3B2E']];
 const hash=s=>{let h=0;for(const c of String(s))h=(h*31+c.charCodeAt(0))|0;return Math.abs(h)};
@@ -354,11 +403,12 @@ const art=(u,seed,cls='')=>`<div class="art ${cls}" style="${bgArt(u,seed)}"></d
 
 /* ---------- state ---------- */
 const KEY='empty.string/v1';
-const DEF={name:'Tester',liked:[],saved:[],artists:[],playlists:[],recent:[],plays:{},eq:{on:true,preset:'Flat',g:[0,0,0,0,0]},autoplay:true,songSort:'added',albumSort:'artist',lastSeen:0,joined:Date.now()};
+const DEF={name:'Tester',liked:[],saved:[],artists:[],playlists:[],recent:[],plays:{},eq:{on:true,preset:'Flat',g:[0,0,0,0,0]},autoplay:true,songSort:'added',albumSort:'artist',lastSeen:0,joined:Date.now(),sources:{archive:true,radio:true,lyrics:true},radioCountry:'AT'};
 let S;try{S=Object.assign(JSON.parse(JSON.stringify(DEF)),JSON.parse(localStorage.getItem(KEY)||'{}'))}catch{S=JSON.parse(JSON.stringify(DEF))}
+S.sources=Object.assign({},DEF.sources,S.sources||{});
 const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch{}};
 const isLiked=id=>S.liked.some(t=>t.id===id);
-const slim=t=>({id:t.id,title:t.title,artist:t.artist,artistId:t.artistId,art:t.art,duration:t.duration,genre:t.genre,link:t.link,addedAt:Date.now()});
+const slim=t=>({id:t.id,src:t.src||'audius',title:t.title,artist:t.artist,artistId:t.artistId||null,art:t.art,duration:t.duration,genre:t.genre,link:t.link,stream:t.stream,live:!!t.live,uuid:t.uuid,album:t.album,addedAt:Date.now()});
 const initial=()=>(S.name.trim()[0]||'?').toUpperCase();
 
 /* ---------- audius api ---------- */
@@ -372,13 +422,76 @@ async function api(path,params={}){
 }
 const streamUrl=id=>`${HOST}/v1/tracks/${encodeURIComponent(id)}/stream?app_name=${APP}`;
 const okT=t=>t&&t.is_streamable!==false&&!t.is_delete&&!t.stream_conditions&&!t.is_unlisted&&t.is_available!==false;
-const mapT=t=>({id:t.id,title:t.title||'Untitled',artist:t.user?.name||'Unknown artist',artistId:t.user?.id||null,art:t.artwork?.['480x480']||t.artwork?.['1000x1000']||t.artwork?.['150x150']||'',duration:t.duration||0,genre:t.genre||'',plays:t.play_count||0,favs:t.favorite_count||0,date:t.release_date||t.created_at||'',link:t.permalink?'https://audius.co'+t.permalink:''});
+const mapT=t=>({id:t.id,src:'audius',title:t.title||'Untitled',artist:t.user?.name||'Unknown artist',artistId:t.user?.id||null,art:t.artwork?.['480x480']||t.artwork?.['1000x1000']||t.artwork?.['150x150']||'',duration:t.duration||0,genre:t.genre||'',plays:t.play_count||0,favs:t.favorite_count||0,date:t.release_date||t.created_at||'',link:t.permalink?'https://audius.co'+t.permalink:''});
 const tracksOf=a=>(a||[]).filter(okT).map(mapT);
 const mapP=p=>({kind:'playlist',id:p.id,title:p.playlist_name||'Untitled',owner:p.user?.name||'',art:p.artwork?.['480x480']||p.artwork?.['150x150']||'',count:p.track_count||0,isAlbum:!!p.is_album,link:p.permalink?'https://audius.co'+p.permalink:''});
 const mapU=u=>({kind:'artist',id:u.id,name:u.name||u.handle||'Artist',handle:u.handle||'',art:u.profile_picture?.['480x480']||u.profile_picture?.['150x150']||'',followers:u.follower_count||0,tracks:u.track_count||0});
 const cache=new Map();
 async function cached(key,ms,fn){const c=cache.get(key);if(c&&Date.now()-c.t<ms)return c.v;const v=await fn();cache.set(key,{t:Date.now(),v});return v}
 const trending=(genre,time='week')=>cached('tr:'+genre+time,90e3,async()=>tracksOf(await api('/tracks/trending',{time,genre})));
+
+/* ---------- more sources (all free, no API key, CORS enabled) ---------- */
+const SOURCES={
+  audius:{name:'Audius',what:'Full songs, artists, playlists, charts',url:'https://audius.co',docs:'https://docs.audius.org/',core:true},
+  archive:{name:'Internet Archive',what:'Full netlabel albums under Creative Commons licenses',url:'https://archive.org/details/netlabels',docs:'https://archive.org/developers/'},
+  radio:{name:'Radio Browser',what:'Live radio stations from every country, community database',url:'https://www.radio-browser.info',docs:'https://docs.radio-browser.info/'},
+  lyrics:{name:'LRCLIB',what:'Time-synced lyrics shown in the player',url:'https://lrclib.net',docs:'https://lrclib.net/docs'}
+};
+const srcOn=k=>SOURCES[k]?.core||!!S.sources[k];
+const getJSON=async(u,ms=9000)=>{const c=new AbortController();const t=setTimeout(()=>c.abort(),ms);try{const r=await fetch(u,{signal:c.signal});if(!r.ok)throw new Error(new URL(u).host+' answered '+r.status);return await r.json()}catch(e){if(e.name==='AbortError')throw new Error(new URL(u).host+' timed out');throw e}finally{clearTimeout(t)}};
+const qs=o=>Object.entries(o).filter(([,v])=>v!=null&&v!=='').map(([k,v])=>encodeURIComponent(k)+'='+encodeURIComponent(v)).join('&');
+
+/* Internet Archive: netlabel + open source audio releases */
+const IA_COLL='(collection:netlabels OR collection:opensource_audio) AND format:("VBR MP3" OR "MP3" OR "64Kbps MP3" OR "128Kbps MP3" OR "192Kbps MP3" OR "256Kbps MP3" OR "320Kbps MP3")'; /* only items that really have playable MP3s */
+const iaArt=id=>`https://archive.org/services/img/${encodeURIComponent(id)}`;
+const one=v=>Array.isArray(v)?v.join(', '):(v||'');
+const mapIA=d=>({kind:'ia',id:d.identifier,title:one(d.title)||d.identifier,owner:one(d.creator)||'Internet Archive',art:iaArt(d.identifier),count:0,isAlbum:true,downloads:d.downloads||0,year:String(d.year||d.date||'').slice(0,4),link:'https://archive.org/details/'+d.identifier});
+async function iaSearch(q,{rows=24,sort='downloads desc'}={}){
+  const query=`${q?'('+q+') AND ':''}mediatype:audio AND ${IA_COLL}`;
+  const u='https://archive.org/advancedsearch.php?'+qs({q:query,rows,output:'json'})+'&fl[]=identifier&fl[]=title&fl[]=creator&fl[]=downloads&fl[]=year&fl[]=date'+(sort?'&sort[]='+encodeURIComponent(sort):'');
+  const j=await getJSON(u);return (j.response?.docs||[]).map(mapIA);
+}
+const secs=v=>{if(v==null)return 0;const s=String(v);if(s.includes(':'))return s.split(':').reduce((a,x)=>a*60+(+x||0),0);return Math.round(+s||0)};
+async function iaAlbum(id){
+  const j=await getJSON('https://archive.org/metadata/'+encodeURIComponent(id));
+  const m=j.metadata||{};const files=(j.files||[]).filter(f=>/\.mp3$/i.test(f.name));
+  const orig=files.filter(f=>f.source==='original');const vbr=files.filter(f=>f.format==='VBR MP3');const use=orig.length?orig:vbr.length?vbr:files;
+  const n=f=>parseInt(String(f.track||'').split('/')[0])||0;
+  use.sort((a,b)=>(n(a)-n(b))||a.name.localeCompare(b.name,undefined,{numeric:true}));
+  const lic=m.licenseurl||'';
+  const tracks=use.slice(0,150).map(f=>({id:`ia:${id}/${f.name}`,src:'archive',title:f.title||f.name.replace(/\.mp3$/i,'').replace(/^[\d\s._-]+/,'').replace(/_/g,' ')||f.name,artist:f.artist||f.creator||one(m.creator)||'Unknown artist',artistId:null,art:iaArt(id),duration:secs(f.length),genre:String(one(m.subject)).split(/[;,]/).map(s=>s.trim()).filter(Boolean)[0]||'',plays:0,favs:0,date:m.date||'',album:one(m.title),link:'https://archive.org/details/'+id,stream:`https://archive.org/download/${encodeURIComponent(id)}/${f.name.split('/').map(encodeURIComponent).join('/')}`}));
+  return {tracks,license:lic,meta:m};
+}
+const licName=u=>{const m=String(u).match(/licenses\/([a-z-]+)\/([\d.]+)/i);if(m)return 'CC '+m[1].toUpperCase()+' '+m[2];if(/publicdomain/i.test(u))return 'Public domain';return u?'See license':'License not stated'};
+
+/* Radio Browser: community radio database, several mirrors */
+const RB_HOSTS=['de1','fi1','de2','all'].map(h=>`https://${h}.api.radio-browser.info`);let rbHost=0;
+async function rb(path,params={}){
+  let err;for(let k=0;k<RB_HOSTS.length;k++){const h=RB_HOSTS[(rbHost+k)%RB_HOSTS.length];try{const r=await getJSON(h+path+'?'+qs(params),7000);rbHost=(rbHost+k)%RB_HOSTS.length;return r}catch(e){err=e}}
+  throw err||new Error('Radio Browser unreachable');
+}
+const mapRB=s=>({id:'rb:'+s.stationuuid,src:'radio',uuid:s.stationuuid,title:(s.name||'Station').trim(),artist:[s.state||s.country||s.countrycode,(s.tags||'').split(',').filter(Boolean).slice(0,2).join(', ')].filter(Boolean).join(' · ')||'Live radio',art:/^https:/.test(s.favicon||'')?s.favicon:'',duration:0,genre:(s.tags||'').split(',')[0]||'',plays:s.clickcount||0,live:true,stream:s.url_resolved,link:s.homepage||'',bitrate:s.bitrate||0,codec:s.codec||'',country:s.country||''});
+const rbOk=s=>s.url_resolved&&/^https:/.test(s.url_resolved)&&!/somafm\.com/i.test(s.url_resolved)&&!s.hls&&s.lastcheckok!==0&&/mp3|aac|ogg|opus/i.test(s.codec||'mp3');
+const stations=(params)=>cached('rb:'+JSON.stringify(params),300e3,async()=>{const seen=new Set();return (await rb('/json/stations/search',{hidebroken:true,is_https:true,order:'clickcount',reverse:true,limit:60,...params})).filter(rbOk).filter(s=>{const k=(s.name||'').trim().toLowerCase();if(seen.has(k))return false;seen.add(k);return true}).map(mapRB)});
+
+/* LRCLIB: synced lyrics */
+function parseLRC(txt){const out=[];for(const line of String(txt).split(/\r?\n/)){const tags=[...line.matchAll(/\[(\d+):(\d+(?:\.\d+)?)\]/g)];if(!tags.length)continue;const text=line.replace(/\[[^\]]*\]/g,'').trim();for(const m of tags)out.push({t:+m[1]*60+ +m[2],text})}return out.sort((a,b)=>a.t-b.t)}
+const cleanT=s=>String(s).replace(/\s*[\(\[](feat|ft|prod|official|audio|video|lyric)[^\)\]]*[\)\]]/gi,'').replace(/\s+-\s+(official|audio|lyric).*$/i,'').trim();
+async function getLyrics(t){
+  return cached('ly:'+t.id,600e3,async()=>{
+    const base='https://lrclib.net/api';let tn=cleanT(t.title),an=String(t.artist).split(/,| & | x /i)[0].trim();
+    const dash=tn.split(/\s+[-–]\s+/);if(dash.length===2){an=dash[0].trim();tn=dash[1].trim()} /* many uploads are titled "Artist - Song" */
+    const tryGet=async u=>{for(let k=0;k<2;k++){try{return await getJSON(u,8000)}catch(e){if(/ 404$/.test(e.message))return null;if(k)throw e;await sleep(1200)}}};
+    try{const j=await tryGet(`${base}/get?`+qs({track_name:tn,artist_name:an,duration:t.duration?Math.round(t.duration):''}));if(j&&(j.syncedLyrics||j.plainLyrics))return j}catch{}
+    let r;try{r=await tryGet(`${base}/search?`+qs({track_name:tn,artist_name:an}))}catch(e){throw new Error('the lyrics service is busy right now. Try again in a moment')}
+    const best=(r||[]).sort((a,b)=>(!!b.syncedLyrics-!!a.syncedLyrics)||(Math.abs((a.duration||0)-(t.duration||0))-Math.abs((b.duration||0)-(t.duration||0))))[0];
+    return best||null});
+}
+
+/* stream routing: sources that send CORS headers go through the equalizer */
+const streamFor=t=>(!t.src||t.src==='audius')?streamUrl(t.id):t.stream;
+const corsOK=t=>t.src!=='radio';
+const srcTag=t=>t.src==='archive'?'<span class="src ia">archive</span>':'';
 
 /* ---------- clock (Europe/Vienna) ---------- */
 const TZ='Europe/Vienna';let clockOffset=0,clockSource='system clock';
@@ -396,22 +509,29 @@ let toastT;function toast(m){const t=$('#toast');t.textContent=m;t.classList.add
 /* ---------- lists registry ---------- */
 const LISTS={};let seq=0;
 const reg=(tracks,label)=>{const k='l'+(++seq);LISTS[k]={tracks,label};return k};
-function trow(t,k,i,o={}){const cur=P.cur();return `<div class="trow${o.num?' num':''}${cur&&cur.id===t.id?' playing':''}" data-id="${esc(t.id)}" data-act="play" data-list="${k}" data-i="${i}" role="button" tabindex="0">${o.num?`<span class="n">${i+1}</span>`:''}${art(t.art,t.id,'sm')}<div class="tm"><b>${esc(t.title)}</b><span>${esc(o.noArtist?(t.genre||'Single'):t.artist)}${!o.noArtist&&t.genre?' · '+esc(t.genre):''}</span></div><span class="dur">${fmt(t.duration)}</span><button class="ib0" data-act="menu" data-list="${k}" data-i="${i}" aria-label="More options for ${esc(t.title)}">${ic('more',20)}</button></div>`}
+function trow(t,k,i,o={}){const cur=P.cur();return `<div class="trow${o.num?' num':''}${cur&&cur.id===t.id?' playing':''}" data-id="${esc(t.id)}" data-act="play" data-list="${k}" data-i="${i}" role="button" tabindex="0">${o.num?`<span class="n">${i+1}</span>`:''}${art(t.art,t.id,'sm')}<div class="tm"><b>${esc(t.title)}</b><span>${srcTag(t)}${esc(o.noArtist?(t.genre||'Single'):t.artist)}${!o.noArtist&&t.genre&&!t.live?' · '+esc(t.genre):''}</span></div><span class="dur${t.live?' live':''}">${t.live?'LIVE':fmt(t.duration)}</span><button class="ib0" data-act="menu" data-list="${k}" data-i="${i}" aria-label="More options for ${esc(t.title)}">${ic('more',20)}</button></div>`}
 function rows(tracks,label,o={}){if(!tracks.length)return `<p class="empty">${o.empty||'Nothing here yet.'}</p>`;const k=reg(tracks,label);return `<div class="tlist">${tracks.map((t,i)=>trow(t,k,i,o)).join('')}</div>`}
 const skelRows=n=>`<div class="tlist">${'<div class="skel sk-row"></div>'.repeat(n)}</div>`;
 const skelCards=n=>'<div class="skel sk-card"></div>'.repeat(n);
 function card(o,sub){return `<button class="card" data-act="push" data-view="collection" data-arg="${A(o)}">${art(o.art,o.id,o.kind==='artist'?'round':'')}<b>${esc(o.title||o.name)}</b><span>${esc(sub)}</span></button>`}
 function mosaicHtml(tracks,size,r){const arts=tracks.slice(0,4);if(arts.length<4)return `<div class="art" style="width:${size}px;height:${size}px;border-radius:${r}px;${bgArt(arts[0]?.art,arts[0]?.id||'empty')}"></div>`;return `<div class="mosaic" style="width:${size}px;height:${size}px;border-radius:${r}px">${arts.map(t=>art(t.art,t.id)).join('')}</div>`}
-function markPlaying(){const cur=P.cur();$$('.trow').forEach(r=>r.classList.toggle('playing',!!cur&&r.dataset.id===cur.id))}
+function markPlaying(){const cur=P.cur();$$('.trow,.scard').forEach(r=>r.classList.toggle('playing',!!cur&&r.dataset.id===cur.id))}
+/* station card: plays directly */
+function stationCard(t,k,i){return `<button class="scard${P.cur()?.id===t.id?' playing':''}" data-id="${esc(t.id)}" data-act="play" data-list="${k}" data-i="${i}">${art(t.art,t.id)}<span class="lv"><i class="livedot"></i>LIVE${t.bitrate?' · '+t.bitrate+'k':''}</span><b>${esc(t.title)}</b><span>${esc(t.artist)}</span></button>`}
+function stationCards(list,label){if(!list.length)return '<p class="empty" style="width:100%">No stations found.</p>';const k=reg(list,label);return list.map((t,i)=>stationCard(t,k,i)).join('')}
 
 /* ---------- playback + equalizer ---------- */
-const audio=new Audio();audio.crossOrigin='anonymous';audio.preload='auto';
+/* two decks: aEq goes through the Web Audio equalizer (needs CORS), aRaw plays anything (radio streams without CORS) */
+const aEq=new Audio();aEq.crossOrigin='anonymous';aEq.preload='auto';
+const aRaw=new Audio();aRaw.preload='none';
+let audio=aEq;
+function useDeck(cors){const want=cors?aEq:aRaw;if(want===audio)return;const old=audio;audio=want;audio.volume=old.volume;old.pause();old.removeAttribute('src');try{old.load()}catch{}}
 const BANDS=[{f:60,t:'lowshelf',l:'60 Hz'},{f:230,t:'peaking',l:'230 Hz'},{f:910,t:'peaking',l:'910 Hz'},{f:3600,t:'peaking',l:'3.6 kHz'},{f:14000,t:'highshelf',l:'14 kHz'}];
 const PRESETS={'Flat':[0,0,0,0,0],'Bass Boost':[7,4,0,0,1],'Running':[5,3,0,2,4],'Vocal':[-2,0,3,4,1],'Lo-Fi':[3,1,-1,-3,-6]};
 let actx=null,filters=null;
 function ensureGraph(){
   if(actx){if(actx.state==='suspended')actx.resume();return}
-  try{const AC=window.AudioContext||window.webkitAudioContext;if(!AC)return;actx=new AC();const src=actx.createMediaElementSource(audio);
+  try{const AC=window.AudioContext||window.webkitAudioContext;if(!AC)return;actx=new AC();const src=actx.createMediaElementSource(aEq);
     filters=BANDS.map(b=>{const f=actx.createBiquadFilter();f.type=b.t;f.frequency.value=b.f;f.Q.value=1.1;return f});
     let n=src;for(const f of filters){n.connect(f);n=f}n.connect(actx.destination);applyEq()}catch(e){console.warn('EQ unavailable',e)}
 }
@@ -419,8 +539,10 @@ function applyEq(){if(!filters)return;filters.forEach((f,i)=>f.gain.setTargetAtT
 const P={q:[],i:-1,label:'',shuffle:false,repeat:'off',errs:0,
   cur(){return this.q[this.i]},
   play(list,i,label){if(!list?.length)return;this.q=list.slice();this.i=i;this.label=label||'';this.load(true)},
-  load(auto){const t=this.cur();if(!t)return;ensureGraph();audio.src=streamUrl(t.id);if(auto)audio.play().catch(e=>{if(e.name==='NotAllowedError')toast('Tap play to start')});onTrack(t)},
-  toggle(){if(!this.cur())return;ensureGraph();if(audio.paused)audio.play().catch(()=>{});else audio.pause()},
+  load(auto){const t=this.cur();if(!t)return;useDeck(corsOK(t));if(audio===aEq)ensureGraph();else if(actx&&actx.state==='suspended')actx.resume();audio.src=streamFor(t);if(auto)audio.play().catch(e=>{if(e.name==='NotAllowedError')toast('Tap play to start')});onTrack(t);
+    if(t.src==='radio'&&t.uuid)rb('/json/url/'+encodeURIComponent(t.uuid)).catch(()=>{}); /* Radio Browser asks apps to count clicks */
+  },
+  toggle(){if(!this.cur())return;if(audio===aEq)ensureGraph();if(audio.paused){if(this.cur().live&&!audio.src)this.load(true);else audio.play().catch(()=>{})}else audio.pause()},
   async next(auto){if(!this.q.length)return;let n;
     if(this.shuffle&&this.q.length>1){do n=Math.floor(Math.random()*this.q.length);while(n===this.i)}else n=this.i+1;
     if(n>=this.q.length){
@@ -429,29 +551,74 @@ const P={q:[],i:-1,label:'',shuffle:false,repeat:'off',errs:0,
       else{audio.pause();audio.currentTime=0;renderNow();return}
     }
     this.i=n;this.load(true)},
-  prev(){if(audio.currentTime>3||this.i<=0){audio.currentTime=0;return}this.i--;this.load(true)},
+  prev(){const live=this.cur()?.live;if(!live&&(audio.currentTime>3||this.i<=0)){audio.currentTime=0;return}if(this.i<=0)return;this.i--;this.load(true)},
   jump(i){this.i=i;this.load(true)},
   playNext(t){if(!this.cur()){this.play([t],0,'Up next');return}this.q.splice(this.i+1,0,t);toast('Plays next')},
 };
-audio.addEventListener('ended',()=>{if(P.repeat==='one'){audio.currentTime=0;audio.play().catch(()=>{})}else P.next(true)});
-audio.addEventListener('error',()=>{if(!P.cur()||!audio.src)return;P.errs++;if(P.errs>4){P.errs=0;toast('Playback keeps failing. Check your connection.');return}toast('This track is unavailable. Skipping');P.next(true)});
-audio.addEventListener('playing',()=>{P.errs=0;renderPlayState()});
-audio.addEventListener('pause',renderPlayState);
-audio.addEventListener('timeupdate',renderProgress);
-audio.addEventListener('loadedmetadata',renderProgress);
+const onDeck=(ev,fn)=>[aEq,aRaw].forEach(a=>a.addEventListener(ev,e=>{if(e.target===audio)fn(e)}));
+onDeck('ended',()=>{if(SLEEP.eot){sleepFire();return}if(P.repeat==='one'){audio.currentTime=0;audio.play().catch(()=>{})}else P.next(true)});
+onDeck('error',()=>{if(!P.cur()||!audio.getAttribute('src'))return;P.errs++;if(P.errs>4){P.errs=0;toast('Playback keeps failing. Check your connection.');return}toast(P.cur().live?'Station is offline. Trying the next one':'This track is unavailable. Skipping');P.next(true)});
+onDeck('playing',()=>{P.errs=0;renderPlayState()});
+onDeck('pause',renderPlayState);
+onDeck('timeupdate',()=>{renderProgress();LYR.sync()});
+onDeck('loadedmetadata',renderProgress);
 function onTrack(t){
   S.recent=[slim(t),...S.recent.filter(x=>x.id!==t.id)].slice(0,30);
   if(t.artistId){const p=S.plays[t.artistId]||{name:t.artist,art:t.art,n:0,id:t.artistId};p.n++;p.name=t.artist;if(t.art)p.art=t.art;S.plays[t.artistId]=p}
-  save();renderNow();markPlaying();
-  if('mediaSession' in navigator){try{navigator.mediaSession.metadata=new MediaMetadata({title:t.title,artist:t.artist,album:P.label||'empty.string',artwork:t.art?[{src:t.art,sizes:'480x480',type:'image/jpeg'}]:[]});
-    [['play',()=>audio.play()],['pause',()=>audio.pause()],['nexttrack',()=>P.next()],['previoustrack',()=>P.prev()]].forEach(([a,f])=>{try{navigator.mediaSession.setActionHandler(a,f)}catch{}})}catch{}}
+  save();renderNow();markPlaying();setMedia(t);LYR.reset();
+  if('mediaSession' in navigator){[['play',()=>audio.play()],['pause',()=>audio.pause()],['nexttrack',()=>P.next()],['previoustrack',()=>P.prev()]].forEach(([a,f])=>{try{navigator.mediaSession.setActionHandler(a,f)}catch{}})}
+}
+function setMedia(t){if(!('mediaSession' in navigator))return;try{navigator.mediaSession.metadata=new MediaMetadata({title:t.title,artist:t.artist,album:P.label||'empty.string',artwork:t.art?[{src:t.art,sizes:'480x480',type:'image/jpeg'}]:[]})}catch{}}
+
+function paintNow(){const t=P.cur();const txt=t?.live?esc([t.codec,t.bitrate?t.bitrate+' kbps':'',t.country].filter(Boolean).join(' · ')||'Live stream'):'';$$('[data-np]').forEach(e=>e.innerHTML=txt)}
+
+/* ---------- sleep timer ---------- */
+const SLEEP={until:0,eot:false,timer:null};
+function sleepSet(min){clearInterval(SLEEP.timer);SLEEP.until=0;SLEEP.eot=false;
+  if(min==='eot'){SLEEP.eot=true;toast('Stops after this song')}
+  else if(min>0){SLEEP.until=Date.now()+min*60e3;toast(`Sleep timer: ${min} min`)}
+  else toast('Sleep timer off');
+  SLEEP.timer=setInterval(sleepTick,1000);sleepTick();renderNow()}
+function sleepTick(){const c=$('#sleepchip');if(!SLEEP.until&&!SLEEP.eot){c.hidden=true;clearInterval(SLEEP.timer);return}
+  c.hidden=false;if(SLEEP.eot){c.innerHTML=ic('moon',13)+'end of song';return}
+  const left=SLEEP.until-Date.now();if(left<=0){sleepFire();return}
+  if(left<8000)audio.volume=Math.max(0,left/8000); /* fade out */
+  c.innerHTML=ic('moon',13)+fmt(left/1000)}
+function sleepFire(){audio.pause();audio.volume=1;SLEEP.until=0;SLEEP.eot=false;clearInterval(SLEEP.timer);$('#sleepchip').hidden=true;toast('Sleep timer ended. Good night');renderNow()}
+function sleepSheet(){const opts=[['Off',0],['15 minutes',15],['30 minutes',30],['45 minutes',45],['1 hour',60],['End of this song','eot']];
+  const cur=SLEEP.eot?'eot':SLEEP.until?'x':0;
+  openSheet(`<div class="row between"><h2>Sleep timer</h2><button class="see" data-act="closesheet">Close</button></div><div class="list">${opts.map(([l,v])=>`<button class="li${(v===0&&cur===0)||(v==='eot'&&cur==='eot')?' on':''}" data-sl="${v}">${l}${(v===0&&cur===0)||(v==='eot'&&cur==='eot')?ic('check',18):''}</button>`).join('')}</div>${SLEEP.until?`<p class="note">Running: ${fmt((SLEEP.until-Date.now())/1000)} left. The music fades out over the last few seconds.</p>`:''}`,s=>{s.onclick=e=>{const b=e.target.closest('[data-sl]');if(!b)return;const v=b.dataset.sl;sleepSet(v==='eot'?'eot':+v);closeSheet()}})}
+
+/* ---------- lyrics (LRCLIB) ---------- */
+const LYR={lines:null,plain:null,id:null,open:false,idx:-1,
+  reset(){this.lines=null;this.plain=null;this.id=null;this.idx=-1;if(this.open)openLyrics()},
+  sync(){if(!this.open||!this.lines)return;const c=audio.currentTime+.25;let i=-1;for(let k=0;k<this.lines.length;k++){if(this.lines[k].t<=c)i=k;else break}
+    if(i===this.idx)return;this.idx=i;const box=$('#sheet .lyr');if(!box)return;const ps=$$('p',box);ps.forEach((p,k)=>{p.classList.toggle('on',k===i);p.classList.toggle('past',k<i)});
+    if(ps[i])ps[i].scrollIntoView({block:'center',behavior:reduce?'auto':'smooth'})}};
+async function openLyrics(){
+  const t=P.cur();if(!t)return;
+  const head=`<div class="row between"><div class="grow"><div class="eyebrow acc">Lyrics</div><b style="display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:16px">${esc(t.title)}</b><span class="muted">${esc(t.artist)}</span></div><button class="see" data-act="closesheet">Close</button></div>`;
+  const s=$('#sheet');openSheet(head+`<div data-ly>${skelRows(4)}</div>`);s.classList.add('tall');LYR.open=true;
+  const box=()=>$('[data-ly]',s);
+  if(t.live){box().innerHTML='<p class="empty">This is a live stream. Lyrics are only available for songs.</p>';return}
+  if(!srcOn('lyrics')){box().innerHTML='<p class="empty">Lyrics are turned off in Settings → Sources.</p>';return}
+  try{
+    if(LYR.id!==t.id){const j=await getLyrics(t);if(P.cur()!==t)return;LYR.id=t.id;LYR.lines=j?.syncedLyrics?parseLRC(j.syncedLyrics):null;LYR.plain=j?.plainLyrics||null;LYR.instr=!!j?.instrumental}
+    if(!LYR.open)return;
+    LYR.idx=-1;
+    if(LYR.lines?.length)box().innerHTML=`<div class="lyr">${LYR.lines.map((l,i)=>l.text?`<p data-seek="${l.t}">${esc(l.text)}</p>`:`<p class="gap" data-seek="${l.t}"></p>`).join('')}</div><p class="note">Synced lyrics from LRCLIB. Tap a line to jump there.</p>`;
+    else if(LYR.plain)box().innerHTML=`<div class="lyr plain">${LYR.plain.split('\n').map(l=>l.trim()?`<p>${esc(l)}</p>`:'<div class="gap"></div>').join('')}</div><p class="note">Plain lyrics from LRCLIB (no timing available).</p>`;
+    else box().innerHTML=`<p class="empty">${LYR.instr?'This one is an instrumental.':'No lyrics found for this song. Most Audius and Archive uploads are independent releases that are not in the lyrics database yet.'}</p><p class="note">Lyrics database: https://lrclib.net (anyone can add lyrics there).</p>`;
+    LYR.sync();
+    box().onclick=e=>{const p=e.target.closest('[data-seek]');if(p&&isFinite(audio.duration)){audio.currentTime=+p.dataset.seek;if(audio.paused)audio.play().catch(()=>{})}};
+  }catch(e){box().innerHTML=`<p class="empty err">Couldn't load lyrics: ${esc(e.message)}. <button class="see" data-act="lyrics">Retry</button></p>`}
 }
 
 /* ---------- mini + player render ---------- */
 function renderNow(){
   const t=P.cur();const mini=$('#mini');
   if(!t){if(document.documentElement.classList.contains('wide')){mini.classList.remove('hide');mini.innerHTML='<div class="art"></div><div class="tm"><b>Nothing playing</b><span>Pick any song to start</span></div><div class="mid"></div>'}else mini.classList.add('hide');return}
-  mini.classList.remove('hide');
+  mini.classList.remove('hide');mini.classList.toggle('live',!!t.live);
   mini.innerHTML=`${art(t.art,t.id)}<div class="tm"><b>${esc(t.title)}</b><span>${esc(t.artist)}</span></div><button class="ib0 like${isLiked(t.id)?' on':''}" data-act="like" aria-label="${isLiked(t.id)?'Remove from':'Add to'} liked songs">${ic(isLiked(t.id)?'heartF':'heart',22)}</button><div class="mid"><button class="donly" data-act="prev" aria-label="Previous">${ic('prev',22)}</button><button class="pp" data-act="toggle" aria-label="Play or pause">${ic(audio.paused?'play':'pause',18)}</button><button class="donly" data-act="next" aria-label="Next">${ic('next',22)}</button></div><span class="donly mtime" id="mtime"></span><div class="bar"></div>`;
   const pl=$('#player');
   const upNext=P.q[P.i+1];
@@ -459,17 +626,19 @@ function renderNow(){
   <div class="row between"><button class="ib ghost" data-act="closeplayer" aria-label="Close player">${ic('chevD',26)}</button><div style="text-align:center;min-width:0" class="grow"><div class="eyebrow">Playing from</div><div style="font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(P.label||'Your queue')}</div></div><button class="ib ghost" data-act="menu" data-list="${reg([t],P.label)}" data-i="0" aria-label="More options">${ic('more',22)}</button></div>
   <div class="art cov" style="${bgArt(t.art,t.id)}"></div>
   <div class="row between" style="gap:14px"><div class="grow"><h1 class="ptitle">${esc(t.title)}</h1><button class="muted" style="font-size:15px;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block" data-act="goartist" data-arg="${A({id:t.artistId,name:t.artist,art:t.art})}">${esc(t.artist)}</button></div><button class="ib0 like${isLiked(t.id)?' on':''}" style="width:44px;height:44px" data-act="like" aria-label="Like">${ic(isLiked(t.id)?'heartF':'heart',26)}</button></div>
-  <div style="display:flex;flex-direction:column;gap:6px"><input type="range" class="seek" id="seek" min="0" max="${t.duration||100}" step="0.1" value="0" aria-label="Seek"><div class="row between mono muted" style="font-size:12px"><span id="tcur">0:00</span><span id="tdur">${fmt(t.duration)}</span></div></div>
+  ${t.live?`<div class="livebar"><span class="row" style="gap:0;font-family:var(--fm);font-size:11px;color:var(--danger);flex:none"><i class="livedot"></i>LIVE</span><span class="np" data-np></span>${t.link?`<button class="ib0" data-act="openext" data-arg="${A({u:t.link})}" aria-label="Station website">${ic('ext',16)}</button>`:''}</div>`
+  :`<div style="display:flex;flex-direction:column;gap:6px"><input type="range" class="seek" id="seek" min="0" max="${t.duration||100}" step="0.1" value="0" aria-label="Seek"><div class="row between mono muted" style="font-size:12px"><span id="tcur">0:00</span><span id="tdur">${fmt(t.duration)}</span></div></div>`}
   <div class="ctrls"><button class="sm${P.shuffle?' on':''}" data-act="shuffle" aria-label="Shuffle">${ic('shuffle',22)}</button><button data-act="prev" aria-label="Previous">${ic('prev',32)}</button><button class="big" data-act="toggle" id="bigpp" aria-label="Play or pause">${ic(audio.paused?'play':'pause',30)}</button><button data-act="next" aria-label="Next">${ic('next',32)}</button><button class="sm${P.repeat!=='off'?' on':''}" data-act="repeat" aria-label="Repeat: ${P.repeat}">${ic('repeat',22)}${P.repeat==='one'?'<span class="one">1</span>':''}</button></div>
-  <div class="row between muted" style="font-size:13px;font-weight:600"><button class="row" style="gap:8px" data-act="eqfromplayer">${ic('speaker',18)}EQ · ${S.eq.on?esc(S.eq.preset):'Off'}</button><button class="row" style="gap:8px;min-width:0" data-act="queue"><span style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:170px">${upNext?'Up next: '+esc(upNext.title):'Queue'}</span>${ic('queue',20)}</button></div>`;
+  <div class="pbtns"><button data-act="eqfromplayer" title="${audio===aRaw?'This station does not allow audio processing, EQ is bypassed':'Equalizer'}">${ic('speaker',18)}${audio===aRaw?'EQ n/a':'EQ · '+(S.eq.on?esc(S.eq.preset):'Off')}</button><button data-act="lyrics" ${t.live?'disabled style="opacity:.35"':''}>${ic('mic',18)}Lyrics</button><button data-act="sleep" class="${SLEEP.until||SLEEP.eot?'on':''}">${ic('moon',18)}Sleep</button><button data-act="queue">${ic('queue',18)}Queue</button></div>
+  ${upNext?`<button class="row muted" style="gap:10px;font-size:13px;min-width:0" data-act="queue"><span class="eyebrow" style="flex:none">Up next</span><span style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(upNext.title)} · ${esc(upNext.artist)}</span></button>`:''}`;
   const seek=$('#seek');
-  seek.addEventListener('input',()=>{seeking=true;$('#tcur').textContent=fmt(seek.value)});
-  seek.addEventListener('change',()=>{audio.currentTime=+seek.value;seeking=false});
-  renderPlayState();renderProgress();
+  if(seek){seek.addEventListener('input',()=>{seeking=true;$('#tcur').textContent=fmt(seek.value)});
+  seek.addEventListener('change',()=>{audio.currentTime=+seek.value;seeking=false})}
+  paintNow();renderPlayState();renderProgress();
 }
 let seeking=false;
 function renderPlayState(){const p=audio.paused;$('#player').classList.toggle('paused',p);const a=$('#mini .pp');if(a)a.innerHTML=ic(p?'play':'pause',18);const b=$('#bigpp');if(b)b.innerHTML=ic(p?'play':'pause',30)}
-function renderProgress(){const d=audio.duration||P.cur()?.duration||0;const c=audio.currentTime||0;const bar=$('#mini .bar');if(bar)bar.style.width=(d?c/d*100:0)+'%';const mt=$('#mtime');if(mt)mt.textContent=fmt(c)+' / '+fmt(d);const s=$('#seek');if(s&&!seeking){if(isFinite(audio.duration))s.max=audio.duration;s.value=c;$('#tcur').textContent=fmt(c);if(isFinite(audio.duration))$('#tdur').textContent=fmt(audio.duration)}}
+function renderProgress(){if(P.cur()?.live){const mt=$('#mtime');if(mt)mt.textContent='LIVE';return}const d=(isFinite(audio.duration)&&audio.duration)||P.cur()?.duration||0;const c=audio.currentTime||0;const bar=$('#mini .bar');if(bar)bar.style.width=(d?c/d*100:0)+'%';const mt=$('#mtime');if(mt)mt.textContent=fmt(c)+' / '+fmt(d);const s=$('#seek');if(s&&!seeking){if(isFinite(audio.duration))s.max=audio.duration;s.value=c;$('#tcur').textContent=fmt(c);if(isFinite(audio.duration))$('#tdur').textContent=fmt(audio.duration)}}
 function openPlayer(){if(!P.cur())return;const p=$('#player');p.classList.add('open');p.setAttribute('aria-hidden','false')}
 function closePlayer(){const p=$('#player');p.classList.remove('open');p.setAttribute('aria-hidden','true')}
 
@@ -491,8 +660,8 @@ function refresh(v){if(!v)return;const st=v.el.scrollTop;VIEWS[v.name](v.el,v.pa
 function refreshAll(){stack.forEach(v=>{if(['library','profile','collection','settings'].includes(v.name))refresh(v)})}
 
 /* ---------- sheets ---------- */
-function openSheet(html,mountFn){const s=$('#sheet');s.innerHTML='<div class="handle"></div>'+html;$('#scrim').classList.add('open');s.classList.add('open');mountFn&&mountFn(s)}
-function closeSheet(){$('#scrim').classList.remove('open');$('#sheet').classList.remove('open')}
+function openSheet(html,mountFn){const s=$('#sheet');LYR.open=false;s.classList.remove('tall');s.onclick=null;s.innerHTML='<div class="handle"></div>'+html;$('#scrim').classList.add('open');s.classList.add('open');s.scrollTop=0;mountFn&&mountFn(s)}
+function closeSheet(){LYR.open=false;$('#scrim').classList.remove('open');$('#sheet').classList.remove('open')}
 
 /* ---------- views ---------- */
 const VIEWS={};
@@ -506,7 +675,9 @@ VIEWS.home=(el)=>{
   <section><div class="sh"><div><div class="eyebrow acc">For your runs</div><h2>Workout & Running</h2></div><button class="see" data-act="push" data-view="browse" data-arg="${A({q:'running workout',title:'Workout & Running'})}">See all</button></div><div class="hscroll" data-runs>${skelCards(3)}</div></section>
   <section><div class="sh"><div><div class="eyebrow acc">${esc(g[1]||'All genres')} · this week</div><h2>Trending now</h2></div><button class="see" data-act="push" data-view="collection" data-arg="${A({kind:'trending',genre:g[1],title:'Trending'+(g[1]?' in '+g[0]:'')})}">See all</button></div><div data-trend>${skelRows(5)}</div></section>
   <section data-recent ${S.recent.length?'':'hidden'}><div class="sh"><div><div class="eyebrow acc">Pick up again</div><h2>Recently played</h2></div></div>${rows(S.recent.slice(0,4),'Recently played')}</section>
-  <section><div class="sh"><div><div class="eyebrow acc">Rising artists</div><h2>Underground</h2></div><button class="see" data-act="homerefresh">${ic('refresh',16)}</button></div><div data-fresh>${skelRows(3)}</div></section>`;
+  ${srcOn('radio')?`<section><div class="sh"><div><div class="eyebrow acc"><i class="livedot"></i>On air now · ${esc((COUNTRIES.find(c=>c[0]===S.radioCountry)||['','Worldwide'])[1])}</div><h2>Live radio</h2></div><button class="see" data-act="tab" data-view="radio">All radio</button></div><div class="hscroll" data-live>${skelCards(3)}</div></section>`:''}
+  <section><div class="sh"><div><div class="eyebrow acc">Rising artists</div><h2>Underground</h2></div><button class="see" data-act="homerefresh">${ic('refresh',16)}</button></div><div data-fresh>${skelRows(3)}</div></section>
+  ${srcOn('archive')?`<section><div class="sh"><div><div class="eyebrow acc">Internet Archive · Creative Commons</div><h2>Netlabel releases</h2></div><button class="see" data-act="push" data-view="browse" data-arg="${A({ia:1,q:'',title:'Netlabel releases'})}">See all</button></div><div class="hscroll" data-ia>${skelCards(3)}</div></section>`:''}`;
   tick();loadHome(el);
 };
 async function loadHome(el){
@@ -525,6 +696,8 @@ async function loadHome(el){
   cached('fresh:'+g,120e3,async()=>tracksOf(await api('/tracks/trending/underground',{genre:g}))).then(tr=>{
     if(!el.isConnected)return;$('[data-fresh]',el).innerHTML=rows(tr.slice(0,5),'Underground',{empty:'Nothing rising in this genre right now.'});
   }).catch(()=>{if(el.isConnected)$('[data-fresh]',el).innerHTML='<p class="empty err">Couldn\'t load rising tracks.</p>'});
+  if(srcOn('radio'))stations({countrycode:S.radioCountry}).then(ch=>{if(!el.isConnected)return;$('[data-live]',el).innerHTML=stationCards(ch.slice(0,10),'Live radio')}).catch(()=>{if(el.isConnected)$('[data-live]',el).innerHTML='<p class="empty err" style="width:100%">Radio Browser is not reachable right now.</p>'});
+  if(srcOn('archive'))cached('ia:home',600e3,()=>iaSearch('',{rows:30})).then(ps=>{if(!el.isConnected)return;const pick=ps.slice().sort(()=>Math.random()-.5).slice(0,10);$('[data-ia]',el).innerHTML=pick.length?pick.map(p=>card(p,`${p.owner}${p.year?' · '+p.year:''}`)).join(''):'<p class="empty" style="width:100%">Nothing found.</p>'}).catch(()=>{if(el.isConnected)$('[data-ia]',el).innerHTML='<p class="empty err" style="width:100%">Internet Archive is not reachable right now.</p>'});
 }
 
 /* search */
@@ -542,16 +715,18 @@ function applyFilters(list,f=SR){
 }
 VIEWS.search=(el)=>{
   el.innerHTML=`<div class="row between"><h1 class="h1">Search</h1><button class="ib" data-act="filters" aria-label="Filters" ${SR.type!=='Songs'?'hidden':''}>${ic('sliders',20)}${filtersActive()?'<span class="dot"></span>':''}</button></div>
-  <label class="field">${ic('search',20)}<input id="q" type="search" placeholder="Songs, artists, playlists" value="${esc(SR.q)}" autocomplete="off" enterkeyhint="search"><button class="ib0" data-act="clearq" aria-label="Clear search" ${SR.q?'':'hidden'}>${ic('x',18)}</button></label>
-  <div class="chips">${['Songs','Playlists','Artists'].map(t=>`<button class="chip${SR.type===t?' on':''}" data-act="stype" data-t="${t}">${t}</button>`).join('')}</div>
+  <label class="field">${ic('search',20)}<input id="q" type="search" placeholder="${SR.type==='Radio'?'Station name or genre':'Songs, albums, artists, radio'}" value="${esc(SR.q)}" autocomplete="off" enterkeyhint="search"><button class="ib0" data-act="clearq" aria-label="Clear search" ${SR.q?'':'hidden'}>${ic('x',18)}</button></label>
+  <div class="chips">${['Songs','Albums','Artists'].concat(srcOn('radio')?['Radio']:[]).map(t=>`<button class="chip${SR.type===t?' on':''}" data-act="stype" data-t="${t}">${t}</button>`).join('')}</div>
   <div class="eyebrow" data-meta></div><div data-res></div>`;
   const q=$('#q',el);let deb;
-  q.addEventListener('input',()=>{SR.q=q.value;$('[data-act=clearq]',el).hidden=!q.value;clearTimeout(deb);deb=setTimeout(()=>runSearch(el),320)});
+  q.addEventListener('input',()=>{SR.q=q.value;$('[data-act=clearq]',el).hidden=!q.value;clearTimeout(deb);deb=setTimeout(()=>runSearch(el),SR.type==='Songs'?320:500)});
   q.addEventListener('keydown',e=>{if(e.key==='Enter'){clearTimeout(deb);runSearch(el);q.blur()}});
   runSearch(el);
 };
 async function runSearch(el){
   const res=$('[data-res]',el),meta=$('[data-meta]',el);const id=++SR.rid;const q=SR.q.trim();
+  if(!q&&SR.type==='Radio'){meta.textContent='Popular stations worldwide';res.innerHTML=skelRows(5);
+    try{const list=await stations({});if(id!==SR.rid)return;res.innerHTML=rows(list.slice(0,30),'Radio')}catch(e){if(id===SR.rid)res.innerHTML=`<p class="empty err">${esc(e.message)}</p>`}return}
   if(!q&&!(SR.type==='Songs'&&SR.genres.length)){
     meta.textContent='Browse by genre';
     res.innerHTML=`<div class="tiles">${GENRES.slice(0,8).map(g=>`<button class="tile" style="background:${gradFor(g)}" data-act="browsegenre" data-g="${esc(g)}">${esc(g)}</button>`).join('')}</div>`;return}
@@ -562,10 +737,16 @@ async function runSearch(el){
       if(id!==SR.rid)return;SR.raw=raw;const list=applyFilters(raw);
       meta.textContent=`${list.length} ${list.length===1?'song':'songs'} · ${SR.genres.length?SR.genres.join(', '):'All genres'} · ${SORTS[SR.sort]}${SR.len!=='any'?' · '+LENS[SR.len]:''}`;
       res.innerHTML=rows(list,q?`Search: ${q}`:SR.genres.join(', '),{empty:raw.length?'No songs match these filters. Try removing one.':'No songs found. Try another spelling.'});
-    }else if(SR.type==='Playlists'){
-      const ps=(await api('/playlists/search',{query:q,limit:40})||[]).map(mapP).filter(p=>p.count>0);if(id!==SR.rid)return;
-      meta.textContent=`${ps.length} ${ps.length===1?'result':'results'} · albums and playlists`;
-      res.innerHTML=ps.length?`<div class="grid2">${ps.map(p=>card(p,`${p.isAlbum?'Album':'Playlist'} · ${p.owner}`)).join('')}</div>`:'<p class="empty">No playlists found.</p>';
+    }else if(SR.type==='Albums'){
+      const [au,ia]=await Promise.all([api('/playlists/search',{query:q,limit:40}).then(r=>(r||[]).map(mapP).filter(p=>p.count>0)).catch(()=>[]),srcOn('archive')?iaSearch(q.replace(/[:()"]/g,' '),{rows:24,sort:''}).catch(()=>[]):Promise.resolve([])]);if(id!==SR.rid)return;
+      meta.textContent=`${au.length+ia.length} results · Audius ${au.length}${srcOn('archive')?` · Internet Archive ${ia.length}`:''}`;
+      res.innerHTML=(au.length||ia.length)?`${au.length?`<div class="eyebrow acc">Audius · albums and playlists</div><div class="grid2">${au.map(p=>card(p,`${p.isAlbum?'Album':'Playlist'} · ${p.owner}`)).join('')}</div>`:''}${ia.length?`<div class="eyebrow acc" style="margin-top:22px">Internet Archive · free netlabel releases</div><div class="grid2">${ia.map(p=>card(p,`${p.owner}${p.year?' · '+p.year:''}`)).join('')}</div>`:''}`:'<p class="empty">No albums found.</p>';
+    }else if(SR.type==='Radio'){
+      const ql=q.toLowerCase();
+      const [byName,byTag]=await Promise.all([stations({name:q,limit:40}).catch(()=>[]),stations({tag:ql,limit:40}).catch(()=>[])]);if(id!==SR.rid)return;
+      const seen=new Set();const list=[...byName,...byTag].filter(t=>!seen.has(t.id)&&seen.add(t.id));
+      meta.textContent=`${list.length} ${list.length===1?'station':'stations'} · Radio Browser`;
+      res.innerHTML=rows(list,'Radio: '+q,{empty:'No stations found. Try a genre like jazz, techno or news.'});
     }else{
       const us=(await api('/users/search',{query:q,limit:30})||[]).map(mapU);if(id!==SR.rid)return;
       meta.textContent=`${us.length} ${us.length===1?'artist':'artists'}`;
@@ -586,6 +767,24 @@ function openFilters(){
     else if(f==='apply'){const genreChanged=d.genres.join()!==SR.genres.join()||d.sort!==SR.sort;Object.assign(SR,d);closeSheet();const v2=stack.find(x=>x.name==='search');if(v2){if(genreChanged)refresh(v2);else refresh(v2)}return}
     render(s)}});
 }
+
+/* radio: Radio Browser stations */
+const COUNTRIES=[['AT','Austria'],['DE','Germany'],['CH','Switzerland'],['GB','UK'],['US','USA'],['','Worldwide']];
+const RTAGS=['','pop','rock','electronic','jazz','classical','hiphop','lofi','news','chillout'];
+let rTag='',stAll=false;
+VIEWS.radio=(el)=>{
+  const cn=COUNTRIES.find(c=>c[0]===S.radioCountry)||COUNTRIES[0];
+  el.innerHTML=`<div class="row between"><div style="display:flex;flex-direction:column;gap:4px"><div class="eyebrow"><i class="livedot"></i>Live</div><h1 class="h1">Radio</h1></div><button class="ib" data-act="radiosearch" aria-label="Search stations">${ic('search',20)}</button></div>
+  ${srcOn('radio')?`<section><div class="sh"><div><div class="eyebrow acc">Worldwide · rising today</div><h2>Trending stations</h2></div><button class="see" style="color:var(--accent)" data-act="stall" hidden></button></div><div class="hscroll" data-trendst>${skelCards(3)}</div></section>`:''}
+  ${srcOn('radio')?`<section><div class="sh"><div><div class="eyebrow acc">Radio Browser · ${esc(cn[1])}</div><h2>Stations</h2></div></div>
+  <div class="chips">${COUNTRIES.map(c=>`<button class="chip${c[0]===S.radioCountry?' on':''}" data-act="rcountry" data-c="${c[0]}">${esc(c[1])}</button>`).join('')}</div>
+  <div class="chips">${RTAGS.map(t=>`<button class="chip${t===rTag?' on':''}" data-act="rtag" data-t="${t}" style="padding:6px 12px;font-size:12px">${t?esc(t):'All genres'}</button>`).join('')}</div>
+  <div data-st>${skelRows(6)}</div></section>`:''}
+  ${!srcOn('radio')?'<p class="empty">Radio is turned off. Turn it on in Settings → Sources.</p>':''}
+  <p class="note">Streams come straight from the broadcasters. Some stations block audio processing, the EQ is bypassed for those.</p>`;
+  if(srcOn('radio'))stations({order:'clicktrend',limit:60}).then(ch=>{if(!el.isConnected)return;$('[data-trendst]',el).innerHTML=stationCards(stAll?ch.slice(0,30):ch.slice(0,10),'Trending stations');const b=$('[data-act=stall]',el);if(b){b.hidden=ch.length<=10;b.textContent=stAll?'Show fewer':'Show more'}}).catch(e=>{if(el.isConnected)$('[data-trendst]',el).innerHTML=`<p class="empty err" style="width:100%">${esc(e.message)}</p>`});
+  if(srcOn('radio'))stations({countrycode:S.radioCountry,tag:rTag,limit:rTag||S.radioCountry?60:80}).then(list=>{if(el.isConnected)$('[data-st]',el).innerHTML=rows(list.slice(0,40),`Radio · ${cn[1]}${rTag?' · '+rTag:''}`,{empty:'No HTTPS stations for this combination. Try another genre.'})}).catch(e=>{if(el.isConnected)$('[data-st]',el).innerHTML=`<p class="empty err">Couldn't reach Radio Browser: ${esc(e.message)}</p>`});
+};
 
 /* library */
 let libTab='Songs';
@@ -620,7 +819,7 @@ VIEWS.library=(el)=>{
 
 /* collection (album / playlist / artist / local / liked / trending) */
 VIEWS.collection=(el,p)=>{
-  const top=`<div class="row between"><button class="ib ghost" data-act="back" aria-label="Back">${ic('back',24)}</button><button class="ib ghost" data-act="${p.link||p.kind==='artist'?'openext':'none'}" data-arg="${A({u:p.link||(p.handle?'https://audius.co/'+p.handle:'')})}" aria-label="Open on Audius" ${p.link||p.handle?'':'hidden'}>${ic('ext',20)}</button></div>`;
+  const top=`<div class="row between"><button class="ib ghost" data-act="back" aria-label="Back">${ic('back',24)}</button><button class="ib ghost" data-act="${p.link||p.kind==='artist'?'openext':'none'}" data-arg="${A({u:p.link||(p.handle?'https://audius.co/'+p.handle:'')})}" aria-label="Open on ${p.kind==='ia'?'Internet Archive':'Audius'}" ${p.link||p.handle?'':'hidden'}>${ic('ext',20)}</button></div>`;
   if(p.kind==='local'){
     const pl=S.playlists.find(x=>x.id===p.id);if(!pl){el.innerHTML=top+'<p class="empty">This playlist was deleted.</p>';return}
     const k=reg(pl.tracks,pl.name);
@@ -634,26 +833,28 @@ VIEWS.collection=(el,p)=>{
   const isArtist=p.kind==='artist';
   const title=p.title||p.name||'';
   const saved=isArtist?S.artists.some(a=>a.id===p.id):S.saved.some(x=>x.id===p.id);
-  const label=p.kind==='trending'?'Chart · updated live':isArtist?'Artist':(p.isAlbum?'Album':'Playlist')+(p.owner?' · '+p.owner:'');
+  const isIA=p.kind==='ia';
+  const label=p.kind==='trending'?'Chart · updated live':isArtist?'Artist':isIA?'Album · Internet Archive':(p.isAlbum?'Album':'Playlist')+(p.owner?' · '+p.owner:'');
   el.innerHTML=`${top}<div class="chead">${p.kind==='trending'?`<div class="art big" data-cover style="${bgArt('',title)}"></div>`:art(p.art,p.id,'big'+(isArtist?' round':''))}<div class="info"><div class="eyebrow">${esc(label)}</div><h1 class="h1">${esc(title)}</h1><div class="muted" data-sub>Loading…</div></div>
-  <div class="acts"><button class="btn" data-act="playlist" data-c="1" disabled>${ic('play',18)}Play</button><button class="btn outline" data-act="playlist" data-c="1" data-shuffle="1" disabled>${ic('shuffle',18)}Shuffle</button>${p.kind==='trending'?'':isArtist?`<button class="btn ${saved?'soft':'outline'}" data-act="follow" data-arg="${A({id:p.id,name:title,art:p.art,handle:p.handle||''})}">${saved?'Following':'Follow'}</button>`:`<button class="ib ghost like${saved?' on':''}" style="width:48px;height:48px" data-act="savepl" data-arg="${A({kind:'playlist',id:p.id,title,owner:p.owner,art:p.art,count:p.count,isAlbum:p.isAlbum,link:p.link})}" aria-label="${saved?'Remove from':'Save to'} library">${ic(saved?'heartF':'heart',24)}</button>`}</div></div>
+  <div class="acts"><button class="btn" data-act="playlist" data-c="1" disabled>${ic('play',18)}Play</button><button class="btn outline" data-act="playlist" data-c="1" data-shuffle="1" disabled>${ic('shuffle',18)}Shuffle</button>${p.kind==='trending'?'':isArtist?`<button class="btn ${saved?'soft':'outline'}" data-act="follow" data-arg="${A({id:p.id,name:title,art:p.art,handle:p.handle||''})}">${saved?'Following':'Follow'}</button>`:`<button class="ib ghost like${saved?' on':''}" style="width:48px;height:48px" data-act="savepl" data-arg="${A({kind:isIA?'ia':'playlist',id:p.id,title,owner:p.owner,art:p.art,count:p.count,isAlbum:p.isAlbum,link:p.link})}" aria-label="${saved?'Remove from':'Save to'} library">${ic(saved?'heartF':'heart',24)}</button>`}</div></div>
   <div data-tracks>${skelRows(6)}</div>`;
   const fill=list=>{
     if(!el.isConnected)return;const k=reg(list,title);
     $$('[data-c]',el).forEach(b=>{b.dataset.list=k;b.disabled=!list.length});
     const tot=list.reduce((s,t)=>s+t.duration,0);
-    $('[data-sub]',el).textContent=isArtist?`${num(p.followers||0)} followers · ${list.length} tracks`:`${list.length} ${list.length===1?'song':'songs'} · ${fmtLong(tot)}`;
+    $('[data-sub]',el).textContent=isArtist?`${num(p.followers||0)} followers · ${list.length} tracks`:`${isIA&&p.owner?p.owner+' · ':''}${list.length} ${list.length===1?'song':'songs'} · ${fmtLong(tot)}${isIA&&p._license!=null?' · '+licName(p._license):''}`;
     if(p.kind==='trending'&&list[0])$('[data-cover]',el).setAttribute('style',bgArt(list[0].art,list[0].id));
     $('[data-tracks]',el).innerHTML=list.length?`<div class="tlist">${list.map((t,i)=>trow(t,k,i,{num:true,noArtist:isArtist})).join('')}</div>`:'<p class="empty">No playable tracks here.</p>';
   };
   if(p._tracks){fill(p._tracks);return}
-  const load=p.kind==='trending'?trending(p.genre):isArtist?api(`/users/${encodeURIComponent(p.id)}/tracks`,{sort:'plays',limit:50}).then(tracksOf):api(`/playlists/${encodeURIComponent(p.id)}/tracks`).then(tracksOf);
+  const load=isIA?iaAlbum(p.id).then(r=>{p._license=r.license;return r.tracks}):p.kind==='trending'?trending(p.genre):isArtist?api(`/users/${encodeURIComponent(p.id)}/tracks`,{sort:'plays',limit:50}).then(tracksOf):api(`/playlists/${encodeURIComponent(p.id)}/tracks`).then(tracksOf);
   load.then(list=>{p._tracks=list;fill(list)}).catch(e=>{if(el.isConnected)$('[data-tracks]',el).innerHTML=`<p class="empty err">Couldn't load tracks: ${esc(e.message)}</p>`;const s=$('[data-sub]',el);if(s)s.textContent=''});
 };
 
 /* browse (see all runs playlists) */
 VIEWS.browse=(el,p)=>{
-  el.innerHTML=`<div class="row"><button class="ib ghost" data-act="back" aria-label="Back">${ic('back',24)}</button><h1 class="h1" style="font-size:24px">${esc(p.title)}</h1></div><div data-g class="grid2">${skelCards(4)}</div>`;
+  el.innerHTML=`<div class="row"><button class="ib ghost" data-act="back" aria-label="Back">${ic('back',24)}</button><h1 class="h1" style="font-size:24px">${esc(p.title)}</h1></div>${p.ia?'<p class="note">Most downloaded audio releases from netlabels on the Internet Archive. Free to stream, licensed under Creative Commons.</p>':''}<div data-g class="grid2">${skelCards(4)}</div>`;
+  if(p.ia){iaSearch(p.q,{rows:60}).then(ps=>{if(el.isConnected)$('[data-g]',el).innerHTML=ps.length?ps.map(x=>card(x,`${x.owner}${x.year?' · '+x.year:''}`)).join(''):'<p class="empty">Nothing found.</p>'}).catch(e=>{if(el.isConnected)$('[data-g]',el).innerHTML=`<p class="empty err">${esc(e.message)}</p>`});return}
   Promise.all(p.q.split(' ').map(q=>api('/playlists/search',{query:q}))).then(r=>{if(!el.isConnected)return;const seen=new Set();const ps=r.flat().filter(Boolean).map(mapP).filter(x=>x.count>0&&!seen.has(x.id)&&seen.add(x.id));$('[data-g]',el).innerHTML=ps.length?ps.map(x=>card(x,`${x.owner} · ${x.count} songs`)).join(''):'<p class="empty">Nothing found.</p>'}).catch(e=>{if(el.isConnected)$('[data-g]',el).innerHTML=`<p class="empty err">${esc(e.message)}</p>`});
 };
 
@@ -717,14 +918,34 @@ VIEWS.settings=(el)=>{
   <section style="gap:8px"><div class="eyebrow">Library</div><div class="list">
     <button class="li" data-act="cyclesort" data-k="songSort">Sort liked songs by<span class="r">${SONG_SORTS[S.songSort]}${ic('chevR',18)}</span></button>
     <button class="li" data-act="cyclesort" data-k="albumSort">Sort albums by<span class="r">${ALBUM_SORTS[S.albumSort]}${ic('chevR',18)}</span></button></div></section>
+  <section style="gap:8px"><div class="eyebrow">Music sources</div><div class="list">
+    <button class="li" data-act="push" data-view="sources">Sources and API status<span class="r">${Object.keys(SOURCES).filter(srcOn).length} of ${Object.keys(SOURCES).length} on${ic('chevR',18)}</span></button></div></section>
+  <section style="gap:8px"><div class="eyebrow">Design</div><div class="list">
+    <button class="li" data-act="openext" data-arg="${A({u:'wireframes.html'})}">Wireframes and user flow<span class="r">${ic('grid',16)}${ic('ext',16)}</span></button>
+    <button class="li" data-act="shortcuts">Keyboard shortcuts<span class="r">${ic('kbd',18)}</span></button></div></section>
   <section style="gap:8px"><div class="eyebrow">Data on this device</div><div class="list"><button class="li danger" data-act="clearlib">Clear library and history</button></div></section>
   <section style="gap:8px"><div class="eyebrow">About</div><div class="list">
-    <button class="li" data-act="openext" data-arg="${A({u:'https://audius.co'})}">Music source<span class="r">Audius (${esc(new URL(HOST).host)})${ic('ext',16)}</span></button>
+    <div class="li">Audius node<span class="r mono" style="font-size:12px">${esc(new URL(HOST).host)}</span></div>
     <div class="li">Device<span class="r">${document.documentElement.dataset.device==='phone'?'Phone · full screen':document.documentElement.classList.contains('wide')?'Desktop · full layout':'Desktop · small window'}</span></div>
     <div class="li">Clock<span class="r">Europe/Vienna · ${esc(clockSource)}</span></div>
-    <div class="li">Version<span class="r">empty.string 1.0</span></div></div></section>`;
+    <div class="li">Version<span class="r">empty.string 2.0</span></div></div></section>`;
   const n=$('#sname',el);n.addEventListener('change',()=>{S.name=n.value.trim()||'Tester';save();tick();toast('Name saved');stack.filter(v=>v.name==='home').forEach(refresh)});
 };
+
+/* sources: what each API does, toggles, live latency check */
+VIEWS.sources=(el)=>{
+  el.classList.add('nobar');
+  el.innerHTML=`<div class="row" style="gap:6px"><button class="ib ghost" data-act="back" aria-label="Back">${ic('back',24)}</button><h1 class="h1" style="font-size:24px">Sources</h1></div>
+  <p class="note" style="margin:-8px 0 0">Everything is loaded live from public APIs. None of them needs an account or API key, and all of them allow browser requests (CORS).</p>
+  <div class="status">${Object.entries(SOURCES).map(([k,s])=>`<div class="scard2"><div class="top"><b>${esc(s.name)}</b><span class="ping wait" data-ping="${k}"><i></i>checking</span>${s.core?'<span class="src">core</span>':`<button class="tg${srcOn(k)?' on':''}" data-act="srctoggle" data-k="${k}" aria-label="Use ${esc(s.name)}"><i></i></button>`}</div><p>${esc(s.what)}</p><div class="meta"><button class="see" data-act="openext" data-arg="${A({u:s.url})}">${esc(new URL(s.url).host)}</button><span>·</span><button class="see" data-act="openext" data-arg="${A({u:s.docs})}">API docs</button></div></div>`).join('')}</div>
+  <button class="btn outline block" data-act="pingall">${ic('refresh',18)}Check again</button>`;
+  pingAll(el);
+};
+const PINGS={audius:()=>HOST+'/v1/tracks/trending?limit=1&app_name='+APP,archive:()=>'https://archive.org/advancedsearch.php?q=collection%3Anetlabels&rows=1&output=json&fl[]=identifier',radio:()=>RB_HOSTS[rbHost]+'/json/stats',lyrics:()=>'https://lrclib.net/api/search?q=empty'};
+function pingAll(el){Object.entries(PINGS).forEach(async([k,f])=>{const b=$(`[data-ping="${k}"]`,el);if(!b)return;b.className='ping wait';b.innerHTML='<i></i>checking';const t0=performance.now();
+  try{await getJSON(f(),8000);const ms=Math.round(performance.now()-t0);b.className='ping ok';b.innerHTML=`<i></i>${ms} ms`}catch(e){b.className='ping bad';b.innerHTML='<i></i>offline';b.title=e.message}})}
+function shortcutsSheet(){const k=[['Space','Play / pause'],['→ / ←','Skip 10 s forward / back'],['N / P','Next / previous'],['L','Like current song'],['Y','Lyrics'],['Q','Queue'],['/','Search'],['Esc','Close / back']];
+  openSheet(`<div class="row between"><h2>Keyboard shortcuts</h2><button class="see" data-act="closesheet">Close</button></div><div class="list">${k.map(([a,b])=>`<div class="li">${esc(b)}<span class="r"><span class="kbd">${esc(a)}</span></span></div>`).join('')}</div>`)}
 
 /* equalizer */
 VIEWS.eq=(el)=>{
@@ -739,7 +960,7 @@ VIEWS.eq=(el)=>{
     S.eq.g.forEach((g,i)=>{$(`[data-v="${i}"]`,el).textContent=(g>0?'+':'')+g;$(`[data-band="${i}"]`,el).value=g});
     const pts=S.eq.g.map((g,i)=>[30+i*60,35-g*2.6]);let d=`M0 ${pts[0][1]} L${pts[0][0]} ${pts[0][1]}`;for(let i=1;i<pts.length;i++){const [x0,y0]=pts[i-1],[x1,y1]=pts[i],cx=(x0+x1)/2;d+=` C${cx} ${y0} ${cx} ${y1} ${x1} ${y1}`}d+=` L300 ${pts[4][1]}`;$('[data-curve]',el).setAttribute('d',d);
     $('.eqbox',el).classList.toggle('off',!S.eq.on);
-    $('[data-note]',el).textContent=!S.eq.on?'Equalizer is off. Songs play exactly as uploaded.':actx?'Changes apply live to what is playing right now.':'Start a song and the equalizer applies to it live.'};
+    $('[data-note]',el).textContent=audio===aRaw&&P.cur()?'The station playing right now does not allow audio processing, so the EQ is bypassed for it. It works again with the next song.':!S.eq.on?'Equalizer is off. Songs play exactly as uploaded.':actx?'Changes apply live to what is playing right now.':'Start a song and the equalizer applies to it live.'};
   el._draw=draw;draw();
   $$('[data-band]',el).forEach(r=>r.addEventListener('input',()=>{S.eq.g[+r.dataset.band]=+r.value;const match=Object.entries(PRESETS).find(([,v])=>v.every((x,i)=>x===S.eq.g[i]));S.eq.preset=match?match[0]:'Custom';if(!S.eq.on)S.eq.on=true;applyEq();save();draw()}));
 };
@@ -764,14 +985,15 @@ function openNews(){
 /* track menu */
 function trackMenu(t,label){
   const pls=S.playlists;
-  openSheet(`<div class="row" style="gap:14px">${art(t.art,t.id,'sm')}<div class="grow"><b style="display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(t.title)}</b><span class="muted">${esc(t.artist)} · ${fmt(t.duration)}</span></div></div>
+  openSheet(`<div class="row" style="gap:14px">${art(t.art,t.id,'sm')}<div class="grow"><b style="display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(t.title)}</b><span class="muted">${esc(t.artist)} · ${t.live?'live':fmt(t.duration)}</span></div></div>
   <div class="list">
     <button class="li" data-m="play">Play now<span class="r">${ic('play',18)}</span></button>
     <button class="li" data-m="next">Play next<span class="r">${ic('nextup',18)}</span></button>
     <button class="li" data-m="like">${isLiked(t.id)?'Remove from liked songs':'Add to liked songs'}<span class="r" style="${isLiked(t.id)?'color:var(--accent)':''}">${ic(isLiked(t.id)?'heartF':'heart',18)}</span></button>
     <button class="li" data-m="add">Add to playlist<span class="r">${ic('plus',18)}</span></button>
     ${t.artistId?`<button class="li" data-m="artist">Go to ${esc(t.artist)}<span class="r">${ic('user',18)}</span></button>`:''}
-    ${t.link?`<button class="li" data-m="ext">Open on Audius<span class="r">${ic('ext',18)}</span></button>`:''}
+    ${!t.live?`<button class="li" data-m="lyrics">Show lyrics<span class="r">${ic('mic',18)}</span></button>`:''}
+    ${t.link?`<button class="li" data-m="ext">${t.src==='archive'?'Open on Internet Archive':t.src==='radio'?'Station website':'Open on Audius'}<span class="r">${ic('ext',18)}</span></button>`:''}
   </div>`,s=>{s.onclick=e=>{const b=e.target.closest('[data-m]');if(!b)return;const m=b.dataset.m;
     if(m==='play'){closeSheet();P.play([t],0,label)}
     else if(m==='next'){closeSheet();P.playNext(t);renderNow()}
@@ -779,6 +1001,7 @@ function trackMenu(t,label){
     else if(m==='add'){addToPlaylistSheet(t)}
     else if(m==='artist'){closeSheet();closePlayer();push('collection',{kind:'artist',id:t.artistId,name:t.artist,art:t.art})}
     else if(m==='ext'){window.open(t.link,'_blank','noopener')}
+    else if(m==='lyrics'){if(P.cur()?.id!==t.id){closeSheet();P.play([t],0,label);setTimeout(openLyrics,400)}else openLyrics()}
   }});
 }
 function addToPlaylistSheet(t){
@@ -851,12 +1074,28 @@ document.addEventListener('click',e=>{
     case 'clearlib':{if(el.dataset.confirm){const keep={name:S.name,eq:S.eq,joined:S.joined};S=Object.assign(JSON.parse(JSON.stringify(DEF)),keep);save();toast('Library cleared');refreshAll();break}el.dataset.confirm='1';el.textContent='Tap again to clear everything';setTimeout(()=>{if(el.isConnected){delete el.dataset.confirm;el.textContent='Clear library and history'}},3000);break}
     case 'clearhistory':S.recent=[];S.plays={};save();refreshAll();toast('History cleared');break;
     case 'openext':{const u=jarg(el).u;if(u)window.open(u,'_blank','noopener');break}
+    case 'lyrics':openLyrics();break;
+    case 'sleep':sleepSheet();break;
+    case 'shortcuts':shortcutsSheet();break;
+    case 'radiosearch':SR.type='Radio';SR.q='';tab('search');setTimeout(()=>$('#q')?.focus(),300);break;
+    case 'rcountry':S.radioCountry=el.dataset.c;save();refresh(stack.find(v=>v.name==='radio'));break;
+    case 'stall':stAll=!stAll;refresh(stack.find(v=>v.name==='radio'));break;
+    case 'rtag':rTag=el.dataset.t;refresh(stack.find(v=>v.name==='radio'));break;
+    case 'srctoggle':{const k=el.dataset.k;S.sources[k]=!S.sources[k];save();el.classList.toggle('on',S.sources[k]);toast(`${SOURCES[k].name} ${S.sources[k]?'on':'off'}`);if(k==='lyrics'&&LYR.open)openLyrics();break}
+    case 'pingall':pingAll(stack.at(-1).el);break;
   }
 });
 document.addEventListener('keydown',e=>{
   if(e.key==='Escape'){if($('#sheet').classList.contains('open'))closeSheet();else if($('#player').classList.contains('open'))closePlayer();else back()}
   if((e.key==='Enter'||e.key===' ')&&e.target.matches('[role=button]')){e.preventDefault();e.target.click()}
   if(e.code==='Space'&&!e.target.matches('input,button,[role=button]')){e.preventDefault();P.toggle()}
+  if(e.target.matches('input,textarea')||e.ctrlKey||e.metaKey||e.altKey)return;
+  const k=e.key.toLowerCase(),t=P.cur();
+  if(k==='arrowright'&&t&&!t.live){audio.currentTime=Math.min((audio.duration||0)-1,audio.currentTime+10)}
+  else if(k==='arrowleft'&&t&&!t.live){audio.currentTime=Math.max(0,audio.currentTime-10)}
+  else if(k==='n')P.next();else if(k==='p')P.prev();
+  else if(k==='l'&&t)toggleLike(t);else if(k==='y'&&t)openLyrics();else if(k==='q'&&t)queueSheet();
+  else if(k==='/'){e.preventDefault();closePlayer();closeSheet();tab('search');setTimeout(()=>$('#q')?.focus(),300)}
 });
 /* swipe down to close player, swipe right to go back */
 (()=>{let sx,sy,t0;const app=$('#app');app.addEventListener('touchstart',e=>{const t=e.touches[0];sx=t.clientX;sy=t.clientY;t0=Date.now()},{passive:true});
@@ -871,7 +1110,7 @@ document.addEventListener('visibilitychange',()=>{if(!document.hidden){tick();sy
 
 /* ---------- boot ---------- */
 (async function boot(){
-  $$('#tabs button').forEach(b=>{const v=b.dataset.view;b.innerHTML=ic(v==='library'?'library':v,24)+`<span>${v[0].toUpperCase()+v.slice(1)}</span>`});
+  $$('#tabs button').forEach(b=>{const v=b.dataset.view;b.innerHTML=ic(v,24)+`<span>${v[0].toUpperCase()+v.slice(1)}</span>`});
   clockLoop();syncClock();
   const bar=$('#loadbar'),txt=$('#loadtxt');const t0=Date.now();
   bar.style.width='25%';
@@ -880,7 +1119,7 @@ document.addEventListener('visibilitychange',()=>{if(!document.hidden){tick();sy
   try{await trending()}catch{txt.textContent='Audius is slow right now'}
   bar.style.width='100%';txt.textContent='Ready';
   await sleep(Math.max(0,1100-(Date.now()-t0)));
-  const el=mount('home');stage.append(el);stack=[{el,name:'home',params:{}}];setTabs();
+  const el=mount('home');stage.append(el);stack=[{el,name:'home',params:{}}];setTabs();renderNow();
   $('#splash').classList.add('out');
   checkNews().catch(()=>{});
 })();

@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>empty.string wireframes</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#F4F4F1;--ink:#1D1F1B;--mid:#9A9D96;--box:#D9DAD5;--box2:#C4C6C0;--line:#B9BBB4;--note:#E5484D;--acc:#7DA80F}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--paper);color:var(--ink);font-family:Manrope,system-ui,sans-serif;font-size:14px}
+a{color:inherit}
+header.top{padding:48px max(20px,calc((100% - 1240px)/2)) 24px;border-bottom:1px solid var(--line)}
+.kicker{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--mid)}
+h1{font-size:44px;font-weight:800;margin:8px 0 10px;letter-spacing:-.02em}
+h2{font-size:26px;font-weight:800;margin:0 0 6px}
+p.lead{max-width:760px;line-height:1.6;color:#4a4d47;margin:0}
+nav.toc{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+nav.toc a{font-family:'JetBrains Mono',monospace;font-size:12px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;text-decoration:none}
+nav.toc a:hover{background:var(--ink);color:var(--paper)}
+section{padding:40px max(20px,calc((100% - 1240px)/2));border-bottom:1px solid var(--line)}
+.desc{color:#4a4d47;line-height:1.6;max-width:760px;margin:0 0 26px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:34px 26px}
+figure{margin:0;display:flex;flex-direction:column;gap:12px}
+figcaption b{display:block;font-size:15px}
+figcaption span{color:#4a4d47;font-size:13px;line-height:1.5}
+figcaption ol{margin:8px 0 0;padding-left:20px;color:#4a4d47;font-size:12.5px;line-height:1.55}
+
+/* phone frame */
+.ph{position:relative;width:260px;height:540px;border:2px solid var(--ink);border-radius:30px;background:#fff;padding:30px 14px 0;overflow:hidden;display:flex;flex-direction:column;gap:10px}
+.ph::before{content:"";position:absolute;top:9px;left:50%;transform:translateX(-50%);width:70px;height:14px;border-radius:999px;background:var(--ink)}
+.row{display:flex;align-items:center;gap:8px}
+.between{justify-content:space-between}
+.g{flex:1;min-width:0}
+.b{background:var(--box);border-radius:6px;flex:none}
+.b.d{background:var(--box2)}
+.x{position:relative;background:var(--box);border-radius:6px;overflow:hidden;flex:none}
+.x::before,.x::after{content:"";position:absolute;left:0;top:50%;width:142%;height:1px;background:var(--line);transform-origin:0 0}
+.x::before{transform:rotate(45deg) translate(-15%,-50%);left:-0%;top:0}
+.x::after{transform:rotate(-45deg);left:0;top:100%}
+.t{height:7px;border-radius:4px;background:var(--box2)}
+.t.dk{background:var(--ink)}
+.t.s{height:5px;background:var(--box)}
+.c{border-radius:50%;background:var(--box);flex:none}
+.c.dk{background:var(--ink)}
+.pill{height:22px;border-radius:999px;border:1.5px solid var(--line);flex:none}
+.pill.on{background:var(--ink);border-color:var(--ink)}
+.lbl{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--mid)}
+.big{font-weight:800;font-size:17px;line-height:1.1}
+.tab{position:absolute;left:0;right:0;bottom:0;height:52px;border-top:1.5px solid var(--line);display:flex;justify-content:space-around;align-items:center;background:#fff}
+.tab i{width:20px;height:20px;border-radius:5px;background:var(--box2);display:block}
+.tab i.on{background:var(--ink)}
+.mini{position:absolute;left:8px;right:8px;bottom:58px;height:42px;border-radius:10px;border:1.5px solid var(--ink);background:#fff;display:flex;align-items:center;gap:8px;padding:0 8px}
+.sheet{position:absolute;left:0;right:0;bottom:0;border-top:2px solid var(--ink);border-radius:20px 20px 0 0;background:#fff;padding:12px 14px 18px;display:flex;flex-direction:column;gap:10px}
+.dim{position:absolute;inset:0;background:rgba(29,31,27,.28)}
+.n{position:absolute;width:20px;height:20px;border-radius:50%;background:var(--note);color:#fff;font:700 11px/20px 'JetBrains Mono',monospace;text-align:center;z-index:5;box-shadow:0 0 0 3px #fff}
+.trow{display:flex;align-items:center;gap:8px}
+.trow .x{width:30px;height:30px}
+.trow .g{display:flex;flex-direction:column;gap:5px}
+.live{font-family:'JetBrains Mono',monospace;font-size:8px;color:var(--note);font-weight:500}
+
+/* desktop frame */
+.dk-frame{border:2px solid var(--ink);border-radius:14px;background:#fff;overflow:hidden;max-width:1000px}
+.dk-bar{height:28px;border-bottom:1.5px solid var(--line);display:flex;align-items:center;gap:6px;padding:0 12px}
+.dk-bar i{width:9px;height:9px;border-radius:50%;background:var(--box2)}
+.dk-body{display:grid;grid-template-columns:180px 1fr;height:470px;position:relative}
+.dk-side{border-right:1.5px solid var(--line);padding:18px 14px;display:flex;flex-direction:column;gap:12px}
+.dk-main{padding:22px 28px;display:flex;flex-direction:column;gap:14px;overflow:hidden}
+.dk-player{height:62px;border-top:1.5px solid var(--ink);display:flex;align-items:center;gap:14px;padding:0 18px}
+
+/* flow + api */
+.flow{width:100%;max-width:1100px;height:auto;display:block}
+table{border-collapse:collapse;width:100%;max-width:1100px;font-size:13px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--mid);font-weight:500}
+td code{font-family:'JetBrains Mono',monospace;font-size:11.5px;background:var(--box);padding:1px 5px;border-radius:4px}
+.legend{display:flex;flex-wrap:wrap;gap:18px;margin-top:18px;font-size:12px;color:#4a4d47}
+.legend span{display:flex;align-items:center;gap:6px}
+.ok{color:var(--acc);font-weight:700}
+footer{padding:28px max(20px,calc((100% - 1240px)/2)) 60px;color:var(--mid);font-size:12px}
+@media (max-width:600px){h1{font-size:32px}.grid{justify-items:center}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="kicker">empty.string · design process · v2.0</div>
+  <h1>Wireframes &amp; user flow</h1>
+  <p class="lead">Low-fidelity wireframes for the music app <b>empty.string</b>. Grey boxes are content areas, crossed boxes are cover art, red dots are annotations. The real, playable prototype lives at <a href="./">femboyss.github.io/empty-strings</a>. These frames show structure only, no colors or real content.</p>
+  <nav class="toc"><a href="#screens">01 Mobile screens</a><a href="#overlays">02 Sheets &amp; overlays</a><a href="#desktop">03 Desktop layout</a><a href="#flow">04 User flow</a><a href="#api">05 API map</a><a href="#decisions">06 Design decisions</a></nav>
+</header>
+
+<!-- ============ SCREENS ============ -->
+<section id="screens">
+  <div class="kicker">01</div><h2>Mobile screens</h2>
+  <p class="desc">Four tabs at the bottom (Home, Search, Radio, Library). The mini player sits above the tab bar on every screen once something plays, so music never stops while you navigate.</p>
+  <div class="grid">
+
+  <!-- splash -->
+  <figure>
+    <div class="ph" style="align-items:center;justify-content:center;gap:14px">
+      <div class="b d" style="width:70px;height:70px;border-radius:20px"></div>
+      <div class="t dk" style="width:120px;height:12px"></div>
+      <div class="t" style="width:150px"></div>
+      <div style="position:absolute;bottom:60px;display:flex;flex-direction:column;align-items:center;gap:8px"><div class="b" style="width:90px;height:3px"><div class="b d" style="width:55%;height:3px;background:var(--ink)"></div></div><div class="lbl">connecting to sources</div></div>
+      <span class="n" style="top:240px;left:40px">1</span><span class="n" style="bottom:52px;left:22px">2</span>
+    </div>
+    <figcaption><b>Splash</b><span>Shown while the app picks a working Audius node and preloads charts.</span><ol><li>Logo + tagline "Full songs. No account."</li><li>Real progress bar with status text, not a fake spinner.</li></ol></figcaption>
+  </figure>
+
+  <!-- home -->
+  <figure>
+    <div class="ph">
+      <div class="row between"><div class="g" style="display:flex;flex-direction:column;gap:5px"><div class="lbl">wednesday 21 october</div><div class="big">Good evening, Tester</div></div><div class="c" style="width:26px;height:26px"></div><div class="c dk" style="width:26px;height:26px"></div></div>
+      <div class="row"><div class="pill on" style="width:34px"></div><div class="pill" style="width:56px"></div><div class="pill" style="width:44px"></div><div class="pill" style="width:62px"></div></div>
+      <div class="x" style="height:110px;border-radius:14px"></div>
+      <div class="lbl">for your runs</div>
+      <div class="row"><div class="x" style="width:68px;height:68px"></div><div class="x" style="width:68px;height:68px"></div><div class="x" style="width:68px;height:68px"></div></div>
+      <div class="lbl">trending now</div>
+      <div class="trow"><div class="x"></div><div class="g"><div class="t dk" style="width:70%"></div><div class="t s" style="width:45%"></div></div></div>
+      <div class="trow"><div class="x"></div><div class="g"><div class="t dk" style="width:60%"></div><div class="t s" style="width:40%"></div></div></div>
+      <div class="mini"><div class="x" style="width:26px;height:26px"></div><div class="g"><div class="t dk" style="width:60%"></div></div><div class="c dk" style="width:24px;height:24px"></div></div>
+      <div class="tab"><i class="on"></i><i></i><i></i><i></i></div>
+      <span class="n" style="top:40px;right:6px">1</span><span class="n" style="top:84px;right:20px">2</span><span class="n" style="top:118px;left:6px">3</span><span class="n" style="top:250px;right:8px">4</span><span class="n" style="bottom:66px;right:2px">5</span>
+    </div>
+    <figcaption><b>Home</b><span>Live content, refreshed every 2 minutes.</span><ol><li>Greeting by time of day (Vienna time), bell = new uploads from followed artists.</li><li>Genre chips filter every section below.</li><li>Hero: #1 trending track, tap to play.</li><li>Rows: running playlists, trending, recently played, underground, live radio, Archive releases.</li><li>Mini player.</li></ol></figcaption>
+  </figure>
+
+  <!-- search -->
+  <figure>
+    <div class="ph">
+      <div class="row between"><div class="big">Search</div><div class="c" style="width:26px;height:26px"></div></div>
+      <div class="b" style="height:34px;border-radius:10px;border:1.5px solid var(--ink);background:#fff"></div>
+      <div class="row"><div class="pill on" style="width:46px"></div><div class="pill" style="width:50px"></div><div class="pill" style="width:48px"></div><div class="pill" style="width:42px"></div></div>
+      <div class="lbl">61 results · audius 37 · archive 24</div>
+      <div class="lbl" style="color:var(--ink)">audius</div>
+      <div class="row"><div class="x" style="flex:1;height:100px"></div><div class="x" style="flex:1;height:100px"></div></div>
+      <div class="lbl" style="color:var(--ink)">internet archive</div>
+      <div class="row"><div class="x" style="flex:1;height:100px"></div><div class="x" style="flex:1;height:100px"></div></div>
+      <div class="tab"><i></i><i class="on"></i><i></i><i></i></div>
+      <span class="n" style="top:66px;right:6px">1</span><span class="n" style="top:108px;right:2px">2</span><span class="n" style="top:146px;right:30px">3</span><span class="n" style="top:36px;right:44px">4</span>
+    </div>
+    <figcaption><b>Search</b><span>One field, four result types.</span><ol><li>Live search while typing (debounced).</li><li>Type chips: Songs, Albums, Artists, Radio.</li><li>Results grouped by source, counts per source.</li><li>Filter sheet (genre, sort, length) for songs.</li></ol></figcaption>
+  </figure>
+
+  <!-- radio -->
+  <figure>
+    <div class="ph">
+      <div class="row between"><div style="display:flex;flex-direction:column;gap:4px"><div class="lbl" style="color:var(--note)">● live</div><div class="big">Radio</div></div><div class="c" style="width:26px;height:26px"></div></div>
+      <div class="lbl">trending stations</div>
+      <div class="row"><div class="x" style="width:68px;height:68px"></div><div class="x" style="width:68px;height:68px"></div><div class="x" style="width:68px;height:68px"></div></div>
+      <div class="lbl">stations · austria</div>
+      <div class="row"><div class="pill on" style="width:48px"></div><div class="pill" style="width:52px"></div><div class="pill" style="width:62px"></div></div>
+      <div class="row"><div class="pill on" style="width:52px;height:18px"></div><div class="pill" style="width:30px;height:18px"></div><div class="pill" style="width:30px;height:18px"></div><div class="pill" style="width:56px;height:18px"></div></div>
+      <div class="trow"><div class="x"></div><div class="g"><div class="t dk" style="width:60%"></div><div class="t s" style="width:40%"></div></div><span class="live">LIVE</span></div>
+      <div class="trow"><div class="x"></div><div class="g"><div class="t dk" style="width:50%"></div><div class="t s" style="width:46%"></div></div><span class="live">LIVE</span></div>
+      <div class="trow"><div class="x"></div><div class="g"><div class="t dk" style="width:66%"></div><div class="t s" style="width:36%"></div></div><span class="live">LIVE</span></div>
+      <div class="tab"><i></i><i></i><i class="on"></i><i></i></div>
+      <span class="n" style="top:96px;right:6px">1</span><span class="n" style="top:200px;right:6px">2</span><span class="n" style="top:262px;left:4px">3</span>
+    </div>
+    <figcaption><b>Radio</b><span>Thousands of live stations via Radio Browser.</span><ol><li>Trending stations worldwide (by click trend).</li><li>Country chips, Austria first (remembered).</li><li>Genre chips. Rows show LIVE instead of a duration.</li></ol></figcaption>
+  </figure>
+
+  <!-- library -->
+  <figure>
+    <div class="ph">
+      <div class="row between"><div class="big">Library</div><div class="c" style="width:26px;height:26px"></div><div class="c dk" style="width:26px;height:26px"></div></div>
+      <div class="row"><div class="pill on" style="width:46px"></div><div class="pill" style="width:50px"></div><div class="pill" style="width:48px"></div><div class="pill" style="width:58px"></div></div>
+      <div class="row between"><div class="t" style="width:90px"></div><div class="t s" style="width:40px"></div></div>
+      <div class="row"><div class="b d" style="height:30px;width:80px;border-radius:999px;background:var(--ink)"></div><div class="pill" style="height:30px;width:86px"></div></div>
+      <div class="trow"><div class="x"></div><div class="g"><div class="t dk" style="width:60%"></div><div class="t s" style="width:40%"></div></div></div>
+      <div class="trow"><div class="x"></div><div class="g"><div class="t dk" style="width:70%"></div><div class="t s" style="width:30%"></div></div></div>
+      <div class="trow"><div class="x"></div><div class="g"><div class="t dk" style="width:50%"></div><div class="t s" style="width:46%"></div></div></div>
+      <div class="trow"><div class="x"></div><div class="g"><div class="t dk" style="width:64%"></div><div class="t s" style="width:40%"></div></div></div>
+      <div class="tab"><i></i><i></i><i></i><i class="on"></i></div>
+      <span class="n" style="top:36px;right:2px">1</span><span class="n" style="top:72px;right:6px">2</span><span class="n" style="top:104px;left:110px">3</span>
+    </div>
+    <figcaption><b>Library</b><span>Everything is saved on the device (localStorage), no account.</span><ol><li>Quick add: new playlist.</li><li>Songs, Albums, Artists, Playlists.</li><li>Sort toggle + Play / Shuffle all.</li></ol></figcaption>
+  </figure>
+
+  <!-- collection -->
+  <figure>
+    <div class="ph">
+      <div class="row between"><div class="c" style="width:22px;height:22px"></div><div class="c" style="width:22px;height:22px"></div></div>
+      <div class="x" style="width:130px;height:130px;align-self:center;border-radius:12px"></div>
+      <div class="lbl" style="align-self:center">album · internet archive</div>
+      <div class="t dk" style="width:70%;height:12px;align-self:center"></div>
+      <div class="t s" style="width:60%;align-self:center"></div>
+      <div class="row" style="justify-content:center"><div class="b" style="height:30px;width:70px;border-radius:999px;background:var(--ink)"></div><div class="pill" style="height:30px;width:76px"></div><div class="c" style="width:30px;height:30px;border:1.5px solid var(--line);background:#fff"></div></div>
+      <div class="trow"><span class="lbl">01</span><div class="x"></div><div class="g"><div class="t dk" style="width:60%"></div><div class="t s" style="width:40%"></div></div></div>
+      <div class="trow"><span class="lbl">02</span><div class="x"></div><div class="g"><div class="t dk" style="width:50%"></div><div class="t s" style="width:40%"></div></div></div>
+      <div class="trow"><span class="lbl">03</span><div class="x"></div><div class="g"><div class="t dk" style="width:66%"></div><div class="t s" style="width:40%"></div></div></div>
+      <span class="n" style="top:30px;right:40px">1</span><span class="n" style="top:226px;right:20px">2</span><span class="n" style="top:262px;right:8px">3</span>
+    </div>
+    <figcaption><b>Album / playlist / artist</b><span>One template for every collection type.</span><ol><li>Back + open on source website.</li><li>Meta line: owner, songs, length, license (CC) for Archive.</li><li>Play, Shuffle, Save (or Follow for artists).</li></ol></figcaption>
+  </figure>
+
+  <!-- player -->
+  <figure>
+    <div class="ph">
+      <div class="row between"><div class="c" style="width:22px;height:22px"></div><div style="display:flex;flex-direction:column;align-items:center;gap:4px"><div class="lbl">playing from</div><div class="t dk" style="width:70px"></div></div><div class="c" style="width:22px;height:22px"></div></div>
+      <div class="x" style="width:100%;height:220px;border-radius:16px"></div>
+      <div class="row"><div class="g" style="display:flex;flex-direction:column;gap:6px"><div class="t dk" style="width:80%;height:11px"></div><div class="t s" style="width:40%"></div></div><div class="c" style="width:26px;height:26px"></div></div>
+      <div class="b d" style="height:4px;border-radius:2px"><div style="width:35%;height:4px;background:var(--ink);border-radius:2px"></div></div>
+      <div class="row between" style="padding:2px 4px"><div class="c" style="width:18px;height:18px"></div><div class="c" style="width:24px;height:24px"></div><div class="c dk" style="width:50px;height:50px"></div><div class="c" style="width:24px;height:24px"></div><div class="c" style="width:18px;height:18px"></div></div>
+      <div class="row between"><div class="t" style="width:44px"></div><div class="t" style="width:44px"></div><div class="t" style="width:40px"></div><div class="t" style="width:44px"></div></div>
+      <span class="n" style="top:350px;right:2px">1</span><span class="n" style="top:388px;right:-2px">2</span><span class="n" style="top:384px;left:2px">3</span><span class="n" style="top:384px;left:96px">4</span><span class="n" style="top:384px;left:156px">5</span>
+    </div>
+    <figcaption><b>Player</b><span>Swipe down to close. Cover shrinks a bit when paused.</span><ol><li>Seek bar. For radio it turns into a LIVE bar with codec + bitrate.</li><li>Shuffle, prev, play, next, repeat (off / all / one).</li><li>EQ (5 bands, presets). Bypassed for stations that block audio processing.</li><li>Lyrics (synced, LRCLIB).</li><li>Sleep timer + queue.</li></ol></figcaption>
+  </figure>
+
+  </div>
+</section>
+
+<!-- ============ OVERLAYS ============ -->
+<section id="overlays">
+  <div class="kicker">02</div><h2>Sheets &amp; overlays</h2>
+  <p class="desc">Secondary actions open as bottom sheets on the phone (thumb-friendly, swipe down to close) and as centered dialogs on desktop.</p>
+  <div class="grid">
+
+  <figure>
+    <div class="ph" style="background:#fff">
+      <div class="x" style="height:120px;border-radius:12px;opacity:.5"></div>
+      <div class="dim"></div>
+      <div class="sheet" style="top:70px">
+        <div class="b" style="width:30px;height:3px;align-self:center"></div>
+        <div class="row between"><div style="display:flex;flex-direction:column;gap:5px"><div class="lbl" style="color:var(--acc)">lyrics</div><div class="t dk" style="width:120px"></div></div><div class="t s" style="width:30px"></div></div>
+        <div class="t" style="width:70%;height:10px;opacity:.5"></div>
+        <div class="t" style="width:60%;height:10px;opacity:.5"></div>
+        <div class="t dk" style="width:85%;height:13px"></div>
+        <div class="t" style="width:75%;height:10px"></div>
+        <div class="t" style="width:66%;height:10px"></div>
+        <div class="t" style="width:80%;height:10px"></div>
+        <div class="t" style="width:50%;height:10px"></div>
+        <span class="n" style="top:22px;right:50px">1</span><span class="n" style="top:96px;right:6px">2</span>
+      </div>
+    </div>
+    <figcaption><b>Lyrics</b><span>Time-synced lines from LRCLIB.</span><ol><li>Song + close.</li><li>Current line highlighted and kept centered, tap a line to jump there. Falls back to plain lyrics or a clear "not found" message.</li></ol></figcaption>
+  </figure>
+
+  <figure>
+    <div class="ph">
+      <div class="dim"></div>
+      <div class="sheet">
+        <div class="b" style="width:30px;height:3px;align-self:center"></div>
+        <div class="trow"><div class="x" style="width:34px;height:34px"></div><div class="g"><div class="t dk" style="width:70%"></div><div class="t s" style="width:40%"></div></div></div>
+        <div style="border:1.5px solid var(--line);border-radius:12px;overflow:hidden">
+          <div class="row between" style="padding:10px;border-bottom:1px solid var(--line)"><div class="t" style="width:60px"></div><div class="c" style="width:12px;height:12px"></div></div>
+          <div class="row between" style="padding:10px;border-bottom:1px solid var(--line)"><div class="t" style="width:60px"></div><div class="c" style="width:12px;height:12px"></div></div>
+          <div class="row between" style="padding:10px;border-bottom:1px solid var(--line)"><div class="t" style="width:110px"></div><div class="c" style="width:12px;height:12px"></div></div>
+          <div class="row between" style="padding:10px;border-bottom:1px solid var(--line)"><div class="t" style="width:80px"></div><div class="c" style="width:12px;height:12px"></div></div>
+          <div class="row between" style="padding:10px;border-bottom:1px solid var(--line)"><div class="t" style="width:70px"></div><div class="c" style="width:12px;height:12px"></div></div>
+          <div class="row between" style="padding:10px"><div class="t" style="width:100px"></div><div class="c" style="width:12px;height:12px"></div></div>
+        </div>
+        <span class="n" style="top:62px;right:14px">1</span>
+      </div>
+    </div>
+    <figcaption><b>Track menu</b><span>Opened with the three dots on any song.</span><ol><li>Play now, play next, like, add to playlist, go to artist, show lyrics, open on source.</li></ol></figcaption>
+  </figure>
+
+  <figure>
+    <div class="ph">
+      <div class="dim"></div>
+      <div class="sheet">
+        <div class="b" style="width:30px;height:3px;align-self:center"></div>
+        <div class="row between"><div class="big" style="font-size:14px">Sleep timer</div><div class="t s" style="width:30px"></div></div>
+        <div style="border:1.5px solid var(--line);border-radius:12px;overflow:hidden">
+          <div class="row between" style="padding:10px;border-bottom:1px solid var(--line)"><div class="t dk" style="width:30px"></div><div class="c dk" style="width:12px;height:12px"></div></div>
+          <div class="row between" style="padding:10px;border-bottom:1px solid var(--line)"><div class="t" style="width:70px"></div></div>
+          <div class="row between" style="padding:10px;border-bottom:1px solid var(--line)"><div class="t" style="width:70px"></div></div>
+          <div class="row between" style="padding:10px;border-bottom:1px solid var(--line)"><div class="t" style="width:70px"></div></div>
+          <div class="row between" style="padding:10px;border-bottom:1px solid var(--line)"><div class="t" style="width:50px"></div></div>
+          <div class="row between" style="padding:10px"><div class="t" style="width:100px"></div></div>
+        </div>
+        <span class="n" style="top:84px;right:14px">1</span>
+      </div>
+      <div class="pill" style="position:absolute;top:32px;left:50%;transform:translateX(-50%);width:70px;height:18px;background:#fff;z-index:3"></div><span class="n" style="top:30px;left:172px">2</span>
+    </div>
+    <figcaption><b>Sleep timer</b><span>For falling asleep to music or radio.</span><ol><li>Off, 15/30/45/60 min, or end of this song.</li><li>Countdown chip at the top, music fades out over the last seconds.</li></ol></figcaption>
+  </figure>
+
+  <figure>
+    <div class="ph">
+      <div class="row"><div class="c" style="width:22px;height:22px"></div><div class="big">Sources</div></div>
+      <div class="t s" style="width:90%"></div><div class="t s" style="width:70%"></div>
+      <div style="border:1.5px solid var(--line);border-radius:12px;padding:10px;display:flex;flex-direction:column;gap:7px"><div class="row"><div class="t dk g"></div><div class="lbl" style="color:var(--acc)">● 406 ms</div><div class="lbl">core</div></div><div class="t s" style="width:80%"></div></div>
+      <div style="border:1.5px solid var(--line);border-radius:12px;padding:10px;display:flex;flex-direction:column;gap:7px"><div class="row"><div class="t dk g"></div><div class="lbl" style="color:var(--acc)">● 804 ms</div><div class="pill on" style="width:30px;height:16px"></div></div><div class="t s" style="width:80%"></div></div>
+      <div style="border:1.5px solid var(--line);border-radius:12px;padding:10px;display:flex;flex-direction:column;gap:7px"><div class="row"><div class="t dk g"></div><div class="lbl" style="color:var(--acc)">● 1060 ms</div><div class="pill on" style="width:30px;height:16px"></div></div><div class="t s" style="width:80%"></div></div>
+      <div style="border:1.5px solid var(--line);border-radius:12px;padding:10px;display:flex;flex-direction:column;gap:7px"><div class="row"><div class="t dk g"></div><div class="lbl" style="color:var(--acc)">● 922 ms</div><div class="pill on" style="width:30px;height:16px"></div></div><div class="t s" style="width:80%"></div></div>
+      <div class="pill" style="height:30px"></div>
+      <span class="n" style="top:84px;right:58px">1</span><span class="n" style="top:160px;right:2px">2</span>
+    </div>
+    <figcaption><b>Settings → Sources</b><span>Makes the APIs visible, useful for the presentation.</span><ol><li>Live latency check per API (green = reachable).</li><li>Toggle each extra source on or off. Audius is the core and always on.</li></ol></figcaption>
+  </figure>
+
+  </div>
+</section>
+
+<!-- ============ DESKTOP ============ -->
+<section id="desktop">
+  <div class="kicker">03</div><h2>Desktop layout (window 900px and wider)</h2>
+  <p class="desc">Same screens, website layout: the tab bar becomes a sidebar, the mini player becomes a full-width player bar, card rows become grids and sheets become centered dialogs. Smaller desktop windows show a scaled phone preview instead.</p>
+  <div class="dk-frame">
+    <div class="dk-bar"><i></i><i></i><i></i><div class="t s" style="width:220px;margin-left:16px"></div></div>
+    <div class="dk-body">
+      <div class="dk-side">
+        <div class="row"><div class="b d" style="width:24px;height:24px;border-radius:7px;background:var(--ink)"></div><div class="t dk" style="width:80px;height:9px"></div></div>
+        <div class="b" style="height:30px;border-radius:8px"></div><div class="t" style="width:60%;margin:6px 8px"></div><div class="t" style="width:50%;margin:6px 8px"></div><div class="t" style="width:56%;margin:6px 8px"></div>
+        <div style="flex:1"></div><div class="t dk" style="width:70px;height:16px"></div>
+      </div>
+      <div class="dk-main">
+        <div class="row between"><div style="display:flex;flex-direction:column;gap:6px"><div class="lbl">wednesday 21 october</div><div class="t dk" style="width:260px;height:18px"></div></div><div class="row"><div class="c" style="width:30px;height:30px"></div><div class="c dk" style="width:30px;height:30px"></div></div></div>
+        <div class="row"><div class="pill on" style="width:40px"></div><div class="pill" style="width:64px"></div><div class="pill" style="width:52px"></div><div class="pill" style="width:72px"></div><div class="pill" style="width:58px"></div></div>
+        <div class="x" style="height:150px;border-radius:14px"></div>
+        <div class="lbl">for your runs</div>
+        <div class="row" style="gap:14px"><div class="x" style="flex:1;height:100px"></div><div class="x" style="flex:1;height:100px"></div><div class="x" style="flex:1;height:100px"></div><div class="x" style="flex:1;height:100px"></div><div class="x" style="flex:1;height:100px"></div></div>
+      </div>
+      <span class="n" style="left:150px;top:14px">1</span><span class="n" style="left:150px;bottom:20px">2</span><span class="n" style="right:20px;top:200px">3</span>
+    </div>
+    <div class="dk-player"><div class="x" style="width:40px;height:40px"></div><div style="display:flex;flex-direction:column;gap:5px;width:160px"><div class="t dk"></div><div class="t s" style="width:60%"></div></div><div class="c" style="width:18px;height:18px"></div><div style="flex:1;display:flex;justify-content:center;gap:16px;align-items:center"><div class="c" style="width:18px;height:18px"></div><div class="c dk" style="width:32px;height:32px"></div><div class="c" style="width:18px;height:18px"></div></div><div class="t s" style="width:80px"></div></div>
+  </div>
+  <p class="desc" style="margin-top:14px">1 Sidebar navigation · 2 Live clock (Vienna) · 3 Card rows become responsive grids · Keyboard: Space, arrows, N, P, L, Y, Q, /, Esc.</p>
+</section>
+
+<!-- ============ FLOW ============ -->
+<section id="flow">
+  <div class="kicker">04</div><h2>User flow</h2>
+  <p class="desc">Main path: open the app, find something, play it, keep it. Every path ends in the player, and every song can be saved to the library.</p>
+  <svg class="flow" viewBox="0 0 1100 420" role="img" aria-label="User flow diagram">
+    <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10z" fill="#1D1F1B"/></marker></defs>
+    <style>.bx{fill:#fff;stroke:#1D1F1B;stroke-width:1.6}.bx2{fill:#1D1F1B}.tx{font:600 13px Manrope,sans-serif;fill:#1D1F1B}.tw{font:700 13px Manrope,sans-serif;fill:#F4F4F1}.sm{font:400 9px 'JetBrains Mono',monospace;fill:#9A9D96}.ln{stroke:#1D1F1B;stroke-width:1.4;fill:none;marker-end:url(#ar)}.dl{stroke:#9A9D96;stroke-width:1.2;fill:none;stroke-dasharray:4 4;marker-end:url(#ar)}</style>
+    <rect class="bx" x="20" y="180" width="110" height="50" rx="10"/><text class="tx" x="75" y="210" text-anchor="middle">Splash</text>
+    <rect class="bx" x="190" y="180" width="110" height="50" rx="10"/><text class="tx" x="245" y="210" text-anchor="middle">Home</text>
+    <path class="ln" d="M130 205H188"/>
+    <rect class="bx" x="370" y="40" width="130" height="50" rx="10"/><text class="tx" x="435" y="63" text-anchor="middle">Search</text><text class="sm" x="435" y="80" text-anchor="middle">songs · albums · radio</text>
+    <rect class="bx" x="370" y="130" width="130" height="50" rx="10"/><text class="tx" x="435" y="153" text-anchor="middle">Radio</text><text class="sm" x="435" y="170" text-anchor="middle">country · genre</text>
+    <rect class="bx" x="370" y="230" width="130" height="50" rx="10"/><text class="tx" x="435" y="253" text-anchor="middle">Collection</text><text class="sm" x="435" y="270" text-anchor="middle">album · artist · chart</text>
+    <rect class="bx" x="370" y="330" width="130" height="50" rx="10"/><text class="tx" x="435" y="353" text-anchor="middle">Library</text><text class="sm" x="435" y="370" text-anchor="middle">liked · playlists</text>
+    <path class="ln" d="M300 195C335 195 330 65 368 65"/><path class="ln" d="M300 200C335 200 335 155 368 155"/><path class="ln" d="M300 210C335 210 335 255 368 255"/><path class="ln" d="M300 215C335 215 330 355 368 355"/>
+    <path class="dl" d="M435 90V128"/><path class="dl" d="M500 80C540 80 540 240 502 240"/>
+    <rect class="bx2" x="600" y="170" width="140" height="70" rx="12"/><text class="tw" x="670" y="203" text-anchor="middle">Play</text><text class="sm" x="670" y="222" text-anchor="middle" style="fill:#C4C6C0">mini player appears</text>
+    <path class="ln" d="M500 65C560 65 550 190 598 190"/><path class="ln" d="M500 155C550 155 560 200 598 200"/><path class="ln" d="M500 255C550 255 560 215 598 215"/><path class="ln" d="M500 355C560 355 560 225 598 225"/>
+    <rect class="bx" x="800" y="170" width="130" height="70" rx="10"/><text class="tx" x="865" y="203" text-anchor="middle">Player</text><text class="sm" x="865" y="222" text-anchor="middle">full screen</text>
+    <path class="ln" d="M740 205H798"/>
+    <rect class="bx" x="980" y="40" width="100" height="40" rx="10"/><text class="tx" x="1030" y="65" text-anchor="middle">Lyrics</text>
+    <rect class="bx" x="980" y="110" width="100" height="40" rx="10"/><text class="tx" x="1030" y="135" text-anchor="middle">Queue</text>
+    <rect class="bx" x="980" y="180" width="100" height="40" rx="10"/><text class="tx" x="1030" y="205" text-anchor="middle">Equalizer</text>
+    <rect class="bx" x="980" y="250" width="100" height="40" rx="10"/><text class="tx" x="1030" y="275" text-anchor="middle">Sleep timer</text>
+    <rect class="bx" x="980" y="320" width="100" height="40" rx="10"/><text class="tx" x="1030" y="345" text-anchor="middle">Like / save</text>
+    <path class="ln" d="M930 190C955 190 950 60 978 60"/><path class="ln" d="M930 197C955 197 955 130 978 130"/><path class="ln" d="M930 205H978"/><path class="ln" d="M930 213C955 213 955 270 978 270"/><path class="ln" d="M930 220C955 220 950 340 978 340"/>
+    <path class="dl" d="M980 352C700 410 520 400 502 365"/><text class="sm" x="740" y="404">saved songs land in the Library</text>
+  </svg>
+  <div class="legend"><span><svg width="30" height="8"><path d="M0 4H28" stroke="#1D1F1B" stroke-width="1.4"/></svg>main path</span><span><svg width="30" height="8"><path d="M0 4H28" stroke="#9A9D96" stroke-width="1.2" stroke-dasharray="4 4"/></svg>secondary path</span><span><svg width="14" height="14"><rect width="14" height="14" rx="3" fill="#1D1F1B"/></svg>key moment</span></div>
+</section>
+
+<!-- ============ API MAP ============ -->
+<section id="api">
+  <div class="kicker">05</div><h2>API map</h2>
+  <p class="desc">All data is loaded live in the browser. Every API below is free, needs no account or key, and allows requests from other websites (CORS). Checked on 21 October 2026.</p>
+  <table>
+    <thead><tr><th>Source</th><th>Used for</th><th>Screens</th><th>Endpoints</th><th>Key</th></tr></thead>
+    <tbody>
+      <tr><td><b>Audius</b><br>audius.co</td><td>Full songs, charts, artists, playlists, search</td><td>Home, Search, Collection, Player</td><td><code>/v1/tracks/trending</code> <code>/v1/tracks/search</code> <code>/v1/tracks/{id}/stream</code> <code>/v1/users/{id}/tracks</code></td><td class="ok">none</td></tr>
+      <tr><td><b>Internet Archive</b><br>archive.org</td><td>Full netlabel albums (Creative Commons)</td><td>Home, Search (Albums), Collection</td><td><code>/advancedsearch.php</code> <code>/metadata/{id}</code> <code>/download/{id}/{file}</code></td><td class="ok">none</td></tr>
+      <tr><td><b>Radio Browser</b><br>radio-browser.info</td><td>Live radio stations worldwide</td><td>Home, Radio, Search (Radio)</td><td><code>/json/stations/search</code> <code>/json/url/{uuid}</code> (click counter)</td><td class="ok">none</td></tr>
+      <tr><td><b>LRCLIB</b><br>lrclib.net</td><td>Time-synced lyrics</td><td>Player → Lyrics</td><td><code>/api/get</code> <code>/api/search</code></td><td class="ok">none</td></tr>
+    </tbody>
+  </table>
+  <p class="desc" style="margin-top:16px">Tested but not used: Jamendo (needs a client ID), SomaFM (streams refuse requests that come from other websites, so they cannot be played from a web app), iTunes Search (only 30-second previews).</p>
+</section>
+
+<!-- ============ DECISIONS ============ -->
+<section id="decisions">
+  <div class="kicker">06</div><h2>Design decisions</h2>
+  <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px">
+    <div><b>No account, no key</b><p class="desc" style="margin:6px 0 0">Library, playlists and history are stored on the device, so the app works instantly for anyone who opens the link.</p></div>
+    <div><b>Thumb zone first</b><p class="desc" style="margin:6px 0 0">Tabs, mini player and sheets are at the bottom where the thumb reaches on a phone. Primary actions use the accent color only.</p></div>
+    <div><b>One collection template</b><p class="desc" style="margin:6px 0 0">Albums, playlists, artists, charts and Archive releases all share one layout, so users learn it once.</p></div>
+    <div><b>Live is visibly different</b><p class="desc" style="margin:6px 0 0">Radio shows a red LIVE marker instead of a duration and a live bar instead of a seek bar, because you cannot seek in a broadcast.</p></div>
+    <div><b>Honest states</b><p class="desc" style="margin:6px 0 0">Skeleton loaders while loading, clear empty and error messages with a retry button, and a Sources page that shows which API is reachable.</p></div>
+    <div><b>Accessible</b><p class="desc" style="margin:6px 0 0">Keyboard shortcuts, visible focus rings, labels on every icon button, and reduced motion when the system asks for it.</p></div>
+  </div>
+</section>
+
+<footer>empty.string · course project · wireframes v2.0 · <a href="./">open the prototype</a></footer>
+</body>
+</html>
