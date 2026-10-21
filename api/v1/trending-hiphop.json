@@ -1,7 +1,7 @@
 {
  "feed": "trending-hiphop",
  "description": "Trending hip-hop songs on Audius",
- "generated": "2026-10-21T18:30:29.825Z",
+ "generated": "2026-10-21T18:36:31.633Z",
  "count": 100,
  "items": [
   {
@@ -20,7 +20,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://v.monophonic.digital/content/baeaaaiqsebmywm6silcnmiv33w3f3hstcgcu2ce72p36f6i6qhu7ghrs3r5jk/480x480.jpg",
+   "artwork": "https://audius-figment-1-validator-18.figment.io/content/baeaaaiqsebmywm6silcnmiv33w3f3hstcgcu2ce72p36f6i6qhu7ghrs3r5jk/480x480.jpg",
    "duration": 147,
    "stream": "https://api.audius.co/v1/tracks/5d4Wzb2/stream?app_name=empty.string",
    "embed": null,
@@ -34,7 +34,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://v.monophonic.digital/content/baeaaaiqsedxyrg5txo4lsgt2e7g2miuwvty5vx4roxka3z573gca64zs6fxv4/480x480.jpg",
+   "artwork": "https://audius-creator-7.theblueprint.xyz/content/baeaaaiqsedxyrg5txo4lsgt2e7g2miuwvty5vx4roxka3z573gca64zs6fxv4/480x480.jpg",
    "duration": 171,
    "stream": "https://api.audius.co/v1/tracks/83a2QMJ/stream?app_name=empty.string",
    "embed": null,
@@ -48,7 +48,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://audius-nodes.com/content/baeaaaiqsebzweyhitgsqxhk6grva7l3myfqmofvli53ttikqgdrfmqwnkvvqi/480x480.jpg",
+   "artwork": "https://creatornode.audius.co/content/baeaaaiqsebzweyhitgsqxhk6grva7l3myfqmofvli53ttikqgdrfmqwnkvvqi/480x480.jpg",
    "duration": 274,
    "stream": "https://api.audius.co/v1/tracks/y20XWrX/stream?app_name=empty.string",
    "embed": null,
@@ -62,7 +62,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://cn1.mainnet.audiusindex.org/content/baeaaaiqsebl7lvwkfa7r3nl735gnkf6mpt3ieu3fjtc5z23iz4wx2illlllck/480x480.jpg",
+   "artwork": "https://v.monophonic.digital/content/baeaaaiqsebl7lvwkfa7r3nl735gnkf6mpt3ieu3fjtc5z23iz4wx2illlllck/480x480.jpg",
    "duration": 203,
    "stream": "https://api.audius.co/v1/tracks/RRxymAw/stream?app_name=empty.string",
    "embed": null,
@@ -76,7 +76,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://audius-discovery-1.altego.net/content/baeaaaiqsebr7ld63khixpja64l2o7rwjyqkrwdnlv55ahpusj6wyrz4dxfof2/480x480.jpg",
+   "artwork": "https://val015.open-audio-validator.com/content/baeaaaiqsebr7ld63khixpja64l2o7rwjyqkrwdnlv55ahpusj6wyrz4dxfof2/480x480.jpg",
    "duration": 194,
    "stream": "https://api.audius.co/v1/tracks/EvXYdGJ/stream?app_name=empty.string",
    "embed": null,
@@ -90,7 +90,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://audius-discovery-3.altego.net/content/baeaaaiqseccucl5dyjluubaxfjy4w6pgolmjwncbelflkqnysisy5x44wv3fe/480x480.jpg",
+   "artwork": "https://validator.stuffisup.com/content/baeaaaiqseccucl5dyjluubaxfjy4w6pgolmjwncbelflkqnysisy5x44wv3fe/480x480.jpg",
    "duration": 150,
    "stream": "https://api.audius.co/v1/tracks/J72oWO6/stream?app_name=empty.string",
    "embed": null,
@@ -118,7 +118,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://v.monophonic.digital/content/baeaaaiqseckfw5opydbv6ouvlrwdyd62igyq3nfxufsjxtcasknupwtjg3v2a/480x480.jpg",
+   "artwork": "https://audius-creator-1.theblueprint.xyz/content/baeaaaiqseckfw5opydbv6ouvlrwdyd62igyq3nfxufsjxtcasknupwtjg3v2a/480x480.jpg",
    "duration": 167,
    "stream": "https://api.audius.co/v1/tracks/92BKP1M/stream?app_name=empty.string",
    "embed": null,
@@ -146,7 +146,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://audius-content-5.figment.io/content/baeaaaiqsecyml23kitkmrwjls5epe4mcin3z2zgnwr6hnkx25kn2o7a5xdsh4/480x480.jpg",
+   "artwork": "https://audius-creator-15.theblueprint.xyz/content/baeaaaiqsecyml23kitkmrwjls5epe4mcin3z2zgnwr6hnkx25kn2o7a5xdsh4/480x480.jpg",
    "duration": 130,
    "stream": "https://api.audius.co/v1/tracks/1BN22lz/stream?app_name=empty.string",
    "embed": null,
@@ -160,7 +160,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://audius-discovery-3.altego.net/content/baeaaaiqseahskip7rtzz7dhfpfckoomh4mmvhpzjr276mps3bra3544xdbuqe/480x480.jpg",
+   "artwork": "https://audius-content-2.figment.io/content/baeaaaiqseahskip7rtzz7dhfpfckoomh4mmvhpzjr276mps3bra3544xdbuqe/480x480.jpg",
    "duration": 74,
    "stream": "https://api.audius.co/v1/tracks/1Vb8yrX/stream?app_name=empty.string",
    "embed": null,
@@ -174,7 +174,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://audius-creator-11.theblueprint.xyz/content/baeaaaiqseajmuh2tj6t57o6armzx66lgldclqygsnn3btjr2vppgc7jk6r6qi/480x480.jpg",
+   "artwork": "https://audius-content-10.figment.io/content/baeaaaiqseajmuh2tj6t57o6armzx66lgldclqygsnn3btjr2vppgc7jk6r6qi/480x480.jpg",
    "duration": 180,
    "stream": "https://api.audius.co/v1/tracks/7d0rWWA/stream?app_name=empty.string",
    "embed": null,
@@ -188,7 +188,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://cn4.mainnet.audiusindex.org/content/baeaaaiqseavigynexxkl6gphalru4vkgox66zb2ike6xw5cn5ygbdcuneh4ay/480x480.jpg",
+   "artwork": "https://v.monophonic.digital/content/baeaaaiqseavigynexxkl6gphalru4vkgox66zb2ike6xw5cn5ygbdcuneh4ay/480x480.jpg",
    "duration": 66,
    "stream": "https://api.audius.co/v1/tracks/9d1X5gj/stream?app_name=empty.string",
    "embed": null,
@@ -202,7 +202,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://audius-creator-16.theblueprint.xyz/content/baeaaaiqsebzdmjuhdno6ikz7txhian7lbf2mhrrmltwvgwdmlh7ijkrqo56we/480x480.jpg",
+   "artwork": "https://audius-discovery-1.altego.net/content/baeaaaiqsebzdmjuhdno6ikz7txhian7lbf2mhrrmltwvgwdmlh7ijkrqo56we/480x480.jpg",
    "duration": 132,
    "stream": "https://api.audius.co/v1/tracks/y83PWEY/stream?app_name=empty.string",
    "embed": null,
@@ -216,7 +216,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://audius.zeogrid.com/content/baeaaaiqseave226hs7lg6pjndxn3adzdikl7eiggodqnjz6qupzmzu4kue6ls/480x480.jpg",
+   "artwork": "https://val020.open-audio-validator.com/content/baeaaaiqseave226hs7lg6pjndxn3adzdikl7eiggodqnjz6qupzmzu4kue6ls/480x480.jpg",
    "duration": 184,
    "stream": "https://api.audius.co/v1/tracks/oYpmOlm/stream?app_name=empty.string",
    "embed": null,
@@ -230,7 +230,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://v.monophonic.digital/content/baeaaaiqsecusoua6rci3utlzxofz6bdbogwnjaephc4dd5ombiff3dm4cyj5g/480x480.jpg",
+   "artwork": "https://audius-content-8.figment.io/content/baeaaaiqsecusoua6rci3utlzxofz6bdbogwnjaephc4dd5ombiff3dm4cyj5g/480x480.jpg",
    "duration": 188,
    "stream": "https://api.audius.co/v1/tracks/NP1kRMp/stream?app_name=empty.string",
    "embed": null,
@@ -258,7 +258,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://audius-01.staked.cloud/content/baeaaaiqsedciw6eda6u2sdrzku5uoweooywnqu73uzuatndt7vibogwwzgyvy/480x480.jpg",
+   "artwork": "https://val020.open-audio-validator.com/content/baeaaaiqsedciw6eda6u2sdrzku5uoweooywnqu73uzuatndt7vibogwwzgyvy/480x480.jpg",
    "duration": 136,
    "stream": "https://api.audius.co/v1/tracks/Zb3Z9GJ/stream?app_name=empty.string",
    "embed": null,
@@ -286,7 +286,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://cn0.mainnet.audiusindex.org/content/baeaaaiqsecqztad5yyzqmo7fxqyqh3zt4mnsjpir36mmsu3fnppd6wtcvmzfa/480x480.jpg",
+   "artwork": "https://v.monophonic.digital/content/baeaaaiqsecqztad5yyzqmo7fxqyqh3zt4mnsjpir36mmsu3fnppd6wtcvmzfa/480x480.jpg",
    "duration": 146,
    "stream": "https://api.audius.co/v1/tracks/wPwzPbk/stream?app_name=empty.string",
    "embed": null,
@@ -300,7 +300,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://v.monophonic.digital/content/baeaaaiqseci2igt57tvxamweirsa4o7y4le7q3ii7ztljxkocr4bileylp3vi/480x480.jpg",
+   "artwork": "https://audius-creator-7.theblueprint.xyz/content/baeaaaiqseci2igt57tvxamweirsa4o7y4le7q3ii7ztljxkocr4bileylp3vi/480x480.jpg",
    "duration": 125,
    "stream": "https://api.audius.co/v1/tracks/0ARMQGm/stream?app_name=empty.string",
    "embed": null,
@@ -328,7 +328,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://audius-creator-6.theblueprint.xyz/content/baeaaaiqseajwrfm2npyvchzeb6zgwzopjx4vm6fxxqtlvfhrgy7hdlgnnkwkq/480x480.jpg",
+   "artwork": "https://val002.open-audio-validator.com/content/baeaaaiqseajwrfm2npyvchzeb6zgwzopjx4vm6fxxqtlvfhrgy7hdlgnnkwkq/480x480.jpg",
    "duration": 117,
    "stream": "https://api.audius.co/v1/tracks/GVP0mzl/stream?app_name=empty.string",
    "embed": null,
@@ -342,7 +342,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://validator.stuffisup.com/content/baeaaaiqsearaznuhdkviuwnsnucmfnr5moujbo53byheltq6aav35gdf4pr24/480x480.jpg",
+   "artwork": "https://v.monophonic.digital/content/baeaaaiqsearaznuhdkviuwnsnucmfnr5moujbo53byheltq6aav35gdf4pr24/480x480.jpg",
    "duration": 197,
    "stream": "https://api.audius.co/v1/tracks/zE9xr4q/stream?app_name=empty.string",
    "embed": null,
@@ -356,7 +356,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://v.monophonic.digital/content/baeaaaiqseafgzkysfo7gv6db2lrsxpmvqsw36mz2we6ls5me6q6hjpih2xb5u/480x480.jpg",
+   "artwork": "https://val016.open-audio-validator.com/content/baeaaaiqseafgzkysfo7gv6db2lrsxpmvqsw36mz2we6ls5me6q6hjpih2xb5u/480x480.jpg",
    "duration": 108,
    "stream": "https://api.audius.co/v1/tracks/V02REPy/stream?app_name=empty.string",
    "embed": null,
@@ -370,7 +370,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://creatornode.audius.co/content/baeaaaiqsedpi7wdx2pma3npy2y36c7syc3c5gvkdpd7445zkm7irvj7l26x7i/480x480.jpg",
+   "artwork": "https://v.monophonic.digital/content/baeaaaiqsedpi7wdx2pma3npy2y36c7syc3c5gvkdpd7445zkm7irvj7l26x7i/480x480.jpg",
    "duration": 261,
    "stream": "https://api.audius.co/v1/tracks/QRpPOYv/stream?app_name=empty.string",
    "embed": null,
@@ -384,7 +384,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://v.monophonic.digital/content/baeaaaiqsedpi7wdx2pma3npy2y36c7syc3c5gvkdpd7445zkm7irvj7l26x7i/480x480.jpg",
+   "artwork": "https://audius-creator-1.theblueprint.xyz/content/baeaaaiqsedpi7wdx2pma3npy2y36c7syc3c5gvkdpd7445zkm7irvj7l26x7i/480x480.jpg",
    "duration": 279,
    "stream": "https://api.audius.co/v1/tracks/aABYr4j/stream?app_name=empty.string",
    "embed": null,
@@ -398,7 +398,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://audius-figment-1-validator-19.figment.io/content/baeaaaiqsedsirlaeicsffho4eutso7sxdc5nk5ybzp7mluolbw47yfomglb6o/480x480.jpg",
+   "artwork": "https://audius-creator-5.theblueprint.xyz/content/baeaaaiqsedsirlaeicsffho4eutso7sxdc5nk5ybzp7mluolbw47yfomglb6o/480x480.jpg",
    "duration": 43,
    "stream": "https://api.audius.co/v1/tracks/WVPkM6l/stream?app_name=empty.string",
    "embed": null,
@@ -412,7 +412,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://audius-content-3.figment.io/content/baeaaaiqsedjonuyrtziu6stpfp56onexflkfn3fhu77p43ei5w5htp64c46tw/480x480.jpg",
+   "artwork": "https://v.audius.rickyrombo.com/content/baeaaaiqsedjonuyrtziu6stpfp56onexflkfn3fhu77p43ei5w5htp64c46tw/480x480.jpg",
    "duration": 165,
    "stream": "https://api.audius.co/v1/tracks/Ymlmg0r/stream?app_name=empty.string",
    "embed": null,
@@ -440,7 +440,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://audius-creator-2.theblueprint.xyz/content/baeaaaiqsebs5owt2bxadhyj5qoeek7fz7nux3sfzpqwjnvtnwxztd2f2sdqek/480x480.jpg",
+   "artwork": "https://audius-content-2.figment.io/content/baeaaaiqsebs5owt2bxadhyj5qoeek7fz7nux3sfzpqwjnvtnwxztd2f2sdqek/480x480.jpg",
    "duration": 182,
    "stream": "https://api.audius.co/v1/tracks/2AVg2oK/stream?app_name=empty.string",
    "embed": null,
@@ -454,7 +454,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://v.monophonic.digital/content/baeaaaiqsecxrlx5ea3ukfnizbuc2h6ivoprwvweuh6edr7cswxrsd2fjdwlwk/480x480.jpg",
+   "artwork": "https://val018.open-audio-validator.com/content/baeaaaiqsecxrlx5ea3ukfnizbuc2h6ivoprwvweuh6edr7cswxrsd2fjdwlwk/480x480.jpg",
    "duration": 110,
    "stream": "https://api.audius.co/v1/tracks/NzEp2ow/stream?app_name=empty.string",
    "embed": null,
@@ -468,7 +468,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://audius-content-6.figment.io/content/baeaaaiqseboa7cjq2lyobx7eisdede4zruzlszvvhhpfaulmce6dvxmxgrb62/480x480.jpg",
+   "artwork": "https://v.monophonic.digital/content/baeaaaiqseboa7cjq2lyobx7eisdede4zruzlszvvhhpfaulmce6dvxmxgrb62/480x480.jpg",
    "duration": 39,
    "stream": "https://api.audius.co/v1/tracks/gY0xEBd/stream?app_name=empty.string",
    "embed": null,
@@ -510,7 +510,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://creatornode.audius.co/content/baeaaaiqsedpi7wdx2pma3npy2y36c7syc3c5gvkdpd7445zkm7irvj7l26x7i/480x480.jpg",
+   "artwork": "https://v.monophonic.digital/content/baeaaaiqsedpi7wdx2pma3npy2y36c7syc3c5gvkdpd7445zkm7irvj7l26x7i/480x480.jpg",
    "duration": 204,
    "stream": "https://api.audius.co/v1/tracks/2j1EMPy/stream?app_name=empty.string",
    "embed": null,
@@ -524,7 +524,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://v.monophonic.digital/content/baeaaaiqsedpi7wdx2pma3npy2y36c7syc3c5gvkdpd7445zkm7irvj7l26x7i/480x480.jpg",
+   "artwork": "https://creatornode.audius.co/content/baeaaaiqsedpi7wdx2pma3npy2y36c7syc3c5gvkdpd7445zkm7irvj7l26x7i/480x480.jpg",
    "duration": 190,
    "stream": "https://api.audius.co/v1/tracks/9p3116G/stream?app_name=empty.string",
    "embed": null,
@@ -538,7 +538,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://audius-content-3.figment.io/content/baeaaaiqsecl4wjlgxhog53jrudukguwumv3jo55qbye5vjw5bt3adic6xjc2w/480x480.jpg",
+   "artwork": "https://v.monophonic.digital/content/baeaaaiqsecl4wjlgxhog53jrudukguwumv3jo55qbye5vjw5bt3adic6xjc2w/480x480.jpg",
    "duration": 296,
    "stream": "https://api.audius.co/v1/tracks/X9OZ7lb/stream?app_name=empty.string",
    "embed": null,
@@ -552,7 +552,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://creatornode.audius.co/content/baeaaaiqsedpi7wdx2pma3npy2y36c7syc3c5gvkdpd7445zkm7irvj7l26x7i/480x480.jpg",
+   "artwork": "https://cn0.mainnet.audiusindex.org/content/baeaaaiqsedpi7wdx2pma3npy2y36c7syc3c5gvkdpd7445zkm7irvj7l26x7i/480x480.jpg",
    "duration": 187,
    "stream": "https://api.audius.co/v1/tracks/QR83oEV/stream?app_name=empty.string",
    "embed": null,
@@ -566,7 +566,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://v.monophonic.digital/content/baeaaaiqsecl4wjlgxhog53jrudukguwumv3jo55qbye5vjw5bt3adic6xjc2w/480x480.jpg",
+   "artwork": "https://audius.rickyrombo.com/content/baeaaaiqsecl4wjlgxhog53jrudukguwumv3jo55qbye5vjw5bt3adic6xjc2w/480x480.jpg",
    "duration": 284,
    "stream": "https://api.audius.co/v1/tracks/ApjAKk/stream?app_name=empty.string",
    "embed": null,
@@ -594,7 +594,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://val018.open-audio-validator.com/content/baeaaaiqsecz3yisecwzudltj6msp76q7wi2mwlvpp5xi7kk6dimnxsjqinrsq/480x480.jpg",
+   "artwork": "https://v.monophonic.digital/content/baeaaaiqsecz3yisecwzudltj6msp76q7wi2mwlvpp5xi7kk6dimnxsjqinrsq/480x480.jpg",
    "duration": 387,
    "stream": "https://api.audius.co/v1/tracks/ByvAbpP/stream?app_name=empty.string",
    "embed": null,
@@ -608,7 +608,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://audius-creator-1.theblueprint.xyz/content/baeaaaiqsecz3yisecwzudltj6msp76q7wi2mwlvpp5xi7kk6dimnxsjqinrsq/480x480.jpg",
+   "artwork": "https://val018.open-audio-validator.com/content/baeaaaiqsecz3yisecwzudltj6msp76q7wi2mwlvpp5xi7kk6dimnxsjqinrsq/480x480.jpg",
    "duration": 352,
    "stream": "https://api.audius.co/v1/tracks/Gxy8qka/stream?app_name=empty.string",
    "embed": null,
@@ -622,7 +622,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://v.monophonic.digital/content/baeaaaiqsecz3yisecwzudltj6msp76q7wi2mwlvpp5xi7kk6dimnxsjqinrsq/480x480.jpg",
+   "artwork": "https://audius-creator-1.theblueprint.xyz/content/baeaaaiqsecz3yisecwzudltj6msp76q7wi2mwlvpp5xi7kk6dimnxsjqinrsq/480x480.jpg",
    "duration": 404,
    "stream": "https://api.audius.co/v1/tracks/rGEvB5N/stream?app_name=empty.string",
    "embed": null,
@@ -636,7 +636,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://v.monophonic.digital/content/baeaaaiqsecz3yisecwzudltj6msp76q7wi2mwlvpp5xi7kk6dimnxsjqinrsq/480x480.jpg",
+   "artwork": "https://audius-creator-1.theblueprint.xyz/content/baeaaaiqsecz3yisecwzudltj6msp76q7wi2mwlvpp5xi7kk6dimnxsjqinrsq/480x480.jpg",
    "duration": 339,
    "stream": "https://api.audius.co/v1/tracks/KlaaW1Y/stream?app_name=empty.string",
    "embed": null,
@@ -650,7 +650,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://val002.open-audio-validator.com/content/baeaaaiqseb77a2tkn6hswpxwhzf2naalxvphozq6ilprtlapcdxzghxgrneoc/480x480.jpg",
+   "artwork": "https://v.monophonic.digital/content/baeaaaiqseb77a2tkn6hswpxwhzf2naalxvphozq6ilprtlapcdxzghxgrneoc/480x480.jpg",
    "duration": 270,
    "stream": "https://api.audius.co/v1/tracks/1Y7GGd/stream?app_name=empty.string",
    "embed": null,
@@ -664,7 +664,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://audius-content-2.figment.io/content/baeaaaiqsea5trtofidb6h62jqfv3dvneeevfaw3g4kubqjecmy75psnag4j44/480x480.jpg",
+   "artwork": "https://audius-content-1.figment.io/content/baeaaaiqsea5trtofidb6h62jqfv3dvneeevfaw3g4kubqjecmy75psnag4j44/480x480.jpg",
    "duration": 292,
    "stream": "https://api.audius.co/v1/tracks/lJygyPO/stream?app_name=empty.string",
    "embed": null,
@@ -692,7 +692,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://audius-creator-1.theblueprint.xyz/content/baeaaaiqsecz3yisecwzudltj6msp76q7wi2mwlvpp5xi7kk6dimnxsjqinrsq/480x480.jpg",
+   "artwork": "https://val017.open-audio-validator.com/content/baeaaaiqsecz3yisecwzudltj6msp76q7wi2mwlvpp5xi7kk6dimnxsjqinrsq/480x480.jpg",
    "duration": 389,
    "stream": "https://api.audius.co/v1/tracks/g5Wv4Jd/stream?app_name=empty.string",
    "embed": null,
@@ -706,7 +706,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://val018.open-audio-validator.com/content/baeaaaiqsecz3yisecwzudltj6msp76q7wi2mwlvpp5xi7kk6dimnxsjqinrsq/480x480.jpg",
+   "artwork": "https://val017.open-audio-validator.com/content/baeaaaiqsecz3yisecwzudltj6msp76q7wi2mwlvpp5xi7kk6dimnxsjqinrsq/480x480.jpg",
    "duration": 321,
    "stream": "https://api.audius.co/v1/tracks/zK49E9p/stream?app_name=empty.string",
    "embed": null,
@@ -734,7 +734,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://v.monophonic.digital/content/baeaaaiqsebdphz7fv4oahyf7tyqparx5ptiyzjeslyfzikqiqqfoftwpgy6qk/480x480.jpg",
+   "artwork": "https://audius-02.staked.cloud/content/baeaaaiqsebdphz7fv4oahyf7tyqparx5ptiyzjeslyfzikqiqqfoftwpgy6qk/480x480.jpg",
    "duration": 142,
    "stream": "https://api.audius.co/v1/tracks/EW3zP87/stream?app_name=empty.string",
    "embed": null,
@@ -748,7 +748,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://audius-creator-13.theblueprint.xyz/content/baeaaaiqsea7s242pp7diuwho5yfcgfooq54ilhg57hyjlrtwombpnknwllfba/480x480.jpg",
+   "artwork": "https://val018.open-audio-validator.com/content/baeaaaiqsea7s242pp7diuwho5yfcgfooq54ilhg57hyjlrtwombpnknwllfba/480x480.jpg",
    "duration": 160,
    "stream": "https://api.audius.co/v1/tracks/NPz42ZZ/stream?app_name=empty.string",
    "embed": null,
@@ -762,7 +762,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://cn3.mainnet.audiusindex.org/content/baeaaaiqseacxigxz5efolay7a6x7qsawv5zcv7dmkvumnjydgtly6p6pavmfu/480x480.jpg",
+   "artwork": "https://val012.open-audio-validator.com/content/baeaaaiqseacxigxz5efolay7a6x7qsawv5zcv7dmkvumnjydgtly6p6pavmfu/480x480.jpg",
    "duration": 108,
    "stream": "https://api.audius.co/v1/tracks/52XkBNx/stream?app_name=empty.string",
    "embed": null,
@@ -776,7 +776,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://v.monophonic.digital/content/baeaaaiqsecjerwfmyo4y4qbxj4vn22psp4auqbiqawgkjw27smqiyqhf2idnw/480x480.jpg",
+   "artwork": "https://val010.open-audio-validator.com/content/baeaaaiqsecjerwfmyo4y4qbxj4vn22psp4auqbiqawgkjw27smqiyqhf2idnw/480x480.jpg",
    "duration": 118,
    "stream": "https://api.audius.co/v1/tracks/B5da9NJ/stream?app_name=empty.string",
    "embed": null,
@@ -804,7 +804,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://val017.open-audio-validator.com/content/baeaaaiqsecksyzkg6w7mn6kqlio5eghkp6s4k6bglqy7cs53fcchglq334scg/480x480.jpg",
+   "artwork": "https://v.monophonic.digital/content/baeaaaiqsecksyzkg6w7mn6kqlio5eghkp6s4k6bglqy7cs53fcchglq334scg/480x480.jpg",
    "duration": 247,
    "stream": "https://api.audius.co/v1/tracks/K7NjM5B/stream?app_name=empty.string",
    "embed": null,
@@ -818,7 +818,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://audius-discovery-1.altego.net/content/baeaaaiqsea5mtzxaoygwd5jyhrhjdhfsz5u6vt6lgz2gqvovjvhvblj6d4zuc/480x480.jpg",
+   "artwork": "https://v.monophonic.digital/content/baeaaaiqsea5mtzxaoygwd5jyhrhjdhfsz5u6vt6lgz2gqvovjvhvblj6d4zuc/480x480.jpg",
    "duration": 126,
    "stream": "https://api.audius.co/v1/tracks/J8pr68d/stream?app_name=empty.string",
    "embed": null,
@@ -832,7 +832,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://audius-content-13.figment.io/content/baeaaaiqseaxdaa56sstlejqfnfp656w5b6masr5l5gwl5su7h4pvcqqrxxih4/480x480.jpg",
+   "artwork": "https://audius-nodes.com/content/baeaaaiqseaxdaa56sstlejqfnfp656w5b6masr5l5gwl5su7h4pvcqqrxxih4/480x480.jpg",
    "duration": 147,
    "stream": "https://api.audius.co/v1/tracks/Rx6Bjkw/stream?app_name=empty.string",
    "embed": null,
@@ -846,7 +846,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://validator.soundmaxx.xyz/content/01M55Q2W89CGV59NYAWKA60BHY/480x480.jpg",
+   "artwork": "https://val006.open-audio-validator.com/content/01M55Q2W89CGV59NYAWKA60BHY/480x480.jpg",
    "duration": 194,
    "stream": "https://api.audius.co/v1/tracks/AQ5YmlK/stream?app_name=empty.string",
    "embed": null,
@@ -860,7 +860,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://audius-figment-1-validator-19.figment.io/content/baeaaaiqsea5su6t5eipeuirgsjqud37mx6vuzkfzf4hkfkvmq4l7wj7htb2ak/480x480.jpg",
+   "artwork": "https://audius-creator-17.theblueprint.xyz/content/baeaaaiqsea5su6t5eipeuirgsjqud37mx6vuzkfzf4hkfkvmq4l7wj7htb2ak/480x480.jpg",
    "duration": 78,
    "stream": "https://api.audius.co/v1/tracks/P622OPm/stream?app_name=empty.string",
    "embed": null,
@@ -902,7 +902,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://audius-content-4.figment.io/content/baeaaaiqsebpogtd3n5w2d3wufpw3yf3t6aag7zt7lroxaen6a27xkxkth5eqc/480x480.jpg",
+   "artwork": "https://v.monophonic.digital/content/baeaaaiqsebpogtd3n5w2d3wufpw3yf3t6aag7zt7lroxaen6a27xkxkth5eqc/480x480.jpg",
    "duration": 183,
    "stream": "https://api.audius.co/v1/tracks/5OJZgRX/stream?app_name=empty.string",
    "embed": null,
@@ -930,7 +930,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://audius-content-2.figment.io/content/baeaaaiqseahfrd24ynrywbxm6atnv22rrjmeoez3defmoivfmoa47l7mxeyxk/480x480.jpg",
+   "artwork": "https://val007.open-audio-validator.com/content/baeaaaiqseahfrd24ynrywbxm6atnv22rrjmeoez3defmoivfmoa47l7mxeyxk/480x480.jpg",
    "duration": 272,
    "stream": "https://api.audius.co/v1/tracks/rz88bA9/stream?app_name=empty.string",
    "embed": null,
@@ -944,7 +944,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://audius-discovery-3.altego.net/content/baeaaaiqseatvgjfyzpgdvxcmamhqyetdms2hethzrizjf6vclw2zbv3sudt7u/480x480.jpg",
+   "artwork": "https://v.monophonic.digital/content/baeaaaiqseatvgjfyzpgdvxcmamhqyetdms2hethzrizjf6vclw2zbv3sudt7u/480x480.jpg",
    "duration": 110,
    "stream": "https://api.audius.co/v1/tracks/02MlA79/stream?app_name=empty.string",
    "embed": null,
@@ -972,7 +972,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://v.monophonic.digital/content/baeaaaiqsecusoua6rci3utlzxofz6bdbogwnjaephc4dd5ombiff3dm4cyj5g/480x480.jpg",
+   "artwork": "https://val001.open-audio-validator.com/content/baeaaaiqsecusoua6rci3utlzxofz6bdbogwnjaephc4dd5ombiff3dm4cyj5g/480x480.jpg",
    "duration": 96,
    "stream": "https://api.audius.co/v1/tracks/JpO1M5Z/stream?app_name=empty.string",
    "embed": null,
@@ -1000,7 +1000,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://audius-discovery-3.altego.net/content/baeaaaiqseatvgjfyzpgdvxcmamhqyetdms2hethzrizjf6vclw2zbv3sudt7u/480x480.jpg",
+   "artwork": "https://v.monophonic.digital/content/baeaaaiqseatvgjfyzpgdvxcmamhqyetdms2hethzrizjf6vclw2zbv3sudt7u/480x480.jpg",
    "duration": 101,
    "stream": "https://api.audius.co/v1/tracks/BZ1wxvx/stream?app_name=empty.string",
    "embed": null,
@@ -1028,7 +1028,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://audius-content-8.figment.io/content/baeaaaiqsecusoua6rci3utlzxofz6bdbogwnjaephc4dd5ombiff3dm4cyj5g/480x480.jpg",
+   "artwork": "https://v.monophonic.digital/content/baeaaaiqsecusoua6rci3utlzxofz6bdbogwnjaephc4dd5ombiff3dm4cyj5g/480x480.jpg",
    "duration": 121,
    "stream": "https://api.audius.co/v1/tracks/A36RwK/stream?app_name=empty.string",
    "embed": null,
@@ -1042,7 +1042,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://audius-creator-16.theblueprint.xyz/content/baeaaaiqsebaulajqxkfl6pmikvmpupi6o2jxfbi5hcv4wxn2gzwb3yfzsiecq/480x480.jpg",
+   "artwork": "https://val018.open-audio-validator.com/content/baeaaaiqsebaulajqxkfl6pmikvmpupi6o2jxfbi5hcv4wxn2gzwb3yfzsiecq/480x480.jpg",
    "duration": 215,
    "stream": "https://api.audius.co/v1/tracks/BxR1p3J/stream?app_name=empty.string",
    "embed": null,
@@ -1056,7 +1056,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://val001.open-audio-validator.com/content/baeaaaiqsecusoua6rci3utlzxofz6bdbogwnjaephc4dd5ombiff3dm4cyj5g/480x480.jpg",
+   "artwork": "https://audius-content-8.figment.io/content/baeaaaiqsecusoua6rci3utlzxofz6bdbogwnjaephc4dd5ombiff3dm4cyj5g/480x480.jpg",
    "duration": 101,
    "stream": "https://api.audius.co/v1/tracks/5wQo36/stream?app_name=empty.string",
    "embed": null,
@@ -1084,7 +1084,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://audius-discovery-1.altego.net/content/baeaaaiqsea4opcykr2dn5i654wipp4dkukqwvylxjdgfauu62rt6mx42wq4tm/480x480.jpg",
+   "artwork": "https://audius-creator-1.theblueprint.xyz/content/baeaaaiqsea4opcykr2dn5i654wipp4dkukqwvylxjdgfauu62rt6mx42wq4tm/480x480.jpg",
    "duration": 303,
    "stream": "https://api.audius.co/v1/tracks/ZPJKmPy/stream?app_name=empty.string",
    "embed": null,
@@ -1112,7 +1112,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://v.monophonic.digital/content/baeaaaiqsedfojfgtnlmmuzmigc4m2hmzumu4vx2yugacxrvy52jsfm57u5idc/480x480.jpg",
+   "artwork": "https://cn3.mainnet.audiusindex.org/content/baeaaaiqsedfojfgtnlmmuzmigc4m2hmzumu4vx2yugacxrvy52jsfm57u5idc/480x480.jpg",
    "duration": 289,
    "stream": "https://api.audius.co/v1/tracks/VKBB1dQ/stream?app_name=empty.string",
    "embed": null,
@@ -1182,7 +1182,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://v.monophonic.digital/content/baeaaaiqsea6yjkmyyj4m3p7uizdgydixv5vdtcwwkcscl7mnm4fpw7o77gkhk/480x480.jpg",
+   "artwork": "https://audius-content-7.figment.io/content/baeaaaiqsea6yjkmyyj4m3p7uizdgydixv5vdtcwwkcscl7mnm4fpw7o77gkhk/480x480.jpg",
    "duration": 190,
    "stream": "https://api.audius.co/v1/tracks/OvjJkdX/stream?app_name=empty.string",
    "embed": null,
@@ -1196,7 +1196,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://cn0.mainnet.audiusindex.org/content/baeaaaiqseaw27hwgcbrqihplzbolv2qe3rrm5udr2hjpqpnktglbsof2dq6s6/480x480.jpg",
+   "artwork": "https://val018.open-audio-validator.com/content/baeaaaiqseaw27hwgcbrqihplzbolv2qe3rrm5udr2hjpqpnktglbsof2dq6s6/480x480.jpg",
    "duration": 187,
    "stream": "https://api.audius.co/v1/tracks/oYwyvy7/stream?app_name=empty.string",
    "embed": null,
@@ -1210,7 +1210,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://v.audius.rickyrombo.com/content/baeaaaiqseaovrunib5gr2ewnklg3qld2paobkticxoh7qa5ya23nb7x2g3r3g/480x480.jpg",
+   "artwork": "https://audius-creator-7.theblueprint.xyz/content/baeaaaiqseaovrunib5gr2ewnklg3qld2paobkticxoh7qa5ya23nb7x2g3r3g/480x480.jpg",
    "duration": 239,
    "stream": "https://api.audius.co/v1/tracks/ljQq63w/stream?app_name=empty.string",
    "embed": null,
@@ -1224,7 +1224,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://cn4.mainnet.audiusindex.org/content/baeaaaiqsecpftz7qrcrd7dvhx363fj3hs3yg6nx6plygcmwyhmzvqbqltuwlm/480x480.jpg",
+   "artwork": "https://audius.zeogrid.com/content/baeaaaiqsecpftz7qrcrd7dvhx363fj3hs3yg6nx6plygcmwyhmzvqbqltuwlm/480x480.jpg",
    "duration": 136,
    "stream": "https://api.audius.co/v1/tracks/XlGapaj/stream?app_name=empty.string",
    "embed": null,
@@ -1238,7 +1238,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://v.monophonic.digital/content/baeaaaiqsedmqihar4cl5y6bwhw5ele7rj7s7mycwcnhkaj5wr2mewah5pbreo/480x480.jpg",
+   "artwork": "https://audius-creator-12.theblueprint.xyz/content/baeaaaiqsedmqihar4cl5y6bwhw5ele7rj7s7mycwcnhkaj5wr2mewah5pbreo/480x480.jpg",
    "duration": 157,
    "stream": "https://api.audius.co/v1/tracks/6qGg8M/stream?app_name=empty.string",
    "embed": null,
@@ -1252,7 +1252,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://val005.open-audio-validator.com/content/baeaaaiqseazlfxvmk46jicltoz37k5igy2hb2fqjtg3kebd4uc66olh3cu2ms/480x480.jpg",
+   "artwork": "https://val008.open-audio-validator.com/content/baeaaaiqseazlfxvmk46jicltoz37k5igy2hb2fqjtg3kebd4uc66olh3cu2ms/480x480.jpg",
    "duration": 133,
    "stream": "https://api.audius.co/v1/tracks/Zlzw2X7/stream?app_name=empty.string",
    "embed": null,
@@ -1308,7 +1308,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://val016.open-audio-validator.com/content/baeaaaiqsearrvdqamndvbuyeuiyxzizy3bl5x3w5ggupn6al5k5lqjsqlryis/480x480.jpg",
+   "artwork": "https://val020.open-audio-validator.com/content/baeaaaiqsearrvdqamndvbuyeuiyxzizy3bl5x3w5ggupn6al5k5lqjsqlryis/480x480.jpg",
    "duration": 111,
    "stream": "https://api.audius.co/v1/tracks/O89d3R/stream?app_name=empty.string",
    "embed": null,
@@ -1322,7 +1322,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://val015.open-audio-validator.com/content/baeaaaiqsecp6ke4p3x4lpej2hz56u773lmzuo7ouvabk7bcrbyk6wplz7nqdk/480x480.jpg",
+   "artwork": "https://v.monophonic.digital/content/baeaaaiqsecp6ke4p3x4lpej2hz56u773lmzuo7ouvabk7bcrbyk6wplz7nqdk/480x480.jpg",
    "duration": 198,
    "stream": "https://api.audius.co/v1/tracks/pkR59B/stream?app_name=empty.string",
    "embed": null,
@@ -1336,7 +1336,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://v.monophonic.digital/content/baeaaaiqseccnuegtqwf7gjtzjodk7wrqbb7quwbsfouicwgctzy6fnskjxclq/480x480.jpg",
+   "artwork": "https://audius-content-7.figment.io/content/baeaaaiqseccnuegtqwf7gjtzjodk7wrqbb7quwbsfouicwgctzy6fnskjxclq/480x480.jpg",
    "duration": 152,
    "stream": "https://api.audius.co/v1/tracks/jEwbXlB/stream?app_name=empty.string",
    "embed": null,
@@ -1350,7 +1350,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://audius-figment-1-validator-19.figment.io/content/baeaaaiqsebcxo4o56jg4p2omdml2apzqi5fgoebglqpwdlnwxok2q2a5of6g4/480x480.jpg",
+   "artwork": "https://v.monophonic.digital/content/baeaaaiqsebcxo4o56jg4p2omdml2apzqi5fgoebglqpwdlnwxok2q2a5of6g4/480x480.jpg",
    "duration": 115,
    "stream": "https://api.audius.co/v1/tracks/B7kGyQ/stream?app_name=empty.string",
    "embed": null,
@@ -1364,7 +1364,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://audius-creator-15.theblueprint.xyz/content/baeaaaiqsec7ynka4egdkl4ftbco4tysoygc2inrpnffeltwvlmbp3vrhzvnng/480x480.jpg",
+   "artwork": "https://v.monophonic.digital/content/baeaaaiqsec7ynka4egdkl4ftbco4tysoygc2inrpnffeltwvlmbp3vrhzvnng/480x480.jpg",
    "duration": 144,
    "stream": "https://api.audius.co/v1/tracks/AK7KlZ3/stream?app_name=empty.string",
    "embed": null,
@@ -1378,7 +1378,7 @@
   },
   {
    "kind": "track",
-   "artwork": "https://audius-content-8.figment.io/content/baeaaaiqsecusoua6rci3utlzxofz6bdbogwnjaephc4dd5ombiff3dm4cyj5g/480x480.jpg",
+   "artwork": "https://val007.open-audio-validator.com/content/baeaaaiqsecusoua6rci3utlzxofz6bdbogwnjaephc4dd5ombiff3dm4cyj5g/480x480.jpg",
    "duration": 129,
    "stream": "https://api.audius.co/v1/tracks/AVd4Aqg/stream?app_name=empty.string",
    "embed": null,
