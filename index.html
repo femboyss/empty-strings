@@ -310,6 +310,30 @@ section{display:flex;flex-direction:column;gap:14px}
 .note a{color:var(--accent)}
 
 html.standalone.phone .sb{display:none}
+/* ---------- garden + embeds ---------- */
+.gardencard{position:relative;overflow:hidden;display:flex;align-items:center;gap:14px;text-align:left;padding:18px;border-radius:20px;background:radial-gradient(120% 140% at 100% 0%,#1F6B4F 0%,#21251E 55%);border:1px solid var(--line);min-height:104px}
+.gardencard .gc-in{display:flex;flex-direction:column;gap:4px;flex:1;position:relative;z-index:1}
+.gardencard b{font-family:var(--fd);font-size:20px}
+.gardencard .gc-in>span:last-child{color:var(--muted);font-size:13px}
+.gardencard .gc-go{width:52px;height:52px;border-radius:999px;background:var(--accent);color:var(--ink);display:grid;place-items:center;flex:none;position:relative;z-index:1}
+.gardencard .gc-glow{position:absolute;right:-30px;top:-30px;width:160px;height:160px;border-radius:50%;background:radial-gradient(circle,rgba(200,245,72,.35),transparent 70%)}
+.view.garden{padding:0!important;overflow:hidden;gap:0;isolation:isolate}
+.gmap{position:absolute;inset:0;background:#0b0d0a}
+.gtop{position:absolute;left:12px;right:12px;top:calc(48px + var(--sat));z-index:500;display:flex;align-items:center;gap:8px}
+.gtop .ib{box-shadow:0 6px 20px rgba(0,0,0,.4)}
+.gtitle{flex:1;display:flex;flex-direction:column;gap:2px;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(10px);padding:8px 14px;border-radius:14px;min-width:0}
+.gtitle b{font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.gcard{position:absolute;left:12px;right:12px;bottom:calc(158px + var(--sab));z-index:500;background:color-mix(in srgb,var(--surface) 92%,transparent);backdrop-filter:blur(12px);border:1px solid var(--line);border-radius:18px;padding:12px;display:flex;flex-direction:column;gap:10px;font-size:13px}
+.gnear{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}.gnear .chip{padding:6px 10px;font-size:12px}
+.leaflet-container{background:#0b0d0a;font-family:var(--fb)}
+.gtiles{filter:invert(1) hue-rotate(180deg) brightness(.78) contrast(.92) saturate(.35)}
+.leaflet-control-attribution{background:rgba(14,16,13,.7)!important;color:var(--muted)!important;font-size:10px}
+.leaflet-control-attribution a{color:var(--text)!important}
+html.wide .gtop{top:20px;left:24px;right:24px}
+html.wide .gcard{bottom:24px;left:auto;right:24px;width:380px}
+.embedwrap{width:100%;max-width:520px;margin:0 auto;border-radius:18px;overflow:hidden;background:var(--raised);box-shadow:0 20px 50px rgba(0,0,0,.5)}
+.embedwrap.video{aspect-ratio:16/9}
+.embedwrap iframe{width:100%;height:100%;border:0;display:block}
 /* ---------- song change animation ---------- */
 @keyframes covOut{to{transform:translateX(calc(var(--d,1)*-75%)) rotate(calc(var(--d,1)*-12deg)) scale(.78);opacity:0;filter:blur(8px)}}
 @keyframes covIn{from{transform:translateX(calc(var(--d,1)*75%)) rotate(calc(var(--d,1)*12deg)) scale(.78);opacity:0;filter:blur(8px)}60%{filter:none}to{transform:none;opacity:1;filter:none}}
@@ -420,7 +444,7 @@ const num=n=>new Intl.NumberFormat('en',{notation:n>=10000?'compact':'standard'}
 const jarg=el=>{try{return JSON.parse(el.dataset.arg||'{}')}catch{return{}}};
 const A=o=>esc(JSON.stringify(o));
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
-const IC={home:'<path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>',search:'<circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>',library:'<path d="M4 4v16M9 4v16M14 4l6 16"/>',heart:'<path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>',heartF:'<path fill="currentColor" d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>',play:'<path d="M7 4.5v15l13-7.5z" fill="currentColor" stroke="none"/>',pause:'<rect x="6" y="4" width="4" height="16" rx="1" fill="currentColor" stroke="none"/><rect x="14" y="4" width="4" height="16" rx="1" fill="currentColor" stroke="none"/>',next:'<path d="M5 4.5v15l11-7.5z" fill="currentColor" stroke="none"/><path d="M19 5v14"/>',prev:'<path d="M19 4.5v15L8 12z" fill="currentColor" stroke="none"/><path d="M5 5v14"/>',more:'<circle cx="5" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="19" cy="12" r="1.6" fill="currentColor" stroke="none"/>',back:'<path d="m15 18-6-6 6-6"/>',chevR:'<path d="m9 18 6-6-6-6"/>',chevD:'<path d="m6 9 6 6 6-6"/>',bell:'<path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>',sliders:'<path d="M4 6h9M17 6h3M4 12h3M11 12h9M4 18h11M19 18h1"/><circle cx="15" cy="6" r="2"/><circle cx="9" cy="12" r="2"/><circle cx="17" cy="18" r="2"/>',shuffle:'<path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/>',repeat:'<path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/>',plus:'<path d="M12 5v14M5 12h14"/>',x:'<path d="M18 6 6 18M6 6l12 12"/>',check:'<path d="M20 6 9 17l-5-5"/>',sort:'<path d="M3 6h18M6 12h12M10 18h4"/>',queue:'<path d="M3 6h13M3 12h13M3 18h9"/><path d="M17 15v6l5-3z" fill="currentColor"/>',speaker:'<path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/>',grip:'<circle cx="9" cy="6" r="1.5" fill="currentColor" stroke="none"/><circle cx="15" cy="6" r="1.5" fill="currentColor" stroke="none"/><circle cx="9" cy="12" r="1.5" fill="currentColor" stroke="none"/><circle cx="15" cy="12" r="1.5" fill="currentColor" stroke="none"/><circle cx="9" cy="18" r="1.5" fill="currentColor" stroke="none"/><circle cx="15" cy="18" r="1.5" fill="currentColor" stroke="none"/>',minusC:'<circle cx="12" cy="12" r="9"/><path d="M8 12h8"/>',pencil:'<path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/>',gear:'<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1 7 17M17 7l2.1-2.1"/>',user:'<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>',ext:'<path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/>',nextup:'<path d="M3 6h12M3 12h12M3 18h7"/><path d="M18 14v8M14 18h8"/>',activity:'<path d="M22 12h-4l-3 9L9 3l-3 9H2"/>',refresh:'<path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/>',radio:'<circle cx="12" cy="12" r="2"/><path d="M16.2 7.8a6 6 0 0 1 0 8.4M7.8 16.2a6 6 0 0 1 0-8.4M19.1 4.9a10 10 0 0 1 0 14.2M4.9 19.1a10 10 0 0 1 0-14.2"/>',mic:'<rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0M12 17v5M8 22h8"/>',moon:'<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>',box:'<path d="M3 7l9-4 9 4-9 4z"/><path d="M3 7v10l9 4 9-4V7M12 11v10"/>',layers:'<path d="m12 2 10 5-10 5L2 7z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/>',kbd:'<rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M7 14h10"/>',compass:'<circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/>',podcast:'<circle cx="12" cy="11" r="2"/><path d="M12 13v8M8.5 15.5a5 5 0 1 1 7 0M5.6 18.4a9 9 0 1 1 12.8 0"/>',share:'<path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7M12 3v12M8 7l4-4 4 4"/>',download:'<path d="M12 3v12M7 10l5 5 5-5M4 20h16"/>',grid:'<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>'};
+const IC={home:'<path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>',search:'<circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>',library:'<path d="M4 4v16M9 4v16M14 4l6 16"/>',heart:'<path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>',heartF:'<path fill="currentColor" d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>',play:'<path d="M7 4.5v15l13-7.5z" fill="currentColor" stroke="none"/>',pause:'<rect x="6" y="4" width="4" height="16" rx="1" fill="currentColor" stroke="none"/><rect x="14" y="4" width="4" height="16" rx="1" fill="currentColor" stroke="none"/>',next:'<path d="M5 4.5v15l11-7.5z" fill="currentColor" stroke="none"/><path d="M19 5v14"/>',prev:'<path d="M19 4.5v15L8 12z" fill="currentColor" stroke="none"/><path d="M5 5v14"/>',more:'<circle cx="5" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="19" cy="12" r="1.6" fill="currentColor" stroke="none"/>',back:'<path d="m15 18-6-6 6-6"/>',chevR:'<path d="m9 18 6-6-6-6"/>',chevD:'<path d="m6 9 6 6 6-6"/>',bell:'<path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>',sliders:'<path d="M4 6h9M17 6h3M4 12h3M11 12h9M4 18h11M19 18h1"/><circle cx="15" cy="6" r="2"/><circle cx="9" cy="12" r="2"/><circle cx="17" cy="18" r="2"/>',shuffle:'<path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/>',repeat:'<path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/>',plus:'<path d="M12 5v14M5 12h14"/>',x:'<path d="M18 6 6 18M6 6l12 12"/>',check:'<path d="M20 6 9 17l-5-5"/>',sort:'<path d="M3 6h18M6 12h12M10 18h4"/>',queue:'<path d="M3 6h13M3 12h13M3 18h9"/><path d="M17 15v6l5-3z" fill="currentColor"/>',speaker:'<path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/>',grip:'<circle cx="9" cy="6" r="1.5" fill="currentColor" stroke="none"/><circle cx="15" cy="6" r="1.5" fill="currentColor" stroke="none"/><circle cx="9" cy="12" r="1.5" fill="currentColor" stroke="none"/><circle cx="15" cy="12" r="1.5" fill="currentColor" stroke="none"/><circle cx="9" cy="18" r="1.5" fill="currentColor" stroke="none"/><circle cx="15" cy="18" r="1.5" fill="currentColor" stroke="none"/>',minusC:'<circle cx="12" cy="12" r="9"/><path d="M8 12h8"/>',pencil:'<path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/>',gear:'<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1 7 17M17 7l2.1-2.1"/>',user:'<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>',ext:'<path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/>',nextup:'<path d="M3 6h12M3 12h12M3 18h7"/><path d="M18 14v8M14 18h8"/>',activity:'<path d="M22 12h-4l-3 9L9 3l-3 9H2"/>',refresh:'<path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/>',radio:'<circle cx="12" cy="12" r="2"/><path d="M16.2 7.8a6 6 0 0 1 0 8.4M7.8 16.2a6 6 0 0 1 0-8.4M19.1 4.9a10 10 0 0 1 0 14.2M4.9 19.1a10 10 0 0 1 0-14.2"/>',mic:'<rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0M12 17v5M8 22h8"/>',moon:'<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>',box:'<path d="M3 7l9-4 9 4-9 4z"/><path d="M3 7v10l9 4 9-4V7M12 11v10"/>',layers:'<path d="m12 2 10 5-10 5L2 7z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/>',kbd:'<rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M7 14h10"/>',globe:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/>',pin:'<path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/>',dice:'<rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="8.5" cy="8.5" r="1.3" fill="currentColor"/><circle cx="15.5" cy="15.5" r="1.3" fill="currentColor"/><circle cx="12" cy="12" r="1.3" fill="currentColor"/>',compass:'<circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/>',podcast:'<circle cx="12" cy="11" r="2"/><path d="M12 13v8M8.5 15.5a5 5 0 1 1 7 0M5.6 18.4a9 9 0 1 1 12.8 0"/>',share:'<path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7M12 3v12M8 7l4-4 4 4"/>',download:'<path d="M12 3v12M7 10l5 5 5-5M4 20h16"/>',grid:'<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>'};
 const ic=(n,s=24)=>`<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${IC[n]}</svg>`;
 const PAL=[['#C8F548','#1F6B4F'],['#FF5E8A','#5B2BD6'],['#FFB547','#D9382B'],['#5CE1E6','#2643C9'],['#B78CFF','#1E1438'],['#E8ECE4','#5E6A58'],['#FF8A3D','#2B1A10'],['#7CF0A8','#0E3B2E']];
 const hash=s=>{let h=0;for(const c of String(s))h=(h*31+c.charCodeAt(0))|0;return Math.abs(h)};
@@ -431,7 +455,7 @@ const art=(u,seed,cls='')=>`<div class="art ${cls}" style="${bgArt(u,seed)}"></d
 
 /* ---------- state ---------- */
 const KEY='empty.string/v1';
-const DEF={name:'Tester',liked:[],saved:[],artists:[],playlists:[],recent:[],plays:{},eq:{on:true,preset:'Flat',g:[0,0,0,0,0]},autoplay:true,songSort:'added',albumSort:'artist',lastSeen:0,joined:Date.now(),sources:{archive:true,radio:true,lyrics:true,podcasts:true,charts:true,covers:true,previews:true,wiki:true},radioCountry:'AT'};
+const DEF={name:'Tester',liked:[],saved:[],artists:[],playlists:[],recent:[],plays:{},eq:{on:true,preset:'Flat',g:[0,0,0,0,0]},autoplay:true,songSort:'added',albumSort:'artist',lastSeen:0,joined:Date.now(),sources:{archive:true,radio:true,lyrics:true,podcasts:true,charts:true,covers:true,previews:true,wiki:true,hearthis:true,mixcloud:true,livefm:true,embeds:true},radioCountry:'AT'};
 let S;try{S=Object.assign(JSON.parse(JSON.stringify(DEF)),JSON.parse(localStorage.getItem(KEY)||'{}'))}catch{S=JSON.parse(JSON.stringify(DEF))}
 S.sources=Object.assign({},DEF.sources,S.sources||{});
 const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch{}};
@@ -468,6 +492,10 @@ const SOURCES={
   charts:{name:'ListenBrainz',what:'Live world charts and fresh releases from real listens',url:'https://listenbrainz.org',docs:'https://listenbrainz.readthedocs.io/'},
   covers:{name:'Cover Art Archive',what:'Album covers for charts and fresh releases',url:'https://coverartarchive.org',docs:'https://musicbrainz.org/doc/Cover_Art_Archive/API'},
   previews:{name:'iTunes Search',what:'30-second previews when a chart song has no free full version',url:'https://performance-partners.apple.com/search-api',docs:'https://performance-partners.apple.com/search-api'},
+  hearthis:{name:'hearthis.at',what:'Full tracks and DJ mixes from an open music community',url:'https://hearthis.at',docs:'https://hearthis.at/api-v2/'},
+  mixcloud:{name:'Mixcloud',what:'DJ mixes and radio shows, played in the official Mixcloud player',url:'https://www.mixcloud.com',docs:'https://www.mixcloud.com/developers/'},
+  livefm:{name:'KEXP + NTS',what:'Live radio with real now-playing info (Seattle, London)',url:'https://www.kexp.org',docs:'https://api.kexp.org/v2/'},
+  embeds:{name:'Links',what:'Paste YouTube, SoundCloud, Mixcloud, Audius, Archive or MP3 links into Search',url:'https://oembed.com',docs:'https://oembed.com'},
   wiki:{name:'Wikipedia',what:'Short artist bios on artist pages',url:'https://www.wikipedia.org',docs:'https://en.wikipedia.org/api/rest_v1/'}
 };
 const srcOn=k=>SOURCES[k]?.core||!!S.sources[k];
@@ -479,7 +507,7 @@ const IA_COLL='(collection:netlabels OR collection:opensource_audio) AND format:
 const iaArt=id=>`https://archive.org/services/img/${encodeURIComponent(id)}`;
 const one=v=>Array.isArray(v)?v.join(', '):(v||'');
 const mapIA=d=>({kind:'ia',id:d.identifier,title:one(d.title)||d.identifier,owner:one(d.creator)||'Internet Archive',art:iaArt(d.identifier),count:0,isAlbum:true,downloads:d.downloads||0,year:String(d.year||d.date||'').slice(0,4),link:'https://archive.org/details/'+d.identifier});
-const IA_SHELVES={netlabels:IA_COLL,live:'collection:etree AND format:"VBR MP3"',r78:'collection:georgeblood AND format:"VBR MP3"'};
+const IA_SHELVES={netlabels:IA_COLL,live:'collection:etree AND format:"VBR MP3"',r78:'collection:georgeblood AND format:"VBR MP3"',otr:'collection:oldtimeradio AND format:"VBR MP3"',mixtapes:'collection:hiphopmixtapes AND format:"VBR MP3"',books:'collection:librivoxaudio AND format:"64Kbps MP3"'};
 async function iaSearch(q,{rows=24,sort='downloads desc',coll=IA_COLL}={}){
   const query=`${q?'('+q+') AND ':''}mediatype:(audio OR etree) AND ${coll}`;
   const u='https://archive.org/advancedsearch.php?'+qs({q:query,rows,output:'json'})+'&fl[]=identifier&fl[]=title&fl[]=creator&fl[]=downloads&fl[]=year&fl[]=date'+(sort?'&sort[]='+encodeURIComponent(sort):'');
@@ -504,7 +532,7 @@ async function rb(path,params={}){
   let err;for(let k=0;k<RB_HOSTS.length;k++){const h=RB_HOSTS[(rbHost+k)%RB_HOSTS.length];try{const r=await getJSON(h+path+'?'+qs(params),7000);rbHost=(rbHost+k)%RB_HOSTS.length;return r}catch(e){err=e}}
   throw err||new Error('Radio Browser unreachable');
 }
-const mapRB=s=>({id:'rb:'+s.stationuuid,src:'radio',uuid:s.stationuuid,title:(s.name||'Station').trim(),artist:[s.state||s.country||s.countrycode,(s.tags||'').split(',').filter(Boolean).slice(0,2).join(', ')].filter(Boolean).join(' · ')||'Live radio',art:/^https:/.test(s.favicon||'')?s.favicon:'',duration:0,genre:(s.tags||'').split(',')[0]||'',plays:s.clickcount||0,live:true,stream:s.url_resolved,link:s.homepage||'',bitrate:s.bitrate||0,codec:s.codec||'',country:s.country||''});
+const mapRB=s=>({geo:s.geo_lat!=null&&s.geo_long!=null?[+s.geo_lat,+s.geo_long]:null,id:'rb:'+s.stationuuid,src:'radio',uuid:s.stationuuid,title:(s.name||'Station').trim(),artist:[s.state||s.country||s.countrycode,(s.tags||'').split(',').filter(Boolean).slice(0,2).join(', ')].filter(Boolean).join(' · ')||'Live radio',art:/^https:/.test(s.favicon||'')?s.favicon:'',duration:0,genre:(s.tags||'').split(',')[0]||'',plays:s.clickcount||0,live:true,stream:s.url_resolved,link:s.homepage||'',bitrate:s.bitrate||0,codec:s.codec||'',country:s.country||''});
 const rbOk=s=>s.url_resolved&&/^https:/.test(s.url_resolved)&&!/somafm\.com/i.test(s.url_resolved)&&!s.hls&&s.lastcheckok!==0&&/mp3|aac|ogg|opus/i.test(s.codec||'mp3');
 const stations=(params)=>cached('rb:'+JSON.stringify(params),300e3,async()=>{const seen=new Set();return (await rb('/json/stations/search',{hidebroken:true,is_https:true,order:'clickcount',reverse:true,limit:60,...params})).filter(rbOk).filter(s=>{const k=(s.name||'').trim().toLowerCase();if(seen.has(k))return false;seen.add(k);return true}).map(mapRB)});
 
@@ -560,10 +588,54 @@ async function resolveChart(t){
 async function wikiBio(name){if(!srcOn('wiki')||!name)return null;return cached('wiki:'+name,3600e3,async()=>{try{const j=await getJSON(`https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(name.trim().replace(/ /g,'_'))}`,7000);
   if(j.type!=='standard'||!/(musician|band|singer|rapper|\bdj\b|producer|composer|songwriter|duo|group|artist|record)/i.test(j.description||''))return null;return {text:j.extract,desc:j.description,url:j.content_urls?.desktop?.page,img:j.thumbnail?.source}}catch{return null}})}
 
+/* hearthis.at: open community, full tracks + DJ mixes (no key, CORS) */
+const hth=async(path,params={})=>getJSON('https://api-v2.hearthis.at'+path+'?'+qs(params),9000);
+const mapHT=t=>({id:'ht:'+t.id,src:'hearthis',title:trimS(t.title).replace(/_/g,' '),artist:trimS(t.user?.username)||'hearthis.at',artistId:null,art:httpsOnly(t.artwork_url)||httpsOnly(t.thumb)||'',duration:+t.duration||0,genre:t.genre||'',plays:+t.playback_count||0,date:t.release_date||'',stream:t.stream_url,link:t.permalink_url||''});
+const htFeed=(type='popular')=>cached('ht:'+type,300e3,async()=>((await hth('/feed/',{type,page:1,count:30}))||[]).filter(t=>t.stream_url&&t.private!=='1').map(mapHT));
+const htSearch=q=>cached('hts:'+q,120e3,async()=>((await hth('/search',{t:q,page:1,count:30}))||[]).filter(t=>t.stream_url&&t.private!=='1').map(mapHT));
+
+/* Mixcloud: search + popular via the open API, playback only in the official widget */
+const mcx=async(path,params={})=>getJSON('https://api.mixcloud.com'+path+'?'+qs(params),9000);
+const mcEmbed=key=>{let k=key;try{k=decodeURIComponent(key)}catch{}return 'https://player-widget.mixcloud.com/widget/iframe/?hide_cover=1&light=0&autoplay=1&feed='+encodeURIComponent(k)};
+const mapMC=c=>({id:'mc:'+c.key,src:'mixcloud',title:trimS(c.name),artist:c.user?.name||'Mixcloud',artistId:null,art:c.pictures?.extra_large||c.pictures?.large||c.pictures?.medium||'',duration:+c.audio_length||0,genre:(c.tags||[])[0]?.name||'',plays:+c.play_count||0,date:c.created_time||'',link:c.url,embed:mcEmbed(c.key),embedH:120});
+const mcPopular=()=>cached('mc:pop',600e3,async()=>{const lists=await Promise.all(['house','techno','hip-hop','ambient','drum-and-bass'].map(t=>mcx(`/discover/${t}/popular/`,{limit:8}).then(r=>r.data||[]).catch(()=>[])));const out=[],seen=new Set();for(let i=0;i<8;i++)for(const l of lists){const c=l[i];if(c&&!seen.has(c.key)){seen.add(c.key);out.push(mapMC(c))}}return out});
+const mcSearch=q=>cached('mcs:'+q,120e3,async()=>((await mcx('/search/',{q,type:'cloudcast',limit:30})).data||[]).map(mapMC));
+
+/* live stations with real now-playing APIs */
+const LIVE_FM=[
+  {id:'live:kexp',src:'radio',live:true,title:'KEXP 90.3',artist:'Seattle · independent',art:'https://www.kexp.org/static/assets/img/logo-header.svg',stream:'https://kexp-mp3-128.streamguys1.com/kexp128.mp3',link:'https://www.kexp.org/',codec:'MP3',bitrate:128,country:'USA',np:'kexp'},
+  {id:'live:nts1',src:'radio',live:true,title:'NTS 1',artist:'London · eclectic',art:'',stream:'https://stream-relay-geo.ntslive.net/stream',link:'https://www.nts.live/',codec:'MP3',country:'UK',np:'nts1'},
+  {id:'live:nts2',src:'radio',live:true,title:'NTS 2',artist:'London · eclectic',art:'',stream:'https://stream-relay-geo.ntslive.net/stream2',link:'https://www.nts.live/',codec:'MP3',country:'UK',np:'nts2'}];
+const NP={
+  kexp:async()=>{const r=(await getJSON('https://api.kexp.org/v2/plays/?limit=1',7000)).results?.[0];return r&&r.play_type==='trackplay'?{title:r.song,artist:r.artist,art:httpsOnly(r.image_uri)}:{title:'Air break',artist:'KEXP'}},
+  nts1:async()=>{const c=(await cached('nts:live',30e3,()=>getJSON('https://www.nts.live/api/v2/live',7000))).results?.[0];return c&&{title:c.now?.broadcast_title,artist:'NTS 1',art:c.now?.embeds?.details?.media?.picture_large}},
+  nts2:async()=>{const c=(await cached('nts:live',30e3,()=>getJSON('https://www.nts.live/api/v2/live',7000))).results?.[1];return c&&{title:c.now?.broadcast_title,artist:'NTS 2',art:c.now?.embeds?.details?.media?.picture_large}}};
+const NOWP={info:null,timer:null,async poll(){clearTimeout(this.timer);const t=P.cur();this.info=null;if(!t?.np||!NP[t.np]||!srcOn('livefm'))return;
+  try{const r=await NP[t.np]();if(P.cur()!==t)return;this.info=r;if(r?.art&&!t.art){t.art=r.art;renderNow()}paintNow();setMediaNow(t,r)}catch{}
+  this.timer=setTimeout(()=>this.poll(),document.hidden?60e3:25e3)}};
+function setMediaNow(t,r){if(!('mediaSession' in navigator)||!r)return;try{navigator.mediaSession.metadata=new MediaMetadata({title:r.title||t.title,artist:(r.artist?r.artist+' · ':'')+t.title,album:'Live',artwork:(r.art||t.art)?[{src:r.art||t.art,sizes:'500x500'}]:[]})}catch{}}
+
+/* play from a link: YouTube / SoundCloud / Mixcloud via official embeds, Audius / Archive / direct audio natively */
+async function fromLink(raw){
+  let u;try{u=new URL(raw.trim())}catch{return null}
+  const h=u.hostname.replace(/^www\.|^m\./,'');
+  const yt=raw.match(/(?:youtu\.be\/|[?&]v=|shorts\/|embed\/)([\w-]{11})/);
+  if(yt&&/youtu/.test(h)){let title='YouTube video',artist='YouTube';try{const o=await getJSON('https://www.youtube.com/oembed?format=json&url='+encodeURIComponent('https://www.youtube.com/watch?v='+yt[1]),7000);title=o.title||title;artist=o.author_name||artist}catch{}
+    return {id:'yt:'+yt[1],src:'youtube',title,artist,artistId:null,art:`https://i.ytimg.com/vi/${yt[1]}/hqdefault.jpg`,duration:0,genre:'',link:'https://www.youtube.com/watch?v='+yt[1],embed:`https://www.youtube-nocookie.com/embed/${yt[1]}?autoplay=1&playsinline=1`,embedH:'video'}}
+  if(h==='soundcloud.com'||h==='on.soundcloud.com'){const o=await getJSON('https://soundcloud.com/oembed?format=json&url='+encodeURIComponent(u.href),8000);const src=(o.html.match(/src="([^"]+)"/)||[])[1];
+    return src?{id:'sc:'+u.pathname,src:'soundcloud',title:o.title?.replace(/ by .*$/,'')||'SoundCloud',artist:o.author_name||'SoundCloud',artistId:null,art:httpsOnly(o.thumbnail_url),duration:0,genre:'',link:u.href,embed:src.replace(/&amp;/g,'&')+'&auto_play=true&visual=false',embedH:166}:null}
+  if(h==='mixcloud.com'){const key=u.pathname.endsWith('/')?u.pathname:u.pathname+'/';try{return mapMC(await mcx(key,{}))}catch{return {id:'mc:'+key,src:'mixcloud',title:key.split('/').filter(Boolean).pop(),artist:'Mixcloud',art:'',duration:0,link:u.href,embed:mcEmbed(key),embedH:120}}}
+  if(h==='audius.co'){const r=await api('/resolve',{url:u.href});if(r&&r.title&&!r.playlist_name&&okT(r))return mapT(r);if(r?.playlist_name)return {collection:mapP(r)};if(r?.handle)return {collection:mapU(r)};return null}
+  if(h==='archive.org'){const m=u.pathname.match(/\/details\/([^/]+)/);if(m)return {collection:{kind:'ia',id:m[1],title:m[1],owner:'',art:iaArt(m[1]),link:u.href}};return null}
+  if(u.protocol==='https:'&&/\.(mp3|m4a|aac|ogg|opus|wav|flac)(\?|$)/i.test(u.pathname))return {id:'url:'+u.href,src:'link',title:decodeURIComponent(u.pathname.split('/').pop()),artist:h,artistId:null,art:'',duration:0,genre:'',stream:u.href,link:u.href};
+  if(u.protocol==='https:')return {id:'url:'+u.href,src:'link',live:true,title:h,artist:'Stream from link',artistId:null,art:'',duration:0,stream:u.href,link:u.href,codec:'Link'};
+  return null}
+const looksLikeUrl=q=>/^https?:\/\/\S+$/i.test(q.trim());
+
 /* stream routing: sources that send CORS headers go through the equalizer */
 const streamFor=t=>(!t.src||t.src==='audius')?streamUrl(t.id):t.stream;
-const corsOK=t=>t.src!=='radio'&&t.src!=='podcast';
-const srcTag=t=>t.src==='archive'?'<span class="src ia">archive</span>':t.src==='podcast'?'<span class="src ia">podcast</span>':t.src==='chart'?'<span class="src">chart</span>':t.src==='preview'?'<span class="src">preview</span>':'';
+const corsOK=t=>['audius','archive','preview',undefined].includes(t.src);
+const srcTag=t=>t.src==='archive'?'<span class="src ia">archive</span>':t.src==='podcast'?'<span class="src ia">podcast</span>':t.src==='chart'?'<span class="src">chart</span>':t.src==='preview'?'<span class="src">preview</span>':t.src==='hearthis'?'<span class="src ia">hearthis</span>':t.src==='mixcloud'?'<span class="src ia">mixcloud</span>':t.src==='youtube'?'<span class="src">youtube</span>':t.src==='soundcloud'?'<span class="src">soundcloud</span>':t.src==='link'?'<span class="src">link</span>':'';
 
 /* ---------- clock (Europe/Vienna) ---------- */
 const TZ='Europe/Vienna';let clockOffset=0,clockSource='system clock';
@@ -617,6 +689,7 @@ const P={q:[],i:-1,dir:1,label:'',shuffle:false,repeat:'off',errs:0,
     if(t.src==='chart'){const me=t;toast('Looking for a free version…');resolveChart(t).then(m=>{if(this.cur()!==me)return;
         if(m){this.misses=0;this.q[this.i]={...m,chartOf:me.title};if(m.preview)toast('No free full version, playing the 30 s preview');this.load(auto)}
         else{this.misses++;toast(`"${me.title}" is not on the free sources`);if(this.misses<6&&this.i<this.q.length-1){this.i++;this.load(auto)}else this.misses=0}}).catch(()=>toast('Search failed. Check your connection.'));return}
+    if(t.embed){useDeck(true);audio.pause();audio.removeAttribute('src');try{audio.load()}catch{}onTrack(t);openPlayer();return}
     useDeck(corsOK(t));if(audio===aEq)ensureGraph();else if(actx&&actx.state==='suspended')actx.resume();audio.src=streamFor(t);if(auto)audio.play().catch(e=>{if(e.name==='NotAllowedError')toast('Tap play to start')});onTrack(t);
     if(t.src==='radio'&&t.uuid)rb('/json/url/'+encodeURIComponent(t.uuid)).catch(()=>{}); /* Radio Browser asks apps to count clicks */
   },
@@ -643,12 +716,13 @@ onDeck('loadedmetadata',renderProgress);
 function onTrack(t){
   S.recent=[slim(t),...S.recent.filter(x=>x.id!==t.id)].slice(0,30);
   if(t.artistId){const p=S.plays[t.artistId]||{name:t.artist,art:t.art,n:0,id:t.artistId};p.n++;p.name=t.artist;if(t.art)p.art=t.art;S.plays[t.artistId]=p}
-  save();renderNow();markPlaying();setMedia(t);LYR.reset();
+  save();renderNow();markPlaying();setMedia(t);LYR.reset();NOWP.poll();
   if('mediaSession' in navigator){[['play',()=>audio.play()],['pause',()=>audio.pause()],['nexttrack',()=>P.next()],['previoustrack',()=>P.prev()],['seekto',d=>{if(isFinite(audio.duration))audio.currentTime=d.seekTime}],['seekforward',()=>{if(!P.cur()?.live)audio.currentTime+=10}],['seekbackward',()=>{if(!P.cur()?.live)audio.currentTime-=10}]].forEach(([a,f])=>{try{navigator.mediaSession.setActionHandler(a,f)}catch{}})}
 }
 function setMedia(t){if(!('mediaSession' in navigator))return;try{navigator.mediaSession.metadata=new MediaMetadata({title:t.title,artist:t.artist,album:P.label||'empty.string',artwork:t.art?[{src:t.art,sizes:'480x480',type:'image/jpeg'}]:[]})}catch{}}
 
-function paintNow(){const t=P.cur();const txt=t?.live?esc([t.codec,t.bitrate?t.bitrate+' kbps':'',t.country].filter(Boolean).join(' · ')||'Live stream'):'';$$('[data-np]').forEach(e=>e.innerHTML=txt)}
+function paintNow(){const t=P.cur();const np=NOWP.info;if(t?.live&&np&&np.title){const txt=`<b>${esc(np.title)}</b>${np.artist&&np.artist!==t.title?' · '+esc(np.artist):''}`;$$('[data-np]').forEach(e=>e.innerHTML=txt);const ms=$('#mini .tm span');if(ms)ms.textContent=(np.artist?np.artist+' – ':'')+np.title;return}
+  const txt=t?.live?esc([t.codec,t.bitrate?t.bitrate+' kbps':'',t.country].filter(Boolean).join(' · ')||'Live stream'):'';$$('[data-np]').forEach(e=>e.innerHTML=txt)}
 
 /* ---------- sleep timer ---------- */
 const SLEEP={until:0,eot:false,timer:null};
@@ -713,12 +787,14 @@ function renderNow(){
   mini.classList.remove('hide');mini.classList.toggle('live',!!t.live);
   mini.innerHTML=`${art(t.art,t.id)}<div class="tm"><b>${esc(t.title)}</b><span>${esc(t.artist)}</span></div><button class="ib0 like${isLiked(t.id)?' on':''}" data-act="like" aria-label="${isLiked(t.id)?'Remove from':'Add to'} liked songs">${ic(isLiked(t.id)?'heartF':'heart',22)}</button><div class="mid"><button class="donly" data-act="prev" aria-label="Previous">${ic('prev',22)}</button><button class="pp" data-act="toggle" aria-label="Play or pause">${ic(audio.paused?'play':'pause',18)}</button><button class="donly" data-act="next" aria-label="Next">${ic('next',22)}</button></div><span class="donly mtime" id="mtime"></span><div class="bar"></div>`;
   const pl=$('#player');
+  if(t.embed&&pl.dataset.tid===t.id&&pl.querySelector('iframe.embedf')){$$('#player .like').forEach(b=>{b.classList.toggle('on',isLiked(t.id));b.innerHTML=ic(isLiked(t.id)?'heartF':'heart',26)});return} /* keep the embedded player alive */
+  pl.dataset.tid=t.id;
   const changed=lastShown!==null&&lastShown!==t.id;lastShown=t.id;
   const oldCov=changed?$('.cov',pl):null;const ghost=oldCov&&pl.classList.contains('open')?{r:oldCov.getBoundingClientRect(),st:oldCov.getAttribute('style')}:null;
   const upNext=P.q[P.i+1];
   pl.innerHTML=`<div class="glow" style="${bgArt(t.art,t.id)}"></div>
   <div class="row between"><button class="ib ghost" data-act="closeplayer" aria-label="Close player">${ic('chevD',26)}</button><div style="text-align:center;min-width:0" class="grow"><div class="eyebrow">Playing from</div><div style="font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(P.label||'Your queue')}</div></div><button class="ib ghost" data-act="menu" data-list="${reg([t],P.label)}" data-i="0" aria-label="More options">${ic('more',22)}</button></div>
-  <div class="art cov" style="${bgArt(t.art,t.id)}"></div>
+  ${t.embed?`<div class="embedwrap ${t.embedH==='video'?'video':''}" style="${t.embedH!=='video'?'height:'+t.embedH+'px':''}"><iframe class="embedf" src="${esc(t.embed)}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" title="${esc(t.title)}"></iframe></div><p class="note" style="margin:-6px 0 0;text-align:center">Playing in the official ${esc({youtube:'YouTube',soundcloud:'SoundCloud',mixcloud:'Mixcloud'}[t.src]||'')} player. Use its controls, then Next for the queue.</p>`:`<div class="art cov" style="${bgArt(t.art,t.id)}"></div>`}
   <div class="row between" style="gap:14px"><div class="grow"><h1 class="ptitle">${esc(t.title)}</h1><button class="muted" style="font-size:15px;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block" data-act="goartist" data-arg="${A({id:t.artistId,name:t.artist,art:t.art})}">${esc(t.artist)}</button></div><button class="ib0 like${isLiked(t.id)?' on':''}" style="width:44px;height:44px" data-act="like" aria-label="Like">${ic(isLiked(t.id)?'heartF':'heart',26)}</button></div>
   ${t.live?`<div class="livebar"><span class="row" style="gap:0;font-family:var(--fm);font-size:11px;color:var(--danger);flex:none"><i class="livedot"></i>LIVE</span><span class="np" data-np></span>${t.link?`<button class="ib0" data-act="openext" data-arg="${A({u:t.link})}" aria-label="Station website">${ic('ext',16)}</button>`:''}</div>`
   :`<div style="display:flex;flex-direction:column;gap:6px"><input type="range" class="seek" id="seek" min="0" max="${t.duration||100}" step="0.1" value="0" aria-label="Seek"><div class="row between mono muted" style="font-size:12px"><span id="tcur">0:00</span><span id="tdur">${fmt(t.duration)}</span></div></div>`}
@@ -811,8 +887,8 @@ function applyFilters(list,f=SR){
 }
 VIEWS.search=(el)=>{
   el.innerHTML=`<div class="row between"><h1 class="h1">Search</h1><button class="ib" data-act="filters" aria-label="Filters" ${SR.type!=='Songs'?'hidden':''}>${ic('sliders',20)}${filtersActive()?'<span class="dot"></span>':''}</button></div>
-  <label class="field">${ic('search',20)}<input id="q" type="search" placeholder="${SR.type==='Radio'?'Station name or genre':'Songs, albums, artists, radio'}" value="${esc(SR.q)}" autocomplete="off" enterkeyhint="search"><button class="ib0" data-act="clearq" aria-label="Clear search" ${SR.q?'':'hidden'}>${ic('x',18)}</button></label>
-  <div class="chips">${['Songs','Albums','Artists'].concat(srcOn('podcasts')?['Podcasts']:[],srcOn('radio')?['Radio']:[]).map(t=>`<button class="chip${SR.type===t?' on':''}" data-act="stype" data-t="${t}">${t}</button>`).join('')}</div>
+  <label class="field">${ic('search',20)}<input id="q" type="search" placeholder="${SR.type==='Radio'?'Station name or genre':'Search or paste a link'}" value="${esc(SR.q)}" autocomplete="off" enterkeyhint="search"><button class="ib0" data-act="clearq" aria-label="Clear search" ${SR.q?'':'hidden'}>${ic('x',18)}</button></label>
+  <div class="chips">${['Songs','Albums','Artists'].concat(srcOn('hearthis')||srcOn('mixcloud')?['Mixes']:[],srcOn('podcasts')?['Podcasts']:[],srcOn('radio')?['Radio']:[]).map(t=>`<button class="chip${SR.type===t?' on':''}" data-act="stype" data-t="${t}">${t}</button>`).join('')}</div>
   <div class="eyebrow" data-meta></div><div data-res></div>`;
   const q=$('#q',el);let deb;
   q.addEventListener('input',()=>{SR.q=q.value;$('[data-act=clearq]',el).hidden=!q.value;clearTimeout(deb);deb=setTimeout(()=>runSearch(el),SR.type==='Songs'?320:500)});
@@ -821,6 +897,15 @@ VIEWS.search=(el)=>{
 };
 async function runSearch(el){
   const res=$('[data-res]',el),meta=$('[data-meta]',el);const id=++SR.rid;const q=SR.q.trim();
+  if(q&&looksLikeUrl(q)&&srcOn('embeds')){meta.textContent='Link';res.innerHTML=skelRows(1);
+    try{const r=await fromLink(q);if(id!==SR.rid)return;
+      if(!r){res.innerHTML='<p class="empty">This link is not supported. Try YouTube, SoundCloud, Mixcloud, Audius, archive.org or a direct https audio file.</p>';return}
+      if(r.collection){res.innerHTML=`<div class="grid2">${card(r.collection,r.collection.owner||'Open')}</div>`;return}
+      meta.textContent='Play from link · '+(r.src==='link'?'direct audio':r.src);res.innerHTML=rows([r],'From link');
+    }catch(e){if(id===SR.rid)res.innerHTML=`<p class="empty err">Couldn't open the link: ${esc(e.message)}</p>`}return}
+  if(!q&&SR.type==='Mixes'){meta.textContent='Popular mixes right now';res.innerHTML=skelRows(5);
+    try{const [a,b]=await Promise.all([srcOn('hearthis')?htFeed('popular').catch(()=>[]):[],srcOn('mixcloud')?mcPopular().catch(()=>[]):[]]);if(id!==SR.rid)return;
+      res.innerHTML=(b.length?`<div class="eyebrow acc">Mixcloud · popular</div>${rows(b.slice(0,12),'Mixcloud popular')}`:'')+(a.length?`<div class="eyebrow acc" style="margin-top:18px">hearthis.at · popular</div>${rows(a.slice(0,15),'hearthis popular')}`:'')||'<p class="empty">Nothing here.</p>'}catch(e){if(id===SR.rid)res.innerHTML=`<p class="empty err">${esc(e.message)}</p>`}return}
   if(!q&&SR.type==='Podcasts'){meta.textContent='Hot podcasts right now';res.innerHTML=skelRows(4);
     try{const ps=await hotPods(navigator.language?.startsWith('de')?'de':'');if(id!==SR.rid)return;res.innerHTML=`<div class="grid2">${ps.map(p=>card(p,`${p.owner||'Podcast'} · ${p.count} episodes`)).join('')}</div>`}catch(e){if(id===SR.rid)res.innerHTML=`<p class="empty err">${esc(e.message)}</p>`}return}
   if(!q&&SR.type==='Radio'){meta.textContent='Popular stations worldwide';res.innerHTML=skelRows(5);
@@ -831,7 +916,7 @@ async function runSearch(el){
   meta.textContent='Searching…';res.innerHTML=skelRows(5);
   try{
     if(SR.type==='Songs'){
-      const raw=q?await cached('s:'+q,60e3,async()=>tracksOf(await api('/tracks/search',{query:q,limit:50}))):(await Promise.all(SR.genres.map(g=>trending(g)))).flat();
+      const raw=q?await cached('s:'+q,60e3,async()=>{const [a,h]=await Promise.all([api('/tracks/search',{query:q,limit:50}).then(tracksOf),srcOn('hearthis')?htSearch(q).catch(()=>[]):Promise.resolve([])]);return [...a,...h.slice(0,15)]}):(await Promise.all(SR.genres.map(g=>trending(g)))).flat();
       if(id!==SR.rid)return;SR.raw=raw;const list=applyFilters(raw);
       meta.textContent=`${list.length} ${list.length===1?'song':'songs'} · ${SR.genres.length?SR.genres.join(', '):'All genres'} · ${SORTS[SR.sort]}${SR.len!=='any'?' · '+LENS[SR.len]:''}`;
       res.innerHTML=rows(list,q?`Search: ${q}`:SR.genres.join(', '),{empty:raw.length?'No songs match these filters. Try removing one.':'No songs found. Try another spelling.'});
@@ -839,6 +924,10 @@ async function runSearch(el){
       const [au,ia]=await Promise.all([api('/playlists/search',{query:q,limit:40}).then(r=>(r||[]).map(mapP).filter(p=>p.count>0)).catch(()=>[]),srcOn('archive')?iaSearch(q.replace(/[:()"]/g,' '),{rows:24,sort:''}).catch(()=>[]):Promise.resolve([])]);if(id!==SR.rid)return;
       meta.textContent=`${au.length+ia.length} results · Audius ${au.length}${srcOn('archive')?` · Internet Archive ${ia.length}`:''}`;
       res.innerHTML=(au.length||ia.length)?`${au.length?`<div class="eyebrow acc">Audius · albums and playlists</div><div class="grid2">${au.map(p=>card(p,`${p.isAlbum?'Album':'Playlist'} · ${p.owner}`)).join('')}</div>`:''}${ia.length?`<div class="eyebrow acc" style="margin-top:22px">Internet Archive · free netlabel releases</div><div class="grid2">${ia.map(p=>card(p,`${p.owner}${p.year?' · '+p.year:''}`)).join('')}</div>`:''}`:'<p class="empty">No albums found.</p>';
+    }else if(SR.type==='Mixes'){
+      const [a,b]=await Promise.all([srcOn('hearthis')?htSearch(q).catch(()=>[]):[],srcOn('mixcloud')?mcSearch(q).catch(()=>[]):[]]);if(id!==SR.rid)return;
+      meta.textContent=`${a.length+b.length} mixes · hearthis.at ${a.length} · Mixcloud ${b.length}`;
+      res.innerHTML=(a.length?`<div class="eyebrow acc">hearthis.at · full tracks</div>${rows(a,'hearthis: '+q)}`:'')+(b.length?`<div class="eyebrow acc" style="margin-top:18px">Mixcloud · official player</div>${rows(b,'Mixcloud: '+q)}`:'')||'<p class="empty">No mixes found.</p>';
     }else if(SR.type==='Podcasts'){
       const ps=await searchPods(q);if(id!==SR.rid)return;
       meta.textContent=`${ps.length} ${ps.length===1?'podcast':'podcasts'} · fyyd`;
@@ -882,7 +971,9 @@ VIEWS.explore=(el)=>{
     ${shelf('fresh','New this week','Fresh releases')}`:''}
   ${srcOn('podcasts')?`<section><div class="sh"><div><div class="eyebrow acc">fyyd · full episodes</div><h2>Hot podcasts</h2></div><button class="see" data-act="podsearch">Search</button></div>
     <div class="chips">${[['de','Deutsch'],['en','English'],['','All']].map(([k,l])=>`<button class="chip${podLang===k?' on':''}" data-act="podlang" data-l="${k}">${l}</button>`).join('')}</div><div class="hscroll" data-pods>${skelCards(3)}</div></section>`:''}
-  ${srcOn('archive')?shelf('live','Internet Archive · etree','Live concerts',`<button class="see" data-act="push" data-view="browse" data-arg="${A({ia:1,coll:'live',q:'',title:'Live concerts'})}">See all</button>`)+shelf('r78','Internet Archive · Great 78 Project','78rpm records',`<button class="see" data-act="push" data-view="browse" data-arg="${A({ia:1,coll:'r78',q:'',title:'78rpm records'})}">See all</button>`):''}
+  ${srcOn('archive')?shelf('live','Internet Archive · etree','Live concerts',`<button class="see" data-act="push" data-view="browse" data-arg="${A({ia:1,coll:'live',q:'',title:'Live concerts'})}">See all</button>`)+shelf('r78','Internet Archive · Great 78 Project','78rpm records',`<button class="see" data-act="push" data-view="browse" data-arg="${A({ia:1,coll:'r78',q:'',title:'78rpm records'})}">See all</button>`)+shelf('mixtapes','Internet Archive · Hip Hop Mixtapes','Mixtapes',`<button class="see" data-act="push" data-view="browse" data-arg="${A({ia:1,coll:'mixtapes',q:'',title:'Hip hop mixtapes'})}">See all</button>`)+shelf('otr','Internet Archive · Old Time Radio','Radio dramas',`<button class="see" data-act="push" data-view="browse" data-arg="${A({ia:1,coll:'otr',q:'',title:'Old time radio'})}">See all</button>`)+shelf('books','LibriVox via Internet Archive · public domain','Audiobooks',`<button class="see" data-act="push" data-view="browse" data-arg="${A({ia:1,coll:'books',q:'',title:'Audiobooks'})}">See all</button>`):''}
+  ${srcOn('hearthis')?`<section><div class="sh"><div><div class="eyebrow acc">hearthis.at · full tracks</div><h2>Fresh on hearthis</h2></div><button class="see" data-act="mixes">All mixes</button></div><div data-ht>${skelRows(4)}</div></section>`:''}
+  ${srcOn('mixcloud')?`<section><div class="sh"><div><div class="eyebrow acc">Mixcloud · DJ mixes and shows</div><h2>Popular mixes</h2></div><button class="see" data-act="mixes">See all</button></div><div data-mc>${skelRows(4)}</div></section>`:''}
   ${shelf('tpl','Audius · this week','Trending playlists')}`;
   const put=(key,html)=>{const b=$(`[data-${key}]`,el);if(b&&el.isConnected)b.innerHTML=html};
   const fail=key=>e=>put(key,`<p class="empty err" style="width:100%">${esc(e.message)}</p>`);
@@ -891,7 +982,9 @@ VIEWS.explore=(el)=>{
   if(srcOn('podcasts'))hotPods(podLang).then(l=>put('pods',l.length?l.slice(0,12).map(p=>card(p,`${p.owner||'Podcast'} · ${p.count} ep.`)).join(''):'<p class="empty" style="width:100%">No podcasts.</p>')).catch(fail('pods'));
   if(srcOn('archive')){
     cached('ia:live',900e3,()=>iaSearch('',{rows:30,coll:IA_SHELVES.live})).then(l=>put('live',l.sort(()=>Math.random()-.5).slice(0,10).map(p=>card(p,`${p.owner}${p.year?' · '+p.year:''}`)).join(''))).catch(fail('live'));
-    cached('ia:78',900e3,()=>iaSearch('',{rows:30,coll:IA_SHELVES.r78})).then(l=>put('r78',l.sort(()=>Math.random()-.5).slice(0,10).map(p=>card(p,`${p.owner}${p.year?' · '+p.year:''}`)).join(''))).catch(fail('r78'))}
+    for(const k of ['r78','mixtapes','otr','books'])cached('ia:'+k,900e3,()=>iaSearch('',{rows:30,coll:IA_SHELVES[k]})).then(l=>put(k,l.sort(()=>Math.random()-.5).slice(0,10).map(p=>card(p,`${p.owner}${p.year?' · '+p.year:''}`)).join(''))).catch(fail(k))}
+  if(srcOn('hearthis'))htFeed('new').then(l=>put('ht',rows(l.slice(0,5),'hearthis new'))).catch(fail('ht'));
+  if(srcOn('mixcloud'))mcPopular().then(l=>put('mc',rows(l.slice(0,5),'Mixcloud popular'))).catch(fail('mc'));
   cached('au:tpl',300e3,async()=>((await api('/playlists/trending',{limit:20}))||[]).map(mapP).filter(p=>p.count>0)).then(l=>put('tpl',l.slice(0,12).map(p=>card(p,`${p.owner} · ${p.count} songs`)).join(''))).catch(fail('tpl'));
 };
 
@@ -902,6 +995,8 @@ let rTag='',stAll=false;
 VIEWS.radio=(el)=>{
   const cn=COUNTRIES.find(c=>c[0]===S.radioCountry)||COUNTRIES[0];
   el.innerHTML=`<div class="row between"><div style="display:flex;flex-direction:column;gap:4px"><div class="eyebrow"><i class="livedot"></i>Live</div><h1 class="h1">Radio</h1></div><button class="ib" data-act="radiosearch" aria-label="Search stations">${ic('search',20)}</button></div>
+  ${srcOn('radio')?`<button class="gardencard" data-act="push" data-view="garden"><span class="gc-glow"></span><span class="gc-in"><span class="eyebrow acc">Garden</span><b>Live radio on a world map</b><span>Spin the globe, tap a dot, listen. Thousands of stations.</span></span><span class="gc-go">${ic('globe',26)}</span></button>`:''}
+  ${srcOn('livefm')?`<section><div class="sh"><div><div class="eyebrow acc"><i class="livedot"></i>With now playing</div><h2>Live picks</h2></div></div><div data-livefm>${rows(LIVE_FM,'Live picks')}</div></section>`:''}
   ${srcOn('radio')?`<section><div class="sh"><div><div class="eyebrow acc">Worldwide · rising today</div><h2>Trending stations</h2></div><button class="see" style="color:var(--accent)" data-act="stall" hidden></button></div><div class="hscroll" data-trendst>${skelCards(3)}</div></section>`:''}
   ${srcOn('radio')?`<section><div class="sh"><div><div class="eyebrow acc">Radio Browser · ${esc(cn[1])}</div><h2>Stations</h2></div></div>
   <div class="chips">${COUNTRIES.map(c=>`<button class="chip${c[0]===S.radioCountry?' on':''}" data-act="rcountry" data-c="${c[0]}">${esc(c[1])}</button>`).join('')}</div>
@@ -912,6 +1007,38 @@ VIEWS.radio=(el)=>{
   if(srcOn('radio'))stations({order:'clicktrend',limit:60}).then(ch=>{if(!el.isConnected)return;$('[data-trendst]',el).innerHTML=stationCards(stAll?ch.slice(0,30):ch.slice(0,10),'Trending stations');const b=$('[data-act=stall]',el);if(b){b.hidden=ch.length<=10;b.textContent=stAll?'Show fewer':'Show more'}}).catch(e=>{if(el.isConnected)$('[data-trendst]',el).innerHTML=`<p class="empty err" style="width:100%">${esc(e.message)}</p>`});
   if(srcOn('radio'))stations({countrycode:S.radioCountry,tag:rTag,limit:rTag||S.radioCountry?60:80}).then(list=>{if(el.isConnected)$('[data-st]',el).innerHTML=rows(list.slice(0,40),`Radio · ${cn[1]}${rTag?' · '+rTag:''}`,{empty:'No HTTPS stations for this combination. Try another genre.'})}).catch(e=>{if(el.isConnected)$('[data-st]',el).innerHTML=`<p class="empty err">Couldn't reach Radio Browser: ${esc(e.message)}</p>`});
 };
+
+/* garden: live radio on a world map (Radio Browser geo data, Leaflet + OpenStreetMap tiles, darkened with a CSS filter) */
+let leafletP=null;
+const loadLeaflet=()=>leafletP||(leafletP=new Promise((ok,no)=>{const c=document.createElement('link');c.rel='stylesheet';c.href='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css';document.head.append(c);
+  const s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js';s.onload=()=>ok(window.L);s.onerror=()=>{leafletP=null;no(new Error('Map library failed to load'))};document.head.append(s)}));
+const geoStations=()=>cached('rb:geo',1800e3,async()=>{const seen=new Set();return (await rb('/json/stations/search',{has_geo_info:true,hidebroken:true,is_https:true,order:'clickcount',reverse:true,limit:1500})).filter(rbOk).filter(s=>{const k=(s.name||'').trim().toLowerCase();if(seen.has(k))return false;seen.add(k);return true}).map(mapRB).filter(t=>t.geo)});
+let G=null;
+VIEWS.garden=(el)=>{
+  el.classList.add('garden','nobar');
+  el.innerHTML=`<div class="gmap" data-gmap></div>
+  <div class="gtop"><button class="ib" data-act="back" aria-label="Back">${ic('back',22)}</button><div class="gtitle"><span class="eyebrow acc">Garden</span><b data-gcount>Loading stations…</b></div><button class="ib" data-act="gnear" aria-label="Stations near me">${ic('pin',20)}</button><button class="ib" data-act="grandom" aria-label="Random station" style="background:var(--accent);color:var(--ink)">${ic('dice',20)}</button></div>
+  <div class="gcard" data-gcard><span class="muted">Tap a green dot to tune in. Zoom in to see more.</span></div>`;
+  (async()=>{try{const [L,list]=await Promise.all([loadLeaflet(),geoStations()]);if(!el.isConnected)return;
+    const map=L.map($('[data-gmap]',el),{zoomControl:false,worldCopyJump:true,preferCanvas:true,minZoom:2,attributionControl:true}).setView([30,10],2);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:17,className:'gtiles',attribution:'&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors · stations: <a href="https://www.radio-browser.info" target="_blank" rel="noopener">Radio Browser</a>'}).addTo(map);
+    const accent=getComputedStyle(document.documentElement).getPropertyValue('--accent').trim()||'#C8F548';
+    const k=reg(list,'Garden');const marks=[];
+    list.forEach((t,i)=>{const m=L.circleMarker(t.geo,{radius:4,weight:0,fillColor:accent,fillOpacity:.85}).addTo(map);m.on('click',()=>gPick(i,true));marks.push(m)});
+    G={map,list,k,marks,el,cur:-1};$('[data-gcount]',el).textContent=`${list.length} live stations`;
+    setTimeout(()=>map.invalidateSize(),350);
+  }catch(e){if(el.isConnected)$('[data-gcard]',el).innerHTML=`<span class="err">${esc(e.message)}</span>`}})();
+};
+function gPick(i,play,fly){if(!G)return;const t=G.list[i];if(!t)return;
+  if(G.cur>=0&&G.marks[G.cur])G.marks[G.cur].setStyle({radius:4,fillColor:getComputedStyle(document.documentElement).getPropertyValue('--accent').trim()});
+  G.cur=i;G.marks[i].setStyle({radius:9,fillColor:'#FFFFFF'});G.marks[i].bringToFront();
+  if(fly)G.map.flyTo(t.geo,Math.max(G.map.getZoom(),6),{duration:1.4});
+  const near=G.list.map((s,j)=>[j,(s.geo[0]-t.geo[0])**2+(s.geo[1]-t.geo[1])**2]).filter(([j])=>j!==i).sort((a,b)=>a[1]-b[1]).slice(0,4).map(([j])=>j);
+  $('[data-gcard]',G.el).innerHTML=`<div class="row" style="gap:12px">${art(t.art,t.id,'sm')}<div class="grow"><b style="display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(t.title)}</b><span class="muted" style="font-size:13px">${esc(t.artist)}</span></div><button class="ib" style="background:var(--accent);color:var(--ink)" data-act="gplay" data-i="${i}" aria-label="Play">${ic('play',18)}</button></div>
+    ${near.length?`<div class="gnear">${near.map(j=>`<button class="chip" data-act="gpick" data-i="${j}">${esc(G.list[j].title)}</button>`).join('')}</div>`:''}`;
+  if(play)P.play(G.list,i,'Garden · '+(t.artist.split(' · ')[0]||'Radio'))}
+async function gNear(){if(!G)return;if(!navigator.geolocation){toast('Location is not available');return}
+  navigator.geolocation.getCurrentPosition(pos=>{const {latitude:a,longitude:b}=pos.coords;let best=-1,bd=1e9;G.list.forEach((s,j)=>{const d=(s.geo[0]-a)**2+(s.geo[1]-b)**2;if(d<bd){bd=d;best=j}});G.map.flyTo([a,b],8,{duration:1.4});if(best>=0)setTimeout(()=>gPick(best,true),1500)},()=>toast('Location permission denied'),{timeout:8000,maximumAge:600000})}
 
 /* library */
 let libTab='Songs';
@@ -1052,13 +1179,14 @@ VIEWS.settings=(el)=>{
     <button class="li" data-act="push" data-view="sources">Sources and API status<span class="r">${Object.keys(SOURCES).filter(srcOn).length} of ${Object.keys(SOURCES).length} on${ic('chevR',18)}</span></button></div></section>
   <section style="gap:8px"><div class="eyebrow">Design</div><div class="list">
     <button class="li" data-act="openext" data-arg="${A({u:'wireframes.html'})}">Wireframes and user flow<span class="r">${ic('grid',16)}${ic('ext',16)}</span></button>
+    <button class="li" data-act="openext" data-arg="${A({u:'api.html'})}">empty.string API for developers<span class="r">${ic('ext',16)}</span></button>
     <button class="li" data-act="shortcuts">Keyboard shortcuts<span class="r">${ic('kbd',18)}</span></button></div></section>
   <section style="gap:8px"><div class="eyebrow">Data on this device</div><div class="list"><button class="li danger" data-act="clearlib">Clear library and history</button></div></section>
   <section style="gap:8px"><div class="eyebrow">About</div><div class="list">
     <div class="li">Audius node<span class="r mono" style="font-size:12px">${esc(new URL(HOST).host)}</span></div>
     <div class="li">Device<span class="r">${document.documentElement.dataset.device==='phone'?'Phone · full screen':document.documentElement.classList.contains('wide')?'Desktop · full layout':'Desktop · small window'}</span></div>
     <div class="li">Clock<span class="r">Europe/Vienna · ${esc(clockSource)}</span></div>
-    <div class="li">Version<span class="r">empty.string 2.1</span></div></div></section>`;
+    <div class="li">Version<span class="r">empty.string 2.2</span></div></div></section>`;
   const n=$('#sname',el);n.addEventListener('change',()=>{S.name=n.value.trim()||'Tester';save();tick();toast('Name saved');stack.filter(v=>v.name==='home').forEach(refresh)});
 };
 
@@ -1215,6 +1343,11 @@ document.addEventListener('click',e=>{
     case 'rcountry':S.radioCountry=el.dataset.c;save();refresh(stack.find(v=>v.name==='radio'));break;
     case 'exrange':exRange=el.dataset.r;refresh(stack.find(v=>v.name==='explore'));break;
     case 'podlang':podLang=el.dataset.l;refresh(stack.find(v=>v.name==='explore'));break;
+    case 'gplay':gPick(+el.dataset.i,true);break;
+    case 'gpick':gPick(+el.dataset.i,true,true);break;
+    case 'grandom':if(G?.list?.length)gPick(Math.floor(Math.random()*G.list.length),true,true);break;
+    case 'gnear':gNear();break;
+    case 'mixes':SR.type='Mixes';SR.q='';goSearch();break;
     case 'podsearch':SR.type='Podcasts';SR.q='';goSearch();setTimeout(()=>$('#q')?.focus(),300);break;
     case 'findq':SR.type='Songs';SR.q=el.dataset.q;SR.genres=[];goSearch();break;
     case 'install':installApp();break;

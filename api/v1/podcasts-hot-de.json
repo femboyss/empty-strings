@@ -1,0 +1,248 @@
+{
+ "feed": "podcasts-hot-de",
+ "description": "Hot German podcasts (fyyd)",
+ "generated": "2026-10-21T18:30:29.825Z",
+ "count": 24,
+ "items": [
+  {
+   "kind": "podcast",
+   "id": "fyyd:71695",
+   "source": "fyyd",
+   "title": "Der Wochenbericht – Wirtschaftsforschung aus Berlin",
+   "artist": "DIW Berlin",
+   "artwork": "https://img-1.fyyd.de/pd/layout/7169535726a557bd2d92d72eae2a765bdfd36.jpg",
+   "episodes": 902,
+   "link": "https://www.diw.de/de/diw_01.c.623820.de/mediathek.html?sort=on&nach_metamed_reihe%5B%5D=DIW+Wochenbericht&sort-mobile=on"
+  },
+  {
+   "kind": "podcast",
+   "id": "fyyd:66573",
+   "source": "fyyd",
+   "title": "Digital Insurance Podcast: Versicherung & Digitalisierung",
+   "artist": "Insurance Media",
+   "artwork": "https://img-1.fyyd.de/pd/layout/665738945c2fcbeac590c6748650b4c9f08b8.jpg",
+   "episodes": 365,
+   "link": "https://pielaco.com/podcast"
+  },
+  {
+   "kind": "podcast",
+   "id": "fyyd:55225",
+   "source": "fyyd",
+   "title": "Geschichten für Kinder",
+   "artist": "Bayerischer Rundfunk",
+   "artwork": "https://img-1.fyyd.de/pd/layout/5522571d1256693d4829922287d49249e0e30.jpg",
+   "episodes": 660,
+   "link": "https://www.br.de/mediathek/podcast/geschichten-fuer-kinder/792"
+  },
+  {
+   "kind": "podcast",
+   "id": "fyyd:72544",
+   "source": "fyyd",
+   "title": "Freie Christengemeinde Ravensburg",
+   "artist": "FCG Ravensburg",
+   "artwork": "https://img-1.fyyd.de/pd/layout/72544d605705bff77af20a6b05370091610cb.jpg",
+   "episodes": 355,
+   "link": "https://wlme4p.podcaster.de/"
+  },
+  {
+   "kind": "podcast",
+   "id": "fyyd:67412",
+   "source": "fyyd",
+   "title": "Hör dich klug! - Dein Wissenspodcast",
+   "artist": "Podcast-Factory - Dr. Judith Roth und Olaf Brinkmann GbR",
+   "artwork": "https://img-1.fyyd.de/pd/layout/67412b20cb82f75341090035ef870e75c969a.jpg",
+   "episodes": 336,
+   "link": "https://podcast-factory.de/"
+  },
+  {
+   "kind": "podcast",
+   "id": "fyyd:79457",
+   "source": "fyyd",
+   "title": "UnterBlog",
+   "artist": "Horst Lüning",
+   "artwork": "https://img-1.fyyd.de/pd/layout/79457bb6a2c5b4a07841e0ec677d3acdc3e97.jpg",
+   "episodes": 924,
+   "link": "https://soundcloud.com/horst-luening-265396581"
+  },
+  {
+   "kind": "podcast",
+   "id": "fyyd:558",
+   "source": "fyyd",
+   "title": "Magabotato",
+   "artist": "Magabotato",
+   "artwork": "https://img-1.fyyd.de/pd/layout/558de9d2c9cd0a75fc7eaf656a4d7e2589a.jpg",
+   "episodes": 863,
+   "link": "https://www.magabotato.de"
+  },
+  {
+   "kind": "podcast",
+   "id": "fyyd:56095",
+   "source": "fyyd",
+   "title": "Edition Zukunft",
+   "artist": "DER STANDARD",
+   "artwork": "https://img-1.fyyd.de/pd/layout/560953e07e41cd44215a137c6eb2100f76e86.jpg",
+   "episodes": 289,
+   "link": "https://www.derStandard.at/podcast"
+  },
+  {
+   "kind": "podcast",
+   "id": "fyyd:77022",
+   "source": "fyyd",
+   "title": "Ichtys Radio Podcast",
+   "artist": "Ichtys Radio",
+   "artwork": "https://img-1.fyyd.de/pd/layout/77022d4acc87a245880e18e7ead67975d052b.jpg",
+   "episodes": 2511,
+   "link": ""
+  },
+  {
+   "kind": "podcast",
+   "id": "fyyd:72334",
+   "source": "fyyd",
+   "title": "Die CHRIS WORLD Show",
+   "artist": "CHRIS WORLD",
+   "artwork": "https://img-1.fyyd.de/pd/layout/72334a63629248804d84b9e1218a25dd8cc9c.jpg",
+   "episodes": 880,
+   "link": "https://linktr.ee/chris_world_official"
+  },
+  {
+   "kind": "podcast",
+   "id": "fyyd:84375",
+   "source": "fyyd",
+   "title": "Off The Path: Der Podcast für Wildnis- & Naturreisen",
+   "artist": "Sebastian Canaves",
+   "artwork": "https://img-1.fyyd.de/pd/layout/8437512be5a4209cd295a07c4ddd13a2217a2.jpg",
+   "episodes": 464,
+   "link": "https://off-the-path-der-reisepodcast.blogs.audiorella.com"
+  },
+  {
+   "kind": "podcast",
+   "id": "fyyd:26675",
+   "source": "fyyd",
+   "title": "tagesschau vor 20 Jahren (Audio)",
+   "artist": "tagesschau",
+   "artwork": "https://img-1.fyyd.de/pd/layout/266755131c0a4cc1b49311bf387ae8286b19b.jpg",
+   "episodes": 3912,
+   "link": "https://www.tagesschau.de/multimedia/sendung/tagesschau_vor_20_jahren/podcast-tsv20-audio-100.html"
+  },
+  {
+   "kind": "podcast",
+   "id": "fyyd:60217",
+   "source": "fyyd",
+   "title": "ESC kompakt - Der Podcast",
+   "artist": "ESC kompakt",
+   "artwork": "https://img-1.fyyd.de/pd/layout/602177a9e9c507d6d3603374472f7d23d746f.jpg",
+   "episodes": 279,
+   "link": "https://esc-kompakt.de/"
+  },
+  {
+   "kind": "podcast",
+   "id": "fyyd:56269",
+   "source": "fyyd",
+   "title": "Erzähl mir von Wien",
+   "artist": "Edith Michaeler und Fritzi Kraus",
+   "artwork": "https://img-1.fyyd.de/pd/layout/56269188f6ee88f14b2e3528fe83f8f6cea60.jpg",
+   "episodes": 259,
+   "link": "https://www.erzaehlmirvon.wien"
+  },
+  {
+   "kind": "podcast",
+   "id": "fyyd:41672",
+   "source": "fyyd",
+   "title": "WDR 4 Kulturtipp",
+   "artist": "Westdeutscher Rundfunk",
+   "artwork": "https://img-1.fyyd.de/pd/layout/41672f3dbafd53223985e4eb1a402edefaaa1.jpg",
+   "episodes": 1091,
+   "link": "https://www1.wdr.de/mediathek/audio/wdr4/wdr4-gut-zu-wissen/gut-zu-wissen-102.html"
+  },
+  {
+   "kind": "podcast",
+   "id": "fyyd:79516",
+   "source": "fyyd",
+   "title": "Besser gründen – Der Gründungs-Podcast (Für Unternehmer, Freiberufler & Start-ups)",
+   "artist": "René Klein (Für-Gründer.de)",
+   "artwork": "https://img-1.fyyd.de/pd/layout/795164da639e1ef4c6dd7ad68043484aba838.jpg",
+   "episodes": 355,
+   "link": "https://www.fuer-gruender.de/"
+  },
+  {
+   "kind": "podcast",
+   "id": "fyyd:81484",
+   "source": "fyyd",
+   "title": "YUMMI – Der Kinderpodcast",
+   "artist": "EDEKA",
+   "artwork": "https://img-1.fyyd.de/pd/layout/814845dbf32c62a61173de0d17aaaec2bcba5.jpg",
+   "episodes": 309,
+   "link": "https://www.edeka.de/yummi"
+  },
+  {
+   "kind": "podcast",
+   "id": "fyyd:4478",
+   "source": "fyyd",
+   "title": "Sonntagsspaziergang",
+   "artist": "Deutschlandfunk",
+   "artwork": "https://img-1.fyyd.de/pd/layout/4478b68add60294881e15531120cddedfba7.jpg",
+   "episodes": 658,
+   "link": "https://www.deutschlandfunk.de/sonntagsspaziergang-100.html"
+  },
+  {
+   "kind": "podcast",
+   "id": "fyyd:70056",
+   "source": "fyyd",
+   "title": "Body Mind Therapy - mit Sinah Diepold",
+   "artist": "Sinah Diepold",
+   "artwork": "https://img-1.fyyd.de/pd/layout/70056906c83a07cbbb31ec16ea0c32faecb6e.jpg",
+   "episodes": 294,
+   "link": ""
+  },
+  {
+   "kind": "podcast",
+   "id": "fyyd:77571",
+   "source": "fyyd",
+   "title": "Für eine Handvoll Popcorn",
+   "artist": "Mike Kaminski und Hendrik Bien",
+   "artwork": "https://img-1.fyyd.de/pd/layout/77571067821771c99130e38c2ba65965d48db.jpg",
+   "episodes": 240,
+   "link": "https://podcasters.spotify.com/pod/show/fuereinehandvollpopcorn"
+  },
+  {
+   "kind": "podcast",
+   "id": "fyyd:71860",
+   "source": "fyyd",
+   "title": "Buchcast MaFia",
+   "artist": "Buchcast Mafia",
+   "artwork": "https://img-1.fyyd.de/pd/layout/71860a0fe5dee15da732311d610050e911505.jpg",
+   "episodes": 292,
+   "link": "https://podcasters.spotify.com/pod/show/buchcast-mafia"
+  },
+  {
+   "kind": "podcast",
+   "id": "fyyd:71837",
+   "source": "fyyd",
+   "title": "Täglicher Bibel-Impuls",
+   "artist": "Bibelpraxis.de, Manuel Seibel",
+   "artwork": "https://img-1.fyyd.de/pd/layout/71837a081168ad4e677039c9734b8654e2052.jpg",
+   "episodes": 2228,
+   "link": "https://www.bibelpraxis.de/"
+  },
+  {
+   "kind": "podcast",
+   "id": "fyyd:55389",
+   "source": "fyyd",
+   "title": "MINIMALRADIO.DE - Dein Radio für elektronische Musik",
+   "artist": "MINIMALRADIO.DE",
+   "artwork": "https://img-1.fyyd.de/pd/layout/55389d4d11ea6d50ebcf8af7e399bae6a601a.jpg",
+   "episodes": 2836,
+   "link": "https://hearthis.at/minimalradio/"
+  },
+  {
+   "kind": "podcast",
+   "id": "fyyd:58148",
+   "source": "fyyd",
+   "title": "All about life – Mindset, Spirit & Achtsamkeit",
+   "artist": "Seraphine Monien, Benedikt Heiming",
+   "artwork": "https://img-1.fyyd.de/pd/layout/58148a61aef03473b816bb473f10f5a7fbeac.jpg",
+   "episodes": 241,
+   "link": "https://www.sera-benia.de"
+  }
+ ]
+}

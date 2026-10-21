@@ -1,0 +1,87 @@
+{
+ "name": "empty.string API",
+ "version": "1.0.0",
+ "generated": "2026-10-21T18:30:29.825Z",
+ "docs": "https://femboyss.github.io/empty-strings/api.html",
+ "sdk": "https://femboyss.github.io/empty-strings/api/empty-string.js",
+ "feeds": [
+  {
+   "name": "trending",
+   "description": "Trending full songs on Audius this week",
+   "url": "https://femboyss.github.io/empty-strings/api/v1/trending.json",
+   "count": 100
+  },
+  {
+   "name": "trending-electronic",
+   "description": "Trending electronic songs on Audius",
+   "url": "https://femboyss.github.io/empty-strings/api/v1/trending-electronic.json",
+   "count": 100
+  },
+  {
+   "name": "trending-hiphop",
+   "description": "Trending hip-hop songs on Audius",
+   "url": "https://femboyss.github.io/empty-strings/api/v1/trending-hiphop.json",
+   "count": 100
+  },
+  {
+   "name": "trending-lofi",
+   "description": "Trending lo-fi songs on Audius",
+   "url": "https://femboyss.github.io/empty-strings/api/v1/trending-lofi.json",
+   "count": 100
+  },
+  {
+   "name": "radio-austria",
+   "description": "Most listened live radio stations in Austria",
+   "url": "https://femboyss.github.io/empty-strings/api/v1/radio-austria.json",
+   "count": 37
+  },
+  {
+   "name": "radio-germany",
+   "description": "Most listened live radio stations in Germany",
+   "url": "https://femboyss.github.io/empty-strings/api/v1/radio-germany.json",
+   "count": 40
+  },
+  {
+   "name": "radio-trending",
+   "description": "Live radio stations rising worldwide today",
+   "url": "https://femboyss.github.io/empty-strings/api/v1/radio-trending.json",
+   "count": 31
+  },
+  {
+   "name": "charts-week",
+   "description": "World charts this week from real listens (ListenBrainz), metadata only",
+   "url": "https://femboyss.github.io/empty-strings/api/v1/charts-week.json",
+   "count": 50
+  },
+  {
+   "name": "podcasts-hot-de",
+   "description": "Hot German podcasts (fyyd)",
+   "url": "https://femboyss.github.io/empty-strings/api/v1/podcasts-hot-de.json",
+   "count": 24
+  },
+  {
+   "name": "podcasts-hot-en",
+   "description": "Hot English podcasts (fyyd)",
+   "url": "https://femboyss.github.io/empty-strings/api/v1/podcasts-hot-en.json",
+   "count": 24
+  },
+  {
+   "name": "mixes-hearthis",
+   "description": "Popular full tracks and DJ mixes on hearthis.at",
+   "url": "https://femboyss.github.io/empty-strings/api/v1/mixes-hearthis.json",
+   "count": 35
+  },
+  {
+   "name": "archive-netlabels",
+   "description": "Most downloaded netlabel albums on the Internet Archive",
+   "url": "https://femboyss.github.io/empty-strings/api/v1/archive-netlabels.json",
+   "count": 30
+  },
+  {
+   "name": "archive-concerts",
+   "description": "Most downloaded live concert recordings on the Internet Archive",
+   "url": "https://femboyss.github.io/empty-strings/api/v1/archive-concerts.json",
+   "count": 30
+  }
+ ]
+}

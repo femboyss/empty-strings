@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>empty.string player</title>
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" href="icons/favicon-32.png">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700&family=JetBrains+Mono:wght@400&family=Manrope:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0E100D;--surface:#171A15;--raised:#21251E;--line:#2C3127;--text:#F2F5EE;--muted:#8F9789;--accent:#C8F548;--ink:#0E100D;--danger:#FF6B5A}
+*{box-sizing:border-box}
+html,body{margin:0;background:transparent;color:var(--text);font-family:Manrope,system-ui,sans-serif}
+.card{display:flex;align-items:center;gap:14px;padding:12px;border-radius:18px;background:var(--surface);border:1px solid var(--line);min-height:96px;position:relative;overflow:hidden}
+.art{width:72px;height:72px;border-radius:12px;background:linear-gradient(135deg,#C8F548,#1F6B4F) center/cover;flex:none}
+.meta{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}
+.meta b{font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.meta span{font-size:12px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.brand{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);text-decoration:none}
+.pp{width:48px;height:48px;border-radius:999px;border:0;background:var(--accent);color:var(--ink);display:grid;place-items:center;cursor:pointer;flex:none}
+.bar{position:absolute;left:0;bottom:0;height:3px;background:var(--accent);width:0}
+.live{color:var(--danger)}
+.frame{border-radius:18px;overflow:hidden;border:1px solid var(--line);background:var(--surface)}
+.frame iframe{width:100%;border:0;display:block}
+.err{color:var(--muted);font-size:13px;padding:16px}
+</style>
+</head>
+<body>
+<div id="root"><div class="card"><div class="art"></div><div class="meta"><b>Loading…</b><span>empty.string</span></div></div></div>
+<script src="api/empty-string.js"></script>
+<script>
+(async () => {
+  const $ = s => document.querySelector(s), esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const p = new URLSearchParams(location.search); let t = null;
+  try {
+    if (p.get('t')) t = JSON.parse(p.get('t'));
+    else if (p.get('url')) t = await EmptyString.resolve(p.get('url'));
+    else if (p.get('feed')) { const f = await EmptyString.feeds.get(p.get('feed')); t = f.items[+p.get('i') || 0]; }
+  } catch (e) { $('#root').innerHTML = `<div class="err">Could not load: ${esc(e.message)}</div>`; return; }
+  if (!t) { $('#root').innerHTML = '<div class="err">Nothing to play. Use ?url=, ?t= or ?feed=.</div>'; return; }
+  const app = 'https://femboyss.github.io/empty-strings/';
+  if (t.embed) {
+    const h = /youtube/.test(t.embed) ? 'aspect-ratio:16/9' : /mixcloud/.test(t.embed) ? 'height:120px' : 'height:166px';
+    $('#root').innerHTML = `<div class="frame"><iframe style="${h}" src="${esc(t.embed)}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" title="${esc(t.title)}"></iframe></div>`;
+    return;
+  }
+  const ic = n => n === 'play' ? '<svg width="20" height="20" viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5z" fill="currentColor"/></svg>' : '<svg width="20" height="20" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16" rx="1" fill="currentColor"/><rect x="14" y="4" width="4" height="16" rx="1" fill="currentColor"/></svg>';
+  $('#root').innerHTML = `<div class="card"><div class="art" style="${t.artwork ? `background-image:url('${esc(t.artwork)}')` : ''}"></div>
+    <div class="meta"><a class="brand" href="${app}" target="_blank" rel="noopener">empty.string</a><b>${esc(t.title)}</b><span>${t.live ? '<span class="live">LIVE</span> · ' : ''}${esc(t.artist || '')}${t.link ? ` · <a href="${esc(t.link)}" target="_blank" rel="noopener" style="color:inherit">source</a>` : ''}</span></div>
+    <button class="pp" aria-label="Play">${ic('play')}</button><div class="bar"></div></div>`;
+  const a = new Audio(); a.preload = 'none'; a.src = t.stream;
+  const pp = $('.pp'), bar = $('.bar');
+  pp.onclick = () => a.paused ? a.play().catch(() => {}) : a.pause();
+  a.onplay = () => pp.innerHTML = ic('pause'); a.onpause = () => pp.innerHTML = ic('play');
+  a.ontimeupdate = () => { if (isFinite(a.duration)) bar.style.width = (a.currentTime / a.duration * 100) + '%'; };
+  if (p.get('autoplay') === '1') a.play().catch(() => {});
+})();
+</script>
+</body>
+</html>

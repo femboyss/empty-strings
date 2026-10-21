@@ -1,0 +1,248 @@
+{
+ "feed": "podcasts-hot-en",
+ "description": "Hot English podcasts (fyyd)",
+ "generated": "2026-10-21T18:30:29.825Z",
+ "count": 24,
+ "items": [
+  {
+   "kind": "podcast",
+   "id": "fyyd:87518",
+   "source": "fyyd",
+   "title": "Hourly News Archives - SRN News",
+   "artist": "",
+   "artwork": "https://img-1.fyyd.de/pd/layout/875181c7a4124710287c2306e9c48188baa83.jpg",
+   "episodes": 14940,
+   "link": ""
+  },
+  {
+   "kind": "podcast",
+   "id": "fyyd:35095",
+   "source": "fyyd",
+   "title": "The Curated Catastrophe",
+   "artist": "Malderor",
+   "artwork": "https://img-1.fyyd.de/pd/layout/3509574b790f91daa597e7fe7f95efa664e3a.jpg",
+   "episodes": 5018,
+   "link": ""
+  },
+  {
+   "kind": "podcast",
+   "id": "fyyd:790",
+   "source": "fyyd",
+   "title": "This Week in Science – The Kickass Science Podcast",
+   "artist": "Dr. Kirsten Sanford Science Media",
+   "artwork": "https://img-1.fyyd.de/pd/layout/790ba73d99bca67cefeb2cda9718f50ee6a.jpg",
+   "episodes": 604,
+   "link": "https://www.twis.org/"
+  },
+  {
+   "kind": "podcast",
+   "id": "fyyd:59062",
+   "source": "fyyd",
+   "title": "SBS Cycling Podcast",
+   "artist": "SBS",
+   "artwork": "https://img-1.fyyd.de/pd/layout/590627c0001870ca320c63b9ddce26e40f36c.jpg",
+   "episodes": 1663,
+   "link": "https://www.sbs.com.au/sport/podcast/sbs-cycling-podcast"
+  },
+  {
+   "kind": "podcast",
+   "id": "fyyd:83056",
+   "source": "fyyd",
+   "title": "Adult Site Broker Talk",
+   "artist": "Bruce Friedman - Adult Website Broker",
+   "artwork": "https://img-1.fyyd.de/pd/layout/830568a377e1a831d224901974127dce87e58.jpg",
+   "episodes": 331,
+   "link": "https://adultsitebroker.com/how-it-works/"
+  },
+  {
+   "kind": "podcast",
+   "id": "fyyd:87795",
+   "source": "fyyd",
+   "title": "Mike, Mike, and Oscar",
+   "artist": "MMO",
+   "artwork": "https://img-1.fyyd.de/pd/layout/877951794304d22b1c10395e6c15dc622af6b.jpg",
+   "episodes": 665,
+   "link": "https://soundcloud.com/mikemikeandoscar"
+  },
+  {
+   "kind": "podcast",
+   "id": "fyyd:87891",
+   "source": "fyyd",
+   "title": "Super Data Science: ML & AI Podcast with Jon Krohn",
+   "artist": "Jon Krohn",
+   "artwork": "https://img-1.fyyd.de/pd/layout/878912c34e2284abf6fa42e3c68f36247e990.jpg",
+   "episodes": 1038,
+   "link": "https://www.superdatascience.com/podcast"
+  },
+  {
+   "kind": "podcast",
+   "id": "fyyd:83381",
+   "source": "fyyd",
+   "title": "Fresh Breakfast with NSK & Shai_Quan",
+   "artist": "Namibia Future Media",
+   "artwork": "https://img-1.fyyd.de/pd/layout/833811f4c5f9e369ecac1559acca575162f9a.jpg",
+   "episodes": 1261,
+   "link": "https://www.futuremedia.com.na/"
+  },
+  {
+   "kind": "podcast",
+   "id": "fyyd:36748",
+   "source": "fyyd",
+   "title": "Arizona Science",
+   "artist": "AZPM",
+   "artwork": "https://img-1.fyyd.de/pd/layout/367482b572927bc6b212f1e41c017ed91b8ca.jpg",
+   "episodes": 2875,
+   "link": "https://originals.azpm.org/arizonascience/"
+  },
+  {
+   "kind": "podcast",
+   "id": "fyyd:76895",
+   "source": "fyyd",
+   "title": "The Ops Authority",
+   "artist": "Natalie Gingrich",
+   "artwork": "https://img-1.fyyd.de/pd/layout/76895cb47c1fe84e14a116da2c0e79a764528.jpg",
+   "episodes": 318,
+   "link": "https://theopsauthority.com/"
+  },
+  {
+   "kind": "podcast",
+   "id": "fyyd:38027",
+   "source": "fyyd",
+   "title": "ritchey - coffee n bass (live on DNBRadio)",
+   "artist": "ritchey",
+   "artwork": "https://img-1.fyyd.de/pd/layout/380270971a7718dbc91ce19e93c478b13a64a.jpg",
+   "episodes": 2032,
+   "link": "https://dnbradio.com/recordings?search=shoeboxritchey"
+  },
+  {
+   "kind": "podcast",
+   "id": "fyyd:80143",
+   "source": "fyyd",
+   "title": "The Daily Motivation",
+   "artist": "Lewis Howes",
+   "artwork": "https://img-1.fyyd.de/pd/layout/801435ed9a2baa0b8551e32a294723ced933c.jpg",
+   "episodes": 1506,
+   "link": "https://www.siriusxm.com"
+  },
+  {
+   "kind": "podcast",
+   "id": "fyyd:30163",
+   "source": "fyyd",
+   "title": "Equipping University",
+   "artist": "Western Avenue Baptist Church of Statesville, NC",
+   "artwork": "https://img-1.fyyd.de/pd/layout/3016381430da4ed887b41e410a2f882871c7b.jpg",
+   "episodes": 4591,
+   "link": ""
+  },
+  {
+   "kind": "podcast",
+   "id": "fyyd:91664",
+   "source": "fyyd",
+   "title": "Dark American Crime",
+   "artist": "Dominic John",
+   "artwork": "https://img-1.fyyd.de/pd/layout/91664c20298b1bdb2afe37377bb3ece962b90.jpg",
+   "episodes": 412,
+   "link": "https://www.spreaker.com/podcast/dark-american-crime--7005371"
+  },
+  {
+   "kind": "podcast",
+   "id": "fyyd:79577",
+   "source": "fyyd",
+   "title": "Pod of Thunder",
+   "artist": "Pod of Thunder",
+   "artwork": "https://img-1.fyyd.de/pd/layout/795773632a4fcaa85c161f108ef0612188970.jpg",
+   "episodes": 674,
+   "link": "https://bleav.com/shows/pod-of-thunder/"
+  },
+  {
+   "kind": "podcast",
+   "id": "fyyd:78140",
+   "source": "fyyd",
+   "title": "Shit You Should Care About",
+   "artist": "Shit You Should Care About",
+   "artwork": "https://img-1.fyyd.de/pd/layout/781405937aaee52fe15c9efa317239542dd77.jpg",
+   "episodes": 326,
+   "link": "https://shityoushouldcareabout.com/"
+  },
+  {
+   "kind": "podcast",
+   "id": "fyyd:35519",
+   "source": "fyyd",
+   "title": "VISION Radio",
+   "artist": "VISION",
+   "artwork": "https://img-1.fyyd.de/pd/layout/355194bbfaaf22654417e3ed832609c077172.jpg",
+   "episodes": 1081,
+   "link": "https://www.visionrecordings.nl/radio"
+  },
+  {
+   "kind": "podcast",
+   "id": "fyyd:1019",
+   "source": "fyyd",
+   "title": "The Art of Manliness",
+   "artist": "The Art of Manliness",
+   "artwork": "https://img-1.fyyd.de/pd/layout/1019ff25c886fa190bcd0e62c0b5beb21b48.jpg",
+   "episodes": 1193,
+   "link": "https://art19.com/shows/the-art-of-manliness"
+  },
+  {
+   "kind": "podcast",
+   "id": "fyyd:78199",
+   "source": "fyyd",
+   "title": "Generation Why: True Crime",
+   "artist": "Audible",
+   "artwork": "https://img-1.fyyd.de/pd/layout/78199142c81eb7b420aa22b25fd9ec9e5b9ba.jpg",
+   "episodes": 691,
+   "link": "https://genwhypod.com"
+  },
+  {
+   "kind": "podcast",
+   "id": "fyyd:88017",
+   "source": "fyyd",
+   "title": "Science & Futurism with Isaac Arthur",
+   "artist": "Isaac Arthur",
+   "artwork": "https://img-1.fyyd.de/pd/layout/880179046f55e0292689dd91bb5d6bee0a114.jpg",
+   "episodes": 1284,
+   "link": "https://art19.com/shows/science-and-futurism"
+  },
+  {
+   "kind": "podcast",
+   "id": "fyyd:82053",
+   "source": "fyyd",
+   "title": "The Pen Addict",
+   "artist": "Relay",
+   "artwork": "https://img-1.fyyd.de/pd/layout/82053bda5da419f8224cb73a7d762b8d378f8.jpg",
+   "episodes": 739,
+   "link": "https://relay.fm/penaddict"
+  },
+  {
+   "kind": "podcast",
+   "id": "fyyd:91570",
+   "source": "fyyd",
+   "title": "Neuroscience Meets Social and Emotional Learning",
+   "artist": "Andrea Samadi",
+   "artwork": "https://img-1.fyyd.de/pd/layout/91570fdf81ea72e0a0493edd76e87637165f4.jpg",
+   "episodes": 418,
+   "link": "https://andreasamadi.podbean.com"
+  },
+  {
+   "kind": "podcast",
+   "id": "fyyd:82538",
+   "source": "fyyd",
+   "title": "The Salisha Show-Where Broadway Meets Culture",
+   "artist": "Salisha Thomas",
+   "artwork": "https://img-1.fyyd.de/pd/layout/82538b4fc17ca4c0a460dccd4c134230a3059.jpg",
+   "episodes": 457,
+   "link": "https://the-salisha-show.captivate.fm"
+  },
+  {
+   "kind": "podcast",
+   "id": "fyyd:49096",
+   "source": "fyyd",
+   "title": "Still Buffering",
+   "artist": "Sydnee McElroy, Rileigh Smirl and Teylor Smirl",
+   "artwork": "https://img-1.fyyd.de/pd/layout/49096f88aa6f0798dde76a03de8abeb07e52b.jpg",
+   "episodes": 499,
+   "link": "https://stillbuffering.simplecast.com"
+  }
+ ]
+}

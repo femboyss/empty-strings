@@ -1,10 +1,13 @@
 /* empty.string service worker: keeps the app shell available offline.
    Music, radio and API data always come live from the network (never cached here). */
-const VERSION = 'es-2.1.1';
+const VERSION = 'es-2.2.0';
 const SHELL = [
   './',
   'index.html',
   'wireframes.html',
+  'api.html',
+  'embed.html',
+  'api/empty-string.js',
   'manifest.webmanifest',
   'icons/icon-192.png',
   'icons/icon-512.png',

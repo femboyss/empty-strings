@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>empty.string API</title>
+<meta name="description" content="Free JavaScript API, JSON feeds and an embeddable player for legal, keyless music sources.">
+<meta name="theme-color" content="#0E100D">
+<link rel="icon" type="image/png" href="icons/favicon-32.png">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0E100D;--surface:#171A15;--raised:#21251E;--line:#2C3127;--text:#F2F5EE;--muted:#8F9789;--accent:#C8F548;--ink:#0E100D;--danger:#FF6B5A}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--text);font-family:Manrope,system-ui,sans-serif;font-size:15px;line-height:1.6}
+a{color:var(--accent)}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px}
+header{padding:56px 0 28px;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text);font-family:'Bricolage Grotesque';font-weight:700;font-size:20px}
+.brand i{font-style:normal;width:36px;height:36px;border-radius:10px;background:var(--accent);color:var(--ink);display:grid;place-items:center;font-weight:800;font-size:22px;padding-top:7px;line-height:1}
+.kicker{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(34px,6vw,54px);line-height:1.02;margin:22px 0 12px;letter-spacing:-.02em}
+h2{font-family:'Bricolage Grotesque';font-weight:700;font-size:26px;margin:0 0 10px}
+h3{font-size:16px;margin:22px 0 6px}
+p{color:#c9cfc3;max-width:720px}
+.lead{font-size:17px}
+section{padding:40px 0;border-bottom:1px solid var(--line)}
+nav.toc{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+nav.toc a{font-family:'JetBrains Mono',monospace;font-size:12px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;text-decoration:none;color:var(--text)}
+nav.toc a:hover{border-color:var(--accent)}
+pre{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;overflow:auto;font-family:'JetBrains Mono',monospace;font-size:13px;line-height:1.55;color:#dfe5d8}
+code{font-family:'JetBrains Mono',monospace;font-size:.9em;background:var(--raised);padding:1px 6px;border-radius:6px}
+pre code{background:none;padding:0}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:500}
+td code{white-space:nowrap}
+.try{display:flex;gap:8px;margin:14px 0}
+.try input{flex:1;height:46px;border-radius:12px;border:1px solid var(--line);background:var(--raised);color:var(--text);padding:0 14px;font:inherit}
+.try input:focus{outline:none;border-color:var(--accent)}
+.try select{height:46px;border-radius:12px;border:1px solid var(--line);background:var(--raised);color:var(--text);padding:0 10px;font:inherit}
+.btn{height:46px;border:0;border-radius:999px;background:var(--accent);color:var(--ink);font-weight:700;padding:0 20px;cursor:pointer;font:inherit;font-weight:700}
+.res{display:flex;flex-direction:column;gap:4px}
+.row{display:flex;align-items:center;gap:12px;padding:8px;border-radius:12px}
+.row:hover{background:var(--surface)}
+.row .art{width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,#C8F548,#1F6B4F) center/cover;flex:none}
+.row .m{flex:1;min-width:0}.row b{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.row span{font-size:12px;color:var(--muted)}
+.row button{border:1px solid var(--line);background:none;color:var(--text);border-radius:999px;padding:6px 12px;cursor:pointer;font:inherit;font-size:12px}
+.row button.on{background:var(--accent);color:var(--ink);border-color:var(--accent)}
+.tag{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:1px 7px;margin-right:6px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
+.feed{display:block;padding:12px 14px;border:1px solid var(--line);border-radius:14px;text-decoration:none;color:var(--text)}
+.feed:hover{border-color:var(--accent)}.feed b{display:block;font-family:'JetBrains Mono',monospace;font-size:13px}.feed span{font-size:13px;color:var(--muted)}
+footer{padding:30px 0 60px;color:var(--muted);font-size:13px}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a class="brand" href="./"><i>&ldquo;&rdquo;</i>empty.string</a>
+  <h1>empty.string API</h1>
+  <p class="lead">One small JavaScript interface, hourly JSON feeds and an embeddable player for free, legal music: full songs, DJ mixes, live radio, podcasts, concerts and world charts. No account, no key, no server. Every request goes straight to the original source.</p>
+  <nav class="toc"><a href="#try">Try it</a><a href="#start">Quick start</a><a href="#format">Result format</a><a href="#methods">Methods</a><a href="#feeds">JSON feeds</a><a href="#embed">Embed player</a><a href="#rules">Sources and rules</a></nav>
+</div></header>
+
+<main class="wrap">
+<section id="try">
+  <div class="kicker">Live demo</div><h2>Try it</h2>
+  <div class="try"><input id="q" placeholder="Search songs, mixes, stations or paste a link" value="lofi"><select id="src"><option value="audius,hearthis">Songs</option><option value="mixcloud">Mixcloud</option><option value="radio-browser">Radio</option><option value="archive">Archive</option></select><button class="btn" id="go">Search</button></div>
+  <div class="res" id="res"></div>
+</section>
+
+<section id="start">
+  <div class="kicker">Quick start</div><h2>Add one script tag</h2>
+<pre><code>&lt;script src="https://femboyss.github.io/empty-strings/api/empty-string.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  const songs = await EmptyString.search('lofi');           // full songs (Audius + hearthis.at)
+  EmptyString.play(songs[0]);                               // plays it with a built-in &lt;audio&gt;
+
+  const radio = await EmptyString.radio({ country: 'AT' }); // live stations in Austria
+  const pods  = await EmptyString.podcasts.hot({ lang: 'de' });
+&lt;/script&gt;</code></pre>
+  <p>Works in any modern browser and in Node 18+ (<code>require('./empty-string.js')</code>). All sources send CORS headers, so it runs on any website, including GitHub Pages.</p>
+</section>
+
+<section id="format">
+  <div class="kicker">Result format</div><h2>Every result looks the same</h2>
+<pre><code>{
+  "id": "audius:a5aXGmz",
+  "source": "audius",          // audius | archive | hearthis | mixcloud | radio-browser | fyyd | listenbrainz | itunes | youtube | soundcloud | link
+  "kind": "track",             // track | station | episode | album | podcast
+  "title": "Return",
+  "artist": "nazah",
+  "artwork": "https://...jpg",
+  "duration": 214,             // seconds, 0 if unknown or live
+  "stream": "https://...",     // direct https audio, or null
+  "embed": null,               // official player URL (Mixcloud, YouTube, SoundCloud) when there is no direct stream
+  "link": "https://audius.co/...",
+  "live": false,
+  "license": ""
+}</code></pre>
+  <p>If <code>stream</code> is set, play it in an <code>&lt;audio&gt;</code> element. If only <code>embed</code> is set, put it in an <code>&lt;iframe allow="autoplay"&gt;</code>. Those sources only allow playback in their own player.</p>
+</section>
+
+<section id="methods">
+  <div class="kicker">Reference</div><h2>Methods</h2>
+  <table>
+    <tr><th>Method</th><th>Returns</th></tr>
+    <tr><td><code>search(q, {sources, limit})</code></td><td>Results from the chosen sources. Default <code>['audius','hearthis']</code>; also <code>mixcloud</code>, <code>archive</code>, <code>radio-browser</code>, <code>fyyd</code>.</td></tr>
+    <tr><td><code>trending({genre, time})</code></td><td>Trending full songs on Audius. Genres like <code>Electronic</code>, <code>Hip-Hop/Rap</code>, <code>Lo-Fi</code>.</td></tr>
+    <tr><td><code>radio({country, tag, near, limit, order})</code></td><td>Live stations. <code>near: {lat, lon, km}</code> finds stations around a point.</td></tr>
+    <tr><td><code>archive.search(q, {collection})</code></td><td>Albums from the Internet Archive. Collections: <code>netlabels</code>, <code>concerts</code>, <code>78rpm</code>, <code>mixtapes</code>, <code>oldtimeradio</code>, <code>audiobooks</code>.</td></tr>
+    <tr><td><code>archive.album(id)</code></td><td>All playable tracks of an Archive item, with license.</td></tr>
+    <tr><td><code>mixes.hearthis(type)</code> / <code>mixes.mixcloud(tag)</code></td><td>Full tracks and DJ mixes (hearthis: <code>popular</code>, <code>new</code>). Mixcloud results come with <code>embed</code>.</td></tr>
+    <tr><td><code>podcasts.hot({lang})</code>, <code>podcasts.search(q)</code>, <code>podcasts.episodes(id)</code></td><td>Podcasts and full episodes from fyyd.</td></tr>
+    <tr><td><code>charts({range})</code></td><td>World charts from real listens (ListenBrainz): <code>week</code>, <code>month</code>, <code>year</code>. Metadata only.</td></tr>
+    <tr><td><code>findPlayable({title, artist})</code></td><td>A free full version on Audius, else the official 30 s iTunes preview, else <code>null</code>.</td></tr>
+    <tr><td><code>resolve(link)</code></td><td>Turns YouTube, SoundCloud, Mixcloud, Audius or direct https audio links into a result.</td></tr>
+    <tr><td><code>lyrics({title, artist, duration})</code></td><td>Lyrics from LRCLIB, synced when available.</td></tr>
+    <tr><td><code>embedUrl(result or link)</code></td><td>URL of a ready-made iframe player for that result.</td></tr>
+    <tr><td><code>play(result)</code> / <code>pause()</code></td><td>Tiny built-in player for results with a <code>stream</code>.</td></tr>
+  </table>
+</section>
+
+<section id="feeds">
+  <div class="kicker">No code needed</div><h2>JSON feeds</h2>
+  <p>Pre-built lists, refreshed every hour by a GitHub Action. Plain JSON with CORS, so any app, bot or website can read them. The index lists all feeds with their last update.</p>
+<pre><code>curl https://femboyss.github.io/empty-strings/api/v1/trending.json</code></pre>
+  <div class="grid" id="feeds-list"><a class="feed" href="api/v1/index.json"><b>index.json</b><span>All feeds</span></a></div>
+</section>
+
+<section id="embed">
+  <div class="kicker">For other websites</div><h2>Embed player</h2>
+  <p>Drop a player for any song, station or link into your page.</p>
+<pre><code>&lt;!-- any supported link --&gt;
+&lt;iframe src="https://femboyss.github.io/empty-strings/embed.html?url=https%3A%2F%2Fsoundcloud.com%2Fforss%2Fflickermood"
+        width="100%" height="122" allow="autoplay" style="border:0"&gt;&lt;/iframe&gt;
+
+&lt;!-- item 0 of a JSON feed --&gt;
+&lt;iframe src="https://femboyss.github.io/empty-strings/embed.html?feed=trending&amp;i=0"
+        width="100%" height="122" style="border:0"&gt;&lt;/iframe&gt;</code></pre>
+  <iframe src="embed.html?feed=trending&i=0" width="100%" height="122" style="border:0;max-width:520px" title="Example player"></iframe>
+</section>
+
+<section id="rules">
+  <div class="kicker">Be nice</div><h2>Sources and rules</h2>
+  <p>empty.string only uses public endpoints that are meant to be called from browsers. When you build on it, follow each source's own rules:</p>
+  <table>
+    <tr><th>Source</th><th>Notes</th></tr>
+    <tr><td><a href="https://docs.audius.org/">Audius</a></td><td>Requests carry <code>app_name=empty.string</code>. Only streamable, ungated tracks are returned.</td></tr>
+    <tr><td><a href="https://archive.org/developers/">Internet Archive</a></td><td>Check each item's license (often Creative Commons). Keep request volume reasonable.</td></tr>
+    <tr><td><a href="https://www.radio-browser.info">Radio Browser</a></td><td>Community database; streams belong to the broadcasters. Several mirrors are used.</td></tr>
+    <tr><td><a href="https://hearthis.at">hearthis.at</a></td><td>Link back to the track page when you show a track.</td></tr>
+    <tr><td><a href="https://www.mixcloud.com/developers/">Mixcloud</a></td><td>Playback only in the official widget (<code>embed</code>).</td></tr>
+    <tr><td><a href="https://fyyd.de">fyyd</a></td><td>Podcast audio comes from the publishers' own servers.</td></tr>
+    <tr><td><a href="https://listenbrainz.org">ListenBrainz</a> / <a href="https://coverartarchive.org">Cover Art Archive</a></td><td>Open data from MetaBrainz. Charts are metadata only.</td></tr>
+    <tr><td><a href="https://performance-partners.apple.com/search-api">iTunes Search</a></td><td>Only official 30 s previews, rate limited (about 20 requests per minute).</td></tr>
+    <tr><td><a href="https://lrclib.net">LRCLIB</a></td><td>Community lyrics database.</td></tr>
+  </table>
+  <p>Not included on purpose: services that need a secret key in the browser, block cross-site requests, or protect their streams against embedding.</p>
+</section>
+</main>
+<footer class="wrap">empty.string API v1 · <a href="./">open the app</a> · <a href="wireframes.html">wireframes</a></footer>
+
+<script src="api/empty-string.js"></script>
+<script>
+const $ = s => document.querySelector(s), esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+let playing = null;
+async function run() {
+  const q = $('#q').value.trim(); const res = $('#res'); if (!q) return;
+  res.innerHTML = '<span style="color:var(--muted)">Searching…</span>';
+  try {
+    const list = /^https?:\/\//.test(q) ? [await EmptyString.resolve(q)].filter(Boolean) : await EmptyString.search(q, { sources: $('#src').value.split(','), limit: 12 });
+    res.innerHTML = list.length ? list.slice(0, 20).map((t, i) => `<div class="row"><div class="art" style="${t.artwork ? `background-image:url('${esc(t.artwork)}')` : ''}"></div><div class="m"><b>${esc(t.title)}</b><span><span class="tag">${esc(t.source)}</span>${esc(t.artist || '')}</span></div>${t.stream ? `<button data-i="${i}">Play</button>` : t.embed || t.kind === 'album' ? `<a href="${esc(t.link)}" target="_blank" rel="noopener" style="font-size:12px">Open</a>` : ''}</div>`).join('') : '<span style="color:var(--muted)">Nothing found.</span>';
+    res.onclick = e => { const b = e.target.closest('button[data-i]'); if (!b) return; const t = list[+b.dataset.i];
+      if (playing === b) { EmptyString.pause(); b.classList.remove('on'); b.textContent = 'Play'; playing = null; return; }
+      document.querySelectorAll('.row button.on').forEach(x => { x.classList.remove('on'); x.textContent = 'Play'; });
+      EmptyString.play(t); b.classList.add('on'); b.textContent = 'Pause'; playing = b; };
+  } catch (e) { res.innerHTML = `<span style="color:var(--danger)">${esc(e.message)}</span>`; }
+}
+$('#go').onclick = run; $('#q').onkeydown = e => { if (e.key === 'Enter') run(); };
+EmptyString.feeds.get('index').then(ix => {
+  $('#feeds-list').innerHTML = `<a class="feed" href="api/v1/index.json"><b>index.json</b><span>All feeds · updated ${new Date(ix.generated).toLocaleString()}</span></a>` +
+    ix.feeds.map(f => `<a class="feed" href="api/v1/${esc(f.name)}.json"><b>${esc(f.name)}.json</b><span>${esc(f.description)}${f.count != null ? ' · ' + f.count + ' items' : ''}</span></a>`).join('');
+}).catch(() => {});
+</script>
+</body>
+</html>

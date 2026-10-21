@@ -1,0 +1,308 @@
+{
+ "feed": "archive-concerts",
+ "description": "Most downloaded live concert recordings on the Internet Archive",
+ "generated": "2026-10-21T18:30:29.825Z",
+ "count": 30,
+ "items": [
+  {
+   "kind": "album",
+   "id": "archive:oar2006-01-14.mix.flac16",
+   "source": "archive",
+   "title": "Of A Revolution Live at Madison Square Garden on 2006-01-14",
+   "artist": "Of A Revolution",
+   "artwork": "https://archive.org/services/img/oar2006-01-14.mix.flac16",
+   "year": "2006",
+   "link": "https://archive.org/details/oar2006-01-14.mix.flac16"
+  },
+  {
+   "kind": "album",
+   "id": "archive:gd77-05-08.sbd.hicks.4982.sbeok.shnf",
+   "source": "archive",
+   "title": "Grateful Dead Live at Barton Hall, Cornell University on 1977-05-08",
+   "artist": "Grateful Dead",
+   "artwork": "https://archive.org/services/img/gd77-05-08.sbd.hicks.4982.sbeok.shnf",
+   "year": "1977",
+   "link": "https://archive.org/details/gd77-05-08.sbd.hicks.4982.sbeok.shnf"
+  },
+  {
+   "kind": "album",
+   "id": "archive:gd73-06-10.sbd.hollister.174.sbeok.shnf",
+   "source": "archive",
+   "title": "Grateful Dead Live at Robert F. Kennedy Stadium on 1973-06-10",
+   "artist": "Grateful Dead",
+   "artwork": "https://archive.org/services/img/gd73-06-10.sbd.hollister.174.sbeok.shnf",
+   "year": "1973",
+   "link": "https://archive.org/details/gd73-06-10.sbd.hollister.174.sbeok.shnf"
+  },
+  {
+   "kind": "album",
+   "id": "archive:gd73-02-15.sbd.hall.1580.sbeok.shnf",
+   "source": "archive",
+   "title": "Grateful Dead Live at Dane County Coliseum on 1973-02-15",
+   "artist": "Grateful Dead",
+   "artwork": "https://archive.org/services/img/gd73-02-15.sbd.hall.1580.sbeok.shnf",
+   "year": "1973",
+   "link": "https://archive.org/details/gd73-02-15.sbd.hall.1580.sbeok.shnf"
+  },
+  {
+   "kind": "album",
+   "id": "archive:jj2008-06-14.mk4",
+   "source": "archive",
+   "title": "Jack Johnson Live at Bonnaroo Music Festival on 2008-06-14",
+   "artist": "Jack Johnson",
+   "artwork": "https://archive.org/services/img/jj2008-06-14.mk4",
+   "year": "2008",
+   "link": "https://archive.org/details/jj2008-06-14.mk4"
+  },
+  {
+   "kind": "album",
+   "id": "archive:gd77-05-07.sbd.eaton.wizard.26085.sbeok.shnf",
+   "source": "archive",
+   "title": "Grateful Dead Live at Boston Garden on 1977-05-07",
+   "artist": "Grateful Dead",
+   "artwork": "https://archive.org/services/img/gd77-05-07.sbd.eaton.wizard.26085.sbeok.shnf",
+   "year": "1977",
+   "link": "https://archive.org/details/gd77-05-07.sbd.eaton.wizard.26085.sbeok.shnf"
+  },
+  {
+   "kind": "album",
+   "id": "archive:gd87-04-03.sennme80.clark-miller.24898.sbeok.shnf",
+   "source": "archive",
+   "title": "Grateful Dead Live at The Centrum on 1987-04-03",
+   "artist": "Grateful Dead",
+   "artwork": "https://archive.org/services/img/gd87-04-03.sennme80.clark-miller.24898.sbeok.shnf",
+   "year": "1987",
+   "link": "https://archive.org/details/gd87-04-03.sennme80.clark-miller.24898.sbeok.shnf"
+  },
+  {
+   "kind": "album",
+   "id": "archive:gd77-05-09.sbd.connor.8304.sbeok.shnf",
+   "source": "archive",
+   "title": "Grateful Dead Live at Buffalo Memorial Auditorium on 1977-05-09",
+   "artist": "Grateful Dead",
+   "artwork": "https://archive.org/services/img/gd77-05-09.sbd.connor.8304.sbeok.shnf",
+   "year": "1977",
+   "link": "https://archive.org/details/gd77-05-09.sbd.connor.8304.sbeok.shnf"
+  },
+  {
+   "kind": "album",
+   "id": "archive:gd77-02-26.sbd.alphadog.9752.sbeok.shnf",
+   "source": "archive",
+   "title": "Grateful Dead Live at Swing Auditorium on 1977-02-26",
+   "artist": "Grateful Dead",
+   "artwork": "https://archive.org/services/img/gd77-02-26.sbd.alphadog.9752.sbeok.shnf",
+   "year": "1977",
+   "link": "https://archive.org/details/gd77-02-26.sbd.alphadog.9752.sbeok.shnf"
+  },
+  {
+   "kind": "album",
+   "id": "archive:tlg2006-10-21.mk4v.flac16",
+   "source": "archive",
+   "title": "Tea Leaf Green Live at The Vic Theatre on 2006-10-21",
+   "artist": "Tea Leaf Green",
+   "artwork": "https://archive.org/services/img/tlg2006-10-21.mk4v.flac16",
+   "year": "2006",
+   "link": "https://archive.org/details/tlg2006-10-21.mk4v.flac16"
+  },
+  {
+   "kind": "album",
+   "id": "archive:gfc2004-02-12",
+   "source": "archive",
+   "title": "Global Funk Live at The Bean Scene on 2004-02-12",
+   "artist": "Global Funk",
+   "artwork": "https://archive.org/services/img/gfc2004-02-12",
+   "year": "2004",
+   "link": "https://archive.org/details/gfc2004-02-12"
+  },
+  {
+   "kind": "album",
+   "id": "archive:gd71-08-06.aud.bertrando.yerys.129.sbeok.shnf",
+   "source": "archive",
+   "title": "Grateful Dead Live at Hollywood Palladium on 1971-08-06",
+   "artist": "Grateful Dead",
+   "artwork": "https://archive.org/services/img/gd71-08-06.aud.bertrando.yerys.129.sbeok.shnf",
+   "year": "1971",
+   "link": "https://archive.org/details/gd71-08-06.aud.bertrando.yerys.129.sbeok.shnf"
+  },
+  {
+   "kind": "album",
+   "id": "archive:Rad2006-04-21.sbd.flac",
+   "source": "archive",
+   "title": "Radiators Live at Parrish Room on 2006-04-21",
+   "artist": "Radiators",
+   "artwork": "https://archive.org/services/img/Rad2006-04-21.sbd.flac",
+   "year": "2006",
+   "link": "https://archive.org/details/Rad2006-04-21.sbd.flac"
+  },
+  {
+   "kind": "album",
+   "id": "archive:gd95-07-09.sbd.7233.sbeok.shnf",
+   "source": "archive",
+   "title": "Grateful Dead Live at Soldier Field on 1995-07-09",
+   "artist": "Grateful Dead",
+   "artwork": "https://archive.org/services/img/gd95-07-09.sbd.7233.sbeok.shnf",
+   "year": "1995",
+   "link": "https://archive.org/details/gd95-07-09.sbd.7233.sbeok.shnf"
+  },
+  {
+   "kind": "album",
+   "id": "archive:gd1977-05-08.shure57.stevenson.29303.flac16",
+   "source": "archive",
+   "title": "Grateful Dead Live at Barton Hall - Cornell University on 1977-05-08",
+   "artist": "Grateful Dead",
+   "artwork": "https://archive.org/services/img/gd1977-05-08.shure57.stevenson.29303.flac16",
+   "year": "1977",
+   "link": "https://archive.org/details/gd1977-05-08.shure57.stevenson.29303.flac16"
+  },
+  {
+   "kind": "album",
+   "id": "archive:pattersonh2006-01-07.184.flac16",
+   "source": "archive",
+   "title": "Patterson Hood Live at Asheville Pizza & Brewing Company on 2006-01-07",
+   "artist": "Patterson Hood",
+   "artwork": "https://archive.org/services/img/pattersonh2006-01-07.184.flac16",
+   "year": "2006",
+   "link": "https://archive.org/details/pattersonh2006-01-07.184.flac16"
+  },
+  {
+   "kind": "album",
+   "id": "archive:moe2004-10-29.at4051a.flac",
+   "source": "archive",
+   "title": "moe. Live at Dar Constitution Hall on 2004-10-29",
+   "artist": "moe.",
+   "artwork": "https://archive.org/services/img/moe2004-10-29.at4051a.flac",
+   "year": "2004",
+   "link": "https://archive.org/details/moe2004-10-29.at4051a.flac"
+  },
+  {
+   "kind": "album",
+   "id": "archive:gd77-05-08.maizner.hicks.5002.sbeok.shnf",
+   "source": "archive",
+   "title": "Grateful Dead Live at Barton Hall, Cornell University on 1977-05-08",
+   "artist": "Grateful Dead",
+   "artwork": "https://archive.org/services/img/gd77-05-08.maizner.hicks.5002.sbeok.shnf",
+   "year": "1977",
+   "link": "https://archive.org/details/gd77-05-08.maizner.hicks.5002.sbeok.shnf"
+  },
+  {
+   "kind": "album",
+   "id": "archive:gd1975-06-17.aud.unknown.87560.flac16",
+   "source": "archive",
+   "title": "Grateful Dead Live at Winterland Arena on 1975-06-17",
+   "artist": "Grateful Dead",
+   "artwork": "https://archive.org/services/img/gd1975-06-17.aud.unknown.87560.flac16",
+   "year": "1975",
+   "link": "https://archive.org/details/gd1975-06-17.aud.unknown.87560.flac16"
+  },
+  {
+   "kind": "album",
+   "id": "archive:gd70-05-15.early-late.sbd.97.sbeok.shnf",
+   "source": "archive",
+   "title": "Grateful Dead Live at Fillmore East (Late Show) on 1970-05-15",
+   "artist": "Grateful Dead",
+   "artwork": "https://archive.org/services/img/gd70-05-15.early-late.sbd.97.sbeok.shnf",
+   "year": "1970",
+   "link": "https://archive.org/details/gd70-05-15.early-late.sbd.97.sbeok.shnf"
+  },
+  {
+   "kind": "album",
+   "id": "archive:localh1999-06-24-fm103.flac16",
+   "source": "archive",
+   "title": "Local H Live at Levis L2 Lazer Rock Stage [Summerfest 1999] on 1999-06-24",
+   "artist": "Local H",
+   "artwork": "https://archive.org/services/img/localh1999-06-24-fm103.flac16",
+   "year": "1999",
+   "link": "https://archive.org/details/localh1999-06-24-fm103.flac16"
+  },
+  {
+   "kind": "album",
+   "id": "archive:jmband1998-06-26.sbd.shn",
+   "source": "archive",
+   "title": "John Mullins Band Live at The Phantasy on 1998-06-26",
+   "artist": "John Mullins Band",
+   "artwork": "https://archive.org/services/img/jmband1998-06-26.sbd.shn",
+   "year": "1998",
+   "link": "https://archive.org/details/jmband1998-06-26.sbd.shn"
+  },
+  {
+   "kind": "album",
+   "id": "archive:oar2006-07-09",
+   "source": "archive",
+   "title": "Of A Revolution Live at Chevrolet Ampitheatre on 2006-07-09",
+   "artist": "Of A Revolution",
+   "artwork": "https://archive.org/services/img/oar2006-07-09",
+   "year": "2006",
+   "link": "https://archive.org/details/oar2006-07-09"
+  },
+  {
+   "kind": "album",
+   "id": "archive:jj2005-08-05.at931.shnf",
+   "source": "archive",
+   "title": "Jack Johnson Live at Dodge Theatre on 2005-08-05",
+   "artist": "Jack Johnson",
+   "artwork": "https://archive.org/services/img/jj2005-08-05.at931.shnf",
+   "year": "2005",
+   "link": "https://archive.org/details/jj2005-08-05.at931.shnf"
+  },
+  {
+   "kind": "album",
+   "id": "archive:SOMS2004-11-13.flac",
+   "source": "archive",
+   "title": "Snake Oil Medicine Show Live at Bishop's Cafe on 2004-11-13",
+   "artist": "Snake Oil Medicine Show",
+   "artwork": "https://archive.org/services/img/SOMS2004-11-13.flac",
+   "year": "2004",
+   "link": "https://archive.org/details/SOMS2004-11-13.flac"
+  },
+  {
+   "kind": "album",
+   "id": "archive:gd1980-12-06.151263.betty.master.flac16",
+   "source": "archive",
+   "title": "Grateful Dead Live at Mill Valley Recreation Center on 1980-12-06",
+   "artist": "Grateful Dead",
+   "artwork": "https://archive.org/services/img/gd1980-12-06.151263.betty.master.flac16",
+   "year": "1980",
+   "link": "https://archive.org/details/gd1980-12-06.151263.betty.master.flac16"
+  },
+  {
+   "kind": "album",
+   "id": "archive:mss2003-12-31.flac16f",
+   "source": "archive",
+   "title": "Moonshine Still Live at Crown Plaza Ballroom on 2003-12-31",
+   "artist": "Moonshine Still",
+   "artwork": "https://archive.org/services/img/mss2003-12-31.flac16f",
+   "year": "2003",
+   "link": "https://archive.org/details/mss2003-12-31.flac16f"
+  },
+  {
+   "kind": "album",
+   "id": "archive:gd72-08-27.sbd.orf.3328.sbeok.shnf",
+   "source": "archive",
+   "title": "Grateful Dead Live at Old Renaissance Faire Grounds on 1972-08-27",
+   "artist": "Grateful Dead",
+   "artwork": "https://archive.org/services/img/gd72-08-27.sbd.orf.3328.sbeok.shnf",
+   "year": "1972",
+   "link": "https://archive.org/details/gd72-08-27.sbd.orf.3328.sbeok.shnf"
+  },
+  {
+   "kind": "album",
+   "id": "archive:maroon5-2004-10-21.flac16",
+   "source": "archive",
+   "title": "Maroon5 Live at Columbiahalle on 2004-10-21",
+   "artist": "Maroon5",
+   "artwork": "https://archive.org/services/img/maroon5-2004-10-21.flac16",
+   "year": "2004",
+   "link": "https://archive.org/details/maroon5-2004-10-21.flac16"
+  },
+  {
+   "kind": "album",
+   "id": "archive:gd79-01-11.gatto.kempka.308.sbeok.shnf",
+   "source": "archive",
+   "title": "Grateful Dead Live at Nassau Coliseum on 1979-01-11",
+   "artist": "Grateful Dead",
+   "artwork": "https://archive.org/services/img/gd79-01-11.gatto.kempka.308.sbeok.shnf",
+   "year": "1979",
+   "link": "https://archive.org/details/gd79-01-11.gatto.kempka.308.sbeok.shnf"
+  }
+ ]
+}
